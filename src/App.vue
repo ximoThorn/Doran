@@ -3,9 +3,19 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
     </div>
+    <div id="nav">
+      <router-link to="/button">Button</router-link>
+    </div>
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  created() {
+    console.log('sd')
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
