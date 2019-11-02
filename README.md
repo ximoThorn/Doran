@@ -1,4 +1,4 @@
-# doran
+# doran-ui
 
 ## Project setup
 ```
