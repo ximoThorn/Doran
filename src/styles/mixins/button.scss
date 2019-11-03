@@ -1,0 +1,38 @@
+
+@mixin btnHover($color) {
+  color: $color;
+  opacity: .8;
+}
+
+@mixin type-btn($color) {
+  border-color: $color;
+  background-color: $color;
+  color: $btn-text-color;
+  &:hover {
+    @include btnHover($btn-text-color);
+  }
+}
+
+@mixin hollow-btn($color) {
+  color: $color;
+  background: (0, 0);
+}
+
+@mixin dr-button-default {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  touch-action: manipulation;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: 1px solid $btn-border-color;
+  white-space: nowrap;
+  line-height: $line-height-base;
+  user-select: none;
+  padding: 12px 20px;
+  font-size: $font-size-base;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  border-radius: $btn-radius-base;
+}

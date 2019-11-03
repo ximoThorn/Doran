@@ -1,11 +1,22 @@
 
 $font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
+$btn-radius-base: 4px;
+$btn-radius-small: 3px;
+$btn-border-color: #dcdfe6;
+$btn-border-hover-color: #57a3f3;
+$btn-font-weight: normal;
 $font-size-base: 14px;
 $font-size-small: 12px;
-$font-size-large: 16px;
+$btn-text-color: #ffffff;
+$btn-primary-color: #2d8cf0;
+$btn-info-color: #2db7f5;
+$btn-success-color: #19be6b;
+$btn-warning-color: #ff9900;
+$btn-error-color: #ed4014;
+// $font-size-large: 16px;
 
-$line-height-base: 1.5;
+$line-height-base: 1;
 $text-color: #515a6e;
 $body-background: #fff;
 $link-color: #2D8cF0;

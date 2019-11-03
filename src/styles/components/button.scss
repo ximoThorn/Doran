@@ -1,0 +1,66 @@
+.dr-button {
+  @include dr-button-default;
+  &-default, &-dashed, &-text {
+    &:hover {
+      color: $btn-border-hover-color;
+      border-color: $btn-border-hover-color;
+    }
+  }
+  &-dashed {
+    border-style: dashed;
+  }
+  &-text {
+    border-color: transparent;
+    &:hover {
+      color: $btn-border-hover-color;
+      border-color: transparent;
+    }
+  }
+  &-medium {
+    font-size: $font-size-base;
+    padding: 10px 20px;
+    border-radius: $btn-radius-base;
+  }
+  &-small {
+    font-size: $font-size-small;
+    padding: 9px 15px;
+    border-radius: $btn-radius-small;
+  }
+  &-mini {
+    font-size: $font-size-small;
+    padding: 7px 15px;
+    border-radius: $btn-radius-small;
+  }
+  &-primary {
+    @include type-btn($btn-primary-color);
+  }
+  &-info {
+    @include type-btn($btn-info-color);
+  }
+  &-success {
+    @include type-btn($btn-success-color);
+  }
+  &-warning {
+    @include type-btn($btn-warning-color);
+  }
+  &-error {
+    @include type-btn($btn-error-color);
+  }
+  &-hollow {
+    &.dr-button-primary  {
+      @include hollow-btn($btn-primary-color);
+    }
+    &.dr-button-info  {
+      @include hollow-btn($btn-info-color);
+    }
+    &.dr-button-success  {
+      @include hollow-btn($btn-success-color);
+    }
+    &.dr-button-warning  {
+      @include hollow-btn($btn-warning-color);
+    }
+    &.dr-button-error  {
+      @include hollow-btn($btn-error-color);
+    }
+  }
+}
