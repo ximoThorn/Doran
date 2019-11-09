@@ -1,7 +1,7 @@
 .dr-button {
   @include dr-button-default;
-  &-default, &-dashed, &-text {
-    &:hover {
+  &-default, &-dashed, &-text  {
+    &:not([disabled]):hover {
       color: $btn-border-hover-color;
       border-color: $btn-border-hover-color;
     }
@@ -11,7 +11,7 @@
   }
   &-text {
     border-color: transparent;
-    &:hover {
+    &:not([disabled]):hover {
       color: $btn-border-hover-color;
       border-color: transparent;
     }
@@ -62,5 +62,25 @@
     &.dr-button-error  {
       @include hollow-btn($btn-error-color);
     }
+  }
+  &-round {
+    border-radius: 20px;
+    &.dr-button-medium {
+      border-radius: 18px;
+    }
+    &.dr-button-small {
+      border-radius: 16px;
+    }
+    &.dr-button-mini {
+      border-radius: 14px;
+    }
+  }
+  &-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+  &-disabled {
+    opacity: .55;
+    cursor: not-allowed;
   }
 }

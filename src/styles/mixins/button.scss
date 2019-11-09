@@ -8,7 +8,7 @@
   border-color: $color;
   background-color: $color;
   color: $btn-text-color;
-  &:hover {
+  &:not([disabled]):hover {
     @include btnHover($btn-text-color);
   }
 }
@@ -16,6 +16,9 @@
 @mixin hollow-btn($color) {
   color: $color;
   background: (0, 0);
+  &:not([disabled]):hover {
+    @include btnHover($color);
+  }
 }
 
 @mixin dr-button-default {

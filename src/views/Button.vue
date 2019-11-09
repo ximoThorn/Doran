@@ -38,6 +38,34 @@
       </DrButton>
     </div>
     <div>
+      <p>失效按钮</p>
+      <DrButton
+        type="primary"
+        disabled>
+        主要按钮
+      </DrButton>
+      <DrButton
+        type="info"
+        disabled>
+        信息按钮
+      </DrButton>
+      <DrButton
+        type="success"
+        disabled>
+        成功按钮
+      </DrButton>
+      <DrButton
+        type="warning"
+        disabled>
+        警告按钮
+      </DrButton>
+      <DrButton
+        type="error"
+        disabled>
+        错误按钮
+      </DrButton>
+    </div>
+    <div>
       <p>镂空效果</p>
       <DrButton
         type="primary"
@@ -87,16 +115,97 @@
         超小按钮
       </DrButton>
     </div>
+    <div>
+      <p>圆角按钮</p>
+      <DrButton
+        type="primary"
+        round>
+        默认大小
+      </DrButton>
+      <DrButton
+        type="info"
+        size="medium"
+        round>
+        中型按钮
+      </DrButton>
+      <DrButton
+        type="success"
+        size="small"
+        round>
+        小型按钮
+      </DrButton>
+      <DrButton
+        type="warning"
+        size="mini"
+        round>
+        超小按钮
+      </DrButton>
+    </div>
+    <div>
+      <p>圆形按钮</p>
+      <DrButton
+        type="primary"
+        icon="dr-icon-search"
+        circle>
+      </DrButton>
+      <DrButton
+        type="primary"
+        icon="dr-icon-home"
+        circle>
+      </DrButton>
+      <DrButton
+        type="primary"
+        icon="dr-icon-favor"
+        circle>
+      </DrButton>
+      <DrButton
+        type="primary"
+        icon="dr-icon-edit"
+        circle>
+      </DrButton>
+      <DrButton
+        type="primary"
+        icon="dr-icon-tagfill"
+        circle>
+      </DrButton>
+    </div>
+    <div>
+      <p>loading按钮</p>
+      <DrButton
+        type="primary" loading>
+        加载中...
+      </DrButton>
+      <DrButton
+        type="primary"
+        @click="handleClick"
+        icon="dr-icon-appreciate"
+        :loading="loadflag">
+        <span v-if="!loadflag">click me</span>
+        <span v-else>loading...</span>
+      </DrButton>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      loadflag: false
+    };
+  },
+  methods: {
+    handleClick() {
+      this.loadflag = true;
+      setTimeout(() => {
+        this.loadflag = false;
+      }, 3000);
+    }
+  }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button-page {
   div {
     margin-bottom: 20px;
