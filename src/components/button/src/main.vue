@@ -19,20 +19,28 @@
 
 <script>
 import DrIcon from '../../icon';
+import { validValue } from '@/utils/validate';
 
 const btnPreFix = 'dr-button';
 export default {
   name: 'DrButton',
   props: {
     type: {
-      type: String
+      validator(value) {
+        const arr = ['default', 'primary', 'info', 'success', 'warning', 'error', 'dashed', 'text'];
+        return validValue(value, arr);
+      },
+      default: 'default'
     },
     hollow: {
       type: Boolean,
       default: false
     },
     size: {
-      type: String
+      validator(value) {
+        const arr = ['medium', 'small', 'mini'];
+        return validValue(value, arr);
+      }
     },
     round: {
       type: Boolean
@@ -54,18 +62,26 @@ export default {
     DrIcon
   },
   computed: {
+    btnSize() {
+      return this.size || this.sizeInherit || 'default';
+    },
     classes() {
       return [
         `${btnPreFix}`,
-        `${btnPreFix}-${this.type || 'default'}`,
+        `${btnPreFix}-${this.type}`,
         {
           [`${btnPreFix}-hollow`]: this.hollow,
-          [`${btnPreFix}-${this.size}`]: !!this.size,
+          [`${btnPreFix}-${this.btnSize}`]: this.btnSize !== 'default',
           [`${btnPreFix}-round`]: this.round,
           [`${btnPreFix}-circle`]: this.circle,
           [`${btnPreFix}-disabled`]: this.disabled
         }
       ];
+    }
+  },
+  data() {
+    return {
+      sizeInherit: ''
     }
   },
   methods: {
@@ -75,11 +91,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.dr-button {
-  span {
-    vertical-align: middle;
-  }
-}
-</style>

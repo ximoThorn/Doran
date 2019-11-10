@@ -1,5 +1,8 @@
 .dr-button {
   @include dr-button-default;
+  > span {
+    vertical-align: middle;
+  }
   &-default, &-dashed, &-text  {
     &:not([disabled]):hover {
       color: $btn-border-hover-color;
@@ -78,6 +81,15 @@
   &-circle {
     border-radius: 50%;
     padding: 12px;
+    &.dr-button-medium {
+      padding: 10px;
+    }
+    &.dr-button-small {
+      padding: 8px;
+    }
+    &.dr-button-mini {
+      padding: 6px;
+    }
   }
   &-disabled {
     opacity: .55;

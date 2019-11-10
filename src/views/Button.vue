@@ -156,33 +156,159 @@
       <DrButton
         type="primary"
         icon="dr-icon-favor"
+        size="medium"
         circle>
       </DrButton>
       <DrButton
         type="primary"
         icon="dr-icon-edit"
+        size="small"
         circle>
       </DrButton>
       <DrButton
         type="primary"
         icon="dr-icon-tagfill"
+        size="mini"
         circle>
       </DrButton>
     </div>
     <div>
-      <p>loading按钮</p>
+      <p>图标按钮</p>
       <DrButton
         type="primary" loading>
         加载中...
+      </DrButton>
+      <DrButton
+        type="primary">
+        点赞 <DrIcon icon="dr-icon-appreciate" />
       </DrButton>
       <DrButton
         type="primary"
         @click="handleClick"
         icon="dr-icon-appreciate"
         :loading="loadflag">
-        <span v-if="!loadflag">click me</span>
-        <span v-else>loading...</span>
+        <span v-if="!loadflag"> click me</span>
+        <span v-else> loading...</span>
       </DrButton>
+    </div>
+    <div>
+      <p>按钮组</p>
+      <DrButtonGroup>
+        <DrButton>
+          默认按钮
+        </DrButton>
+        <DrButton>
+          home
+        </DrButton>
+        <DrButton>
+          默认按钮
+        </DrButton>
+        <DrButton type="dashed">
+          默认按钮
+        </DrButton>
+      </DrButtonGroup>
+      <br>
+      <br>
+      <DrButtonGroup size="mini">
+        <DrButton
+          type="primary">
+          主要按钮
+        </DrButton>
+        <DrButton
+          type="info">
+          信息按钮
+        </DrButton>
+        <DrButton
+          type="success">
+          成功按钮
+        </DrButton>
+      </DrButtonGroup>
+      <br>
+      <br>
+      <DrButtonGroup>
+        <DrButton
+          icon="dr-icon-search"
+          circle>
+        </DrButton>
+        <DrButton
+          icon="dr-icon-home"
+          circle>
+        </DrButton>
+        <DrButton
+          icon="dr-icon-edit"
+          circle>
+        </DrButton>
+        <DrButton
+          icon="dr-icon-favor"
+          circle>
+        </DrButton>
+      </DrButtonGroup>
+      <br>
+      <br>
+      <DrButtonGroup>
+        <DrButton
+          type="primary"
+          size="small"
+          icon="dr-icon-search">
+        </DrButton>
+        <DrButton
+          type="success"
+          size="small"
+          icon="dr-icon-home">
+        </DrButton>
+        <DrButton
+          type="warning"
+          size="small"
+          icon="dr-icon-edit">
+        </DrButton>
+        <DrButton
+          type="error"
+          size="small"
+          icon="dr-icon-favor">
+        </DrButton>
+      </DrButtonGroup>
+      <br>
+      <br>
+      <DrButtonGroup class="page-button-group" vertical>
+        <DrButton
+          type="primary"
+          size="small"
+          icon="dr-icon-search">
+        </DrButton>
+        <DrButton
+          type="success"
+          size="small"
+          icon="dr-icon-home">
+        </DrButton>
+        <DrButton
+          type="warning"
+          size="small"
+          icon="dr-icon-edit">
+        </DrButton>
+        <DrButton
+          type="error"
+          size="small"
+          icon="dr-icon-favor">
+        </DrButton>
+      </DrButtonGroup>
+      <DrButtonGroup class="page-button-group" vertical>
+        <DrButton
+          size="small"
+          icon="dr-icon-search">
+        </DrButton>
+        <DrButton
+          size="small"
+          icon="dr-icon-home">
+        </DrButton>
+        <DrButton
+          size="small"
+          icon="dr-icon-edit">
+        </DrButton>
+        <DrButton
+          size="small"
+          icon="dr-icon-favor">
+        </DrButton>
+      </DrButtonGroup>
     </div>
   </div>
 </template>
@@ -207,13 +333,19 @@ export default {
 
 <style lang="scss">
 .button-page {
-  div {
+  padding-bottom: 100px;
+  > div {
+    overflow: hidden;
     margin-bottom: 20px;
     p {
       margin: 10px 0;
     }
-    button {
+    > button {
       margin: 0 15px;
+    }
+    .page-button-group {
+      display: inline-block;
+      margin: 0 20px;
     }
   }
 }
