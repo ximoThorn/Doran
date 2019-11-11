@@ -31,6 +31,12 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
+    &-primary, &-info, &-success, &-warning, &-error {
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+      border-right-color: hsla(0, 0%, 100%, .5);
+    }
   }
   &-vertical {
     > .dr-button {
@@ -53,6 +59,12 @@
       &:last-child {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+      }
+      &-primary, &-info, &-success, &-warning, &-error {
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+        border-bottom-color: hsla(0, 0%, 100%, .5);
       }
     }
   }
