@@ -337,8 +337,10 @@ export default {
   > div {
     overflow: hidden;
     margin-bottom: 20px;
+    text-align: center;
     p {
       margin: 10px 0;
+      text-align: center;
     }
     > button {
       margin: 0 15px;

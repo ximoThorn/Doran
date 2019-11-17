@@ -1,3 +1,5 @@
 .dr-icon-spin {
-  animation: load-loop 1s linear infinite;
+  &::before {
+    animation: load-loop 1s linear infinite;
+  }
 }

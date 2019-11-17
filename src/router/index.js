@@ -11,8 +11,16 @@ const routes = [
     component: Page
   },
   {
+    path: '/icon',
+    component: () => import('../views/Icon.vue')
+  },
+  {
     path: '/button',
     component: () => import('../views/Button.vue')
+  },
+  {
+    path: '/collapse',
+    component: () => import('../views/Collapse.vue')
   }
 ]
 

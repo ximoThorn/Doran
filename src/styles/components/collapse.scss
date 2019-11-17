@@ -1,0 +1,9 @@
+.dr-collapse {
+  > .dr-collapse-item {
+    &:first-child {
+      > .dr-collapse-item-header {
+        border-top: $collapse-border;
+      }
+    }
+  }
+}

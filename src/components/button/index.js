@@ -1,4 +1,4 @@
-import DrButton from './src/main.vue';
+import DrButton from './src/button.vue';
 
 DrButton.install = function (Vue) {
   Vue.component(DrButton.name, DrButton);

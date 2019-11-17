@@ -1,0 +1,49 @@
+@mixin collapseItemDefault {
+  // border-top: $collapse-border;
+  height: 48px;
+  line-height: 48px;
+  color: #303133;
+  background-color: #fff;
+  font-size: 14px;
+  display: flex;
+  cursor: pointer;
+}
+
+.dr-collapse-item {
+  border-bottom: $collapse-border;
+  .dr-collapse-item {
+    &-header {
+      @include collapseItemDefault;
+      .dr-collapse-item-title {
+        flex: 1;
+        overflow: hidden;
+        font-weight: bold;
+        > span {
+          vertical-align: middle;
+        }
+      }
+      .dr-collapse-item-arrow {
+        flex: 0 0 20px;
+        text-align: center;
+        font-size: 20px;
+        &::before {
+          display: inline-block;
+          transition: transform $collapse-transition-time $collapse-transition;
+        }
+        &-active {
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    &-content {
+      width: 100%;
+      overflow: hidden;
+      line-height: 1.5;
+      &-slot {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}

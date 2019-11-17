@@ -1,0 +1,4 @@
+@mixin wordSpase { // 强制换行
+  word-break: break-all;
+  white-space: pre-wrap;
+}

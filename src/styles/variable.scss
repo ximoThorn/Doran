@@ -1,5 +1,5 @@
 
-$font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 
 $btn-radius-base: 4px;
 $btn-radius-small: 3px;
@@ -29,3 +29,8 @@ $animation-time: .3s;
 $cursor-disabled: not-allowed;
 
 $code-family: Consolas, Menlo, Courier, monospace;
+
+
+$collapse-border: 1px solid #dcdee2;
+$collapse-transition: ease-in-out;
+$collapse-transition-time: .3s;

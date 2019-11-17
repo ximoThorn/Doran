@@ -1,4 +1,4 @@
-import DrIcon from './src/main.vue';
+import DrIcon from './src/icon.vue';
 
 DrIcon.install = function (Vue) {
   Vue.component(DrIcon.name, DrIcon);

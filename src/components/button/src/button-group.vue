@@ -31,7 +31,9 @@ export default {
   methods: {
     _handlerSize(val) {
       this.$children.forEach((item) => {
-        item.sizeInherit = val;
+        if (item.$options.name === 'DrButton') {
+          item.sizeInherit = val;
+        };
       });
     }
   },
