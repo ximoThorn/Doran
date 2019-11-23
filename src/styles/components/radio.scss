@@ -1,0 +1,110 @@
+@mixin mini-radio {
+  .dr-radio-inner {
+    width: 12px;
+    height: 12px;
+    &::after {
+      width: 4px;
+      height: 4px;
+    }
+  }
+}
+
+.dr-radio {
+  &-default {
+    display: inline-block;
+    font-size: $font-size;
+    vertical-align: middle;
+    margin-right: 30px;
+    cursor: pointer;
+    &:not(.dr-radio-disabled) {
+      .dr-radio-inner {
+        &:hover {
+          border-color: $theme-color;
+        }
+      }
+    }
+  }
+  &-edge {
+    @include substitute-init;
+  }
+  &-inner {
+    border: 1px solid $border-color;
+    display: inline-block;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    &::after {
+      content: '';
+      @include absolute-middle;
+      transform: translate(-50%, -50%) scale(0);
+      display: inline-block;
+      background-color: $body-background;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      transition: transform $form-transition-time $form-transition-type;
+    }
+  }
+  &-input {
+    @include input-init
+  }
+  &-label {
+    padding-left: 10px;
+    user-select: none; 
+  }
+  &-checked {
+    .dr-radio-inner {
+      border-color: $theme-color;
+      background-color: $theme-color;
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  } 
+  &-disabled {
+    cursor: not-allowed;
+    .dr-radio-inner {
+      background-color: $disabled-bg-color;
+      &::after {
+        background-color: $disabled-bg-color;
+      }
+    }
+    .dr-radio-label {
+      color: $disabled-color;
+    }
+    &.dr-radio-checked {
+      .dr-radio-inner {
+        border-color: $border-color;
+        &::after {
+          background-color: $disabled-color;
+        }
+      }
+    }
+  }
+  &-border {
+    border-radius: 4px;
+    padding: 12px 16px 8px 10px;
+    border: 1px solid $border-color;
+    &.dr-radio-disabled {
+      border: 1px solid $disabled-color;
+    }
+    &.dr-radio-checked {
+      border: 1px solid $theme-color;
+      &.dr-radio-disabled {
+        border: 1px solid $disabled-color;
+      }
+    }
+    &.dr-radio-medium {
+      padding: 10px 14px 6px 8px;
+    }
+    &.dr-radio-small {
+      padding: 8px 12px 4px 6px;
+      @include mini-radio;
+    }
+    &.dr-radio-mini {
+      padding: 6px 8px 2px 4px;
+      @include mini-radio;
+    }
+  }
+}

@@ -21,6 +21,10 @@ const routes = [
   {
     path: '/collapse',
     component: () => import('../views/Collapse.vue')
+  },
+  {
+    path: '/radio',
+    component: () => import('../views/Radio.vue')
   }
 ]
 

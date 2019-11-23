@@ -9,6 +9,9 @@
     <div id="nav">
       <router-link to="/collapse">Collapse</router-link>
     </div>
+    <div id="nav">
+      <router-link to="/radio">Radio</router-link>
+    </div>
   </div>
 </template>
 

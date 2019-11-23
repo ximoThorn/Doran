@@ -1,15 +1,21 @@
 import DrButton from './components/button';
 import DrIcon from './components/icon';
-import DrButtonGroup from './components/buttonGroup';
+import DrButtonGroup from './components/button-group';
 import DrCollapse from './components/collapse';
 import DrCollapseItem from './components/collapse-item';
+import DrRadio from './components/radio';
+import DrRadioGroup from './components/radio-group';
+import DrRadioButton from './components/radio-button';
 
 const DoranComponents = [
   DrButton,
   DrButtonGroup,
   DrIcon,
   DrCollapse,
-  DrCollapseItem
+  DrCollapseItem,
+  DrRadio,
+  DrRadioGroup,
+  DrRadioButton
 ];
 
 const install = function (Vue, opt = {}) {
@@ -26,5 +32,8 @@ export default {
   DrButtonGroup,
   DrIcon,
   DrCollapse,
-  DrCollapseItem
+  DrCollapseItem,
+  DrRadio,
+  DrRadioGroup,
+  DrRadioButton
 };

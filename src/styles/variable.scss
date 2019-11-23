@@ -1,15 +1,21 @@
 
 $font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$theme-color: #2d8cf0;
+$font-size: 14px;
+$border-color: #dcdfe6;
+$disabled-color: #c0c4cc;
+$disabled-bg-color: #f5f7fa;
+
 
 $btn-radius-base: 4px;
 $btn-radius-small: 3px;
-$btn-border-color: #dcdfe6;
+$btn-border-color: $border-color;
 $btn-border-hover-color: #57a3f3;
 $btn-font-weight: normal;
-$font-size-base: 14px;
+$font-size-base: $font-size;
 $font-size-small: 12px;
 $btn-text-color: #ffffff;
-$btn-primary-color: #2d8cf0;
+$btn-primary-color: $theme-color;
 $btn-info-color: #2db7f5;
 $btn-success-color: #19be6b;
 $btn-warning-color: #ff9900;
@@ -19,7 +25,7 @@ $btn-error-color: #ed4014;
 $line-height-base: 1;
 $text-color: #515a6e;
 $body-background: #fff;
-$link-color: #2D8cF0;
+$link-color: $theme-color;
 $link-hover-color: $link-color;
 $link-active-color: $link-color;
 
@@ -34,3 +40,7 @@ $code-family: Consolas, Menlo, Courier, monospace;
 $collapse-border: 1px solid #dcdee2;
 $collapse-transition: ease-in-out;
 $collapse-transition-time: .3s;
+
+
+$form-transition-time: .15s;
+$form-transition-type: ease-in;
