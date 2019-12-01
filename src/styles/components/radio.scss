@@ -87,7 +87,7 @@
   }
   &-border {
     border-radius: 4px;
-    padding: 12px 16px 8px 10px;
+    padding: 12px 16px 9px 10px;
     border: 1px solid $border-color;
     &.dr-radio-disabled {
       border: 1px solid $disabled-color;
@@ -101,14 +101,16 @@
       }
     }
     &.dr-radio-medium {
-      padding: 10px 14px 6px 8px;
+      padding: 10px 14px 8px 8px;
     }
     &.dr-radio-small {
       padding: 8px 12px 4px 6px;
+      font-size: 12px;
       @include mini-radio;
     }
     &.dr-radio-mini {
-      padding: 6px 8px 2px 4px;
+      padding: 6px 8px 3px 4px;
+      font-size: 12px;
       @include mini-radio;
     }
   }

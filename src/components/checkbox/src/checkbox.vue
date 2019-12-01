@@ -3,7 +3,8 @@
     <span class="dr-checkbox-edge">
       <span
         :class="{
-          'is-focus': focus
+          'dr-checkbox-focus': focus,
+          'dr-checkbox-indeterminate': indeterminate
         }"
         class="dr-checkbox-inner">
       </span>
@@ -70,7 +71,9 @@ export default {
         `${drPreFixCheckbox}-default`,
         {
           [`${drPreFixCheckbox}-checked`]: this.checked,
-          [`${drPreFixCheckbox}-disabled`]: this.disabled
+          [`${drPreFixCheckbox}-disabled`]: this.disabled,
+          [`${drPreFixCheckbox}-border`]: this.border,
+          [`${drPreFixCheckbox}-${this.finalSize}`]: !!this.finalSize
         }
       ];
     },
@@ -78,7 +81,16 @@ export default {
       if (this.isGroup) {
         return this.model.indexOf(this.label) > -1;
       }
-      return this.trueLabel || this.falseLabel ? this.trueLabel === this.currentValue : this.currentValue;
+      if (this.trueLabel !== undefined || this.falseLabel !== undefined) {
+        return this.trueLabel === this.currentValue;
+      }
+      return this.value;
+    },
+    finalSize() {
+      if (this.checkboxGroup.type === 'button') {
+        return '';
+      }
+      return this.size || this.checkboxGroup.size || '';
     },
     model: {
       get(val) {
@@ -116,7 +128,11 @@ export default {
         return false;
       };
       const checked = e.target.checked;
-      this.currentValue = this.trueLabel || this.falseLabel ? (checked ? this.trueLabel : this.falseLabel) : checked;
+      if (this.trueLabel !== undefined || this.falseLabel !== undefined) {
+        this.currentValue = checked ? this.trueLabel : this.falseLabel;
+      } else {
+        this.currentValue = checked;
+      };
       this.$emit('change', this.currentValue);
     }
   }

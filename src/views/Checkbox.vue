@@ -19,16 +19,106 @@
         <DrCheckbox label="人觉" disabled>人觉</DrCheckbox>
       </DrCheckboxGroup>
     </div>
+    <p>indeterminate 状态</p>
+    <div>
+      <div class="indeterminate-checkbox">
+        <DrCheckbox
+          v-model="indeterminateCheckAll"
+          @change="handlerCheckAll"
+          :indeterminate="indeterminateFlag">
+          全选
+        </DrCheckbox>
+      </div>
+      <DrCheckboxGroup v-model="checkoutIndeterminate" @change="handleIndeterminate">
+        <DrCheckbox
+          v-for="(item, index) in valuesInit"
+          :key="index"
+          :label="item">
+          {{item}}
+        </DrCheckbox>
+      </DrCheckboxGroup>
+    </div>
+    <p>带边框</p>
+    <div>
+      <DrCheckbox v-model="borderCheckbox1" border>剑子仙迹</DrCheckbox>
+      <DrCheckbox v-model="borderCheckbox2" border>疏楼龙宿</DrCheckbox>
+      <DrCheckbox v-model="borderCheckbox3" border>佛剑分说</DrCheckbox>
+    </div>
+    <p>带边框失效和不同尺寸</p>
+    <div>
+      <DrCheckbox v-model="borderCheckbox4" disabled size="medium" border>剑非道</DrCheckbox>
+      <DrCheckbox v-model="borderCheckbox5" disabled size="small" border>任平生</DrCheckbox>
+      <DrCheckbox v-model="borderCheckbox6" size="mini" border>霁无瑕</DrCheckbox>
+    </div>
+    <p>带边框不同尺寸(size属性只在border为true的时候生效)</p>
+    <div>
+      <DrCheckboxGroup v-model="borderSizeCheckbox" size="medium">
+        <DrCheckbox label="1" border>剑非道</DrCheckbox>
+        <DrCheckbox label="2" border>任平生</DrCheckbox>
+        <DrCheckbox label="3" border size="small">霁无瑕</DrCheckbox>
+        <DrCheckbox label="4" border size="mini">剑非道</DrCheckbox>
+      </DrCheckboxGroup>
+    </div>
+    <p>带边框按钮组</p>
+    <div>
+      <DrCheckboxGroup v-model="buttonCheckbox" type="button">
+        <DrCheckbox label="剑非道">剑非道</DrCheckbox>
+        <DrCheckbox label="任平生">任平生</DrCheckbox>
+        <DrCheckbox label="霁无瑕">霁无瑕</DrCheckbox>
+        <DrCheckbox label="红尘雪">红尘雪</DrCheckbox>
+      </DrCheckboxGroup>
+      <br>
+      <br>
+      <DrCheckboxGroup v-model="ButtonMediumCheckbox" size="medium" type="button">
+        <DrCheckbox label="剑非道">剑非道</DrCheckbox>
+        <DrCheckbox label="任平生">任平生</DrCheckbox>
+        <DrCheckbox label="霁无瑕">霁无瑕</DrCheckbox>
+        <DrCheckbox label="红尘雪">红尘雪</DrCheckbox>
+      </DrCheckboxGroup>
+      <br>
+      <br>
+      <DrCheckboxGroup v-model="ButtonSmallCheckbox" size="small" type="button">
+        <DrCheckbox label="剑非道">剑非道</DrCheckbox>
+        <DrCheckbox label="任平生">任平生</DrCheckbox>
+        <DrCheckbox label="霁无瑕">霁无瑕</DrCheckbox>
+        <DrCheckbox label="红尘雪">红尘雪</DrCheckbox>
+      </DrCheckboxGroup>
+      <br>
+      <br>
+      <DrCheckboxGroup v-model="ButtonMiniCheckbox" size="mini" type="button">
+        <DrCheckbox label="剑非道">剑非道</DrCheckbox>
+        <DrCheckbox label="任平生">任平生</DrCheckbox>
+        <DrCheckbox label="霁无瑕">霁无瑕</DrCheckbox>
+        <DrCheckbox label="红尘雪">红尘雪</DrCheckbox>
+      </DrCheckboxGroup>
+    </div>
   </div>
 </template>
 
 <script>
+const valuesInit = ['麒麟星', '苍鹰', '云中兽', '金狮', '天虎令', '炽风翼'];
+
 export default {
   data() {
     return {
       checkoutBase: false,
       checkoutbase2: '',
-      checkoutGroupValues: ['叶小钗', '地冥']
+      checkoutGroupValues: ['叶小钗', '地冥'],
+      indeterminateFlag: true,
+      checkoutIndeterminate: ['麒麟星', '苍鹰'],
+      valuesInit,
+      indeterminateCheckAll: false,
+      borderCheckbox1: true,
+      borderCheckbox2: false,
+      borderCheckbox3: false,
+      borderCheckbox4: true,
+      borderCheckbox5: false,
+      borderCheckbox6: false,
+      borderSizeCheckbox: ['1'],
+      buttonCheckbox: ['剑非道'],
+      ButtonMediumCheckbox: ['剑非道'],
+      ButtonSmallCheckbox: ['剑非道'],
+      ButtonMiniCheckbox: ['剑非道']
     };
   },
   methods: {
@@ -40,6 +130,15 @@ export default {
     },
     handleChangeValues(val) {
       console.log(val)
+    },
+    handlerCheckAll(val) {
+      this.checkoutIndeterminate = val ? valuesInit : [];
+      this.indeterminateFlag = false;
+    },
+    handleIndeterminate(val) {
+      const length = val.length;
+      this.indeterminateCheckAll = length === this.valuesInit.length;
+      this.indeterminateFlag = length > 0 && length < this.valuesInit.length;
     }
   }
 }
@@ -58,6 +157,9 @@ export default {
     width: 50%;
     margin: 20px auto;
     text-align: center;
+    .indeterminate-checkbox {
+      margin-bottom: 20px;
+    }
     > label {
       margin: 10px 30px 10px 0;
     }

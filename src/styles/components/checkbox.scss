@@ -3,8 +3,8 @@
     width: 12px;
     height: 12px;
     &::after {
-      width: 4px;
-      height: 4px;
+      width: 3px;
+      height: 6px;
     }
   }
 }
@@ -34,20 +34,35 @@
     width: 14px;
     height: 14px;
     position: relative;
-    &.is-focus {
+    &.dr-checkbox-focus {
       border-color: $theme-color;
     }
-    &::after {
-      content: '';
-      @include absolute-middle;
-      transform: translate(-50%, -50%) scale(0) rotate(45deg);
-      display: inline-block;
-      border: 1px solid $body-white;
-      border-top: none;
-      border-left: none;
-      width: 3px;
-      height: 7px;
-      transition: transform $form-transition-time $form-transition-type;
+    &:not(.dr-checkbox-indeterminate) {
+      &::after {
+        content: '';
+        @include absolute-middle;
+        transform: translate(-50%, -50%) scale(0) rotate(0);
+        display: inline-block;
+        border: 1px solid $body-white;
+        border-top: none;
+        border-left: none;
+        width: 3px;
+        height: 7px;
+        transition: transform $form-transition-time $form-transition-type;
+      }
+    }
+    &.dr-checkbox-indeterminate {
+      background-color: $theme-color;
+      &::after {
+        content: '';
+        @include absolute-middle;
+        display: inline-block;
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+        width: 6px;
+        height: 1px;
+        background-color: $btn-text-color;
+        transition: transform 0 $form-transition-type;
+      }
     }
   }
   &-input {
@@ -91,28 +106,30 @@
   }
   &-border {
     border-radius: 4px;
-    padding: 12px 16px 8px 10px;
+    padding: 12px 16px 9px 10px;
     border: 1px solid $border-color;
     &.dr-checkbox-disabled {
       border: 1px solid $disabled-color;
     }
     &.dr-checkbox-checked {
-      border: 1px solid $theme-color;
       &:not(.dr-checkbox-disabled) {
+        border: 1px solid $theme-color;
         .dr-checkbox-label {
           color: $theme-color;
         }
       }
     }
     &.dr-checkbox-medium {
-      padding: 10px 14px 6px 8px;
+      padding: 10px 14px 8px 8px;
     }
     &.dr-checkbox-small {
       padding: 8px 12px 4px 6px;
+      font-size: 12px;
       @include mini-checkbox;
     }
     &.dr-checkbox-mini {
-      padding: 6px 8px 2px 4px;
+      padding: 6px 8px 3px 4px;
+      font-size: 12px;
       @include mini-checkbox;
     }
   }
@@ -149,6 +166,9 @@
           }
         }
         border: 1px solid $theme-color;
+        &:not(:first-child) {
+          border-left-color: $border-hsla-color;
+        }
         background-color: $theme-color;
         z-index: 2;
       }

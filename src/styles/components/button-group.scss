@@ -10,7 +10,7 @@
       &:not(:first-child) {
         margin-left: 0;
       }
-      border-right-color: hsla(0, 0%, 100%, .5);
+      border-right-color: $border-hsla-color;
     }
   }
   &-vertical {
@@ -29,7 +29,7 @@
         &:not(:first-child) {
           margin-top: 0;
         }
-        border-bottom-color: hsla(0, 0%, 100%, .5);
+        border-bottom-color: $border-hsla-color;
       }
     }
   }

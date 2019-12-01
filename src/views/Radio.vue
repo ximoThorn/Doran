@@ -62,9 +62,11 @@
     </div>
     <p>带边框失效</p>
     <div>
-      <DrRadio v-model="borderRadio2" :disabled="true" label="1" border>剑非道</DrRadio>
-      <DrRadio v-model="borderRadio2" :disabled="true" label="2" border>任平生</DrRadio>
-      <DrRadio v-model="borderRadio2" :disabled="false" label="3" border>霁无瑕</DrRadio>
+      <DrRadioGroup v-model="borderRadio2" size="medium" @change="handleGroupChange">
+        <DrRadio :disabled="true" label="1" border>剑非道</DrRadio>
+        <DrRadio :disabled="true" label="2" border>任平生</DrRadio>
+        <DrRadio :disabled="false" label="3" border>霁无瑕</DrRadio>
+      </DrRadioGroup>
     </div>
     <p>带边框不同尺寸(size属性只在border为true的时候生效)</p>
     <div>

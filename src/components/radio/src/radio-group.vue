@@ -32,7 +32,7 @@ export default {
           [`${drPreFixRadioGroup}-${this.type}`]: this.type,
           [`${drPreFixRadioGroup}-${this.size}`]: this.size && (this.type === 'button')
         }
-      ]
+      ];
     }
   }
 }

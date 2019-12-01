@@ -49,7 +49,7 @@ export default {
           [`${drPrefixRadio}-checked`]: this.checked,
           [`${drPrefixRadio}-disabled`]: this.disabled,
           [`${drPrefixRadio}-border`]: this.border,
-          [`${drPrefixRadio}-${this.size}`]: this.size && this.border
+          [`${drPrefixRadio}-${this.finalSize}`]: !!this.finalSize && this.border
         }
       ];
     },
@@ -60,6 +60,12 @@ export default {
     },
     checked() {
       return this.isGroup ? this.radioGroup.value === this.label : this.value === this.label;
+    },
+    finalSize() {
+      if (this.radioGroup.type === 'button') {
+        return '';
+      }
+      return this.size || this.radioGroup.size || '';
     }
   },
   mounted() {
