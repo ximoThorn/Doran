@@ -1,0 +1,49 @@
+@mixin buttonGroupDefault {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin buttonGroupZindex {
+  float: left;
+  position: relative;
+  &:not(:last-child) {
+    &:hover {
+      z-index: 2;
+    }
+  }
+}
+
+@mixin notDisabled ($color, $borderColor) {
+  &:not([disabled]):hover {
+    color: $color;
+    border-color: $borderColor;
+  }
+}
+
+@mixin groupRadius {
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+@mixin groupVertivalRadius {
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:last-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

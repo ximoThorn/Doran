@@ -1,5 +1,5 @@
-@mixin mini-radio {
-  .dr-radio-inner {
+@mixin mini-checkbox {
+  .dr-checkbox-inner {
     width: 12px;
     height: 12px;
     &::after {
@@ -9,15 +9,15 @@
   }
 }
 
-.dr-radio {
+.dr-checkbox {
   &-default {
     display: inline-block;
     font-size: $font-size;
     vertical-align: middle;
     margin-right: 30px;
     cursor: pointer;
-    &:not(.dr-radio-disabled) {
-      .dr-radio-inner {
+    &:not(.dr-checkbox-disabled) {
+      .dr-checkbox-inner {
         &:hover {
           border-color: $theme-color;
         }
@@ -30,57 +30,61 @@
   &-inner {
     border: 1px solid $border-color;
     display: inline-block;
-    border-radius: 50%;
+    border-radius: $checkbox-radius;
     width: 14px;
     height: 14px;
     position: relative;
+    &.is-focus {
+      border-color: $theme-color;
+    }
     &::after {
       content: '';
       @include absolute-middle;
-      transform: translate(-50%, -50%) scale(0);
+      transform: translate(-50%, -50%) scale(0) rotate(45deg);
       display: inline-block;
-      background-color: $body-white;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
+      border: 1px solid $body-white;
+      border-top: none;
+      border-left: none;
+      width: 3px;
+      height: 7px;
       transition: transform $form-transition-time $form-transition-type;
     }
   }
   &-input {
-    @include input-init
+    @include input-init;
   }
   &-label {
     padding-left: 10px;
     user-select: none; 
   }
   &-checked {
-    .dr-radio-inner {
+    .dr-checkbox-inner {
       border-color: $theme-color;
       background-color: $theme-color;
       &::after {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1) rotate(45deg);
       }
     }
-    .dr-radio-label {
+    .dr-checkbox-label {
       color: $theme-color;
     }
   } 
   &-disabled {
     cursor: not-allowed;
-    .dr-radio-inner {
+    .dr-checkbox-inner {
       background-color: $disabled-bg-color;
       &::after {
         background-color: $disabled-bg-color;
       }
     }
-    .dr-radio-label {
+    .dr-checkbox-label {
       color: $disabled-color;
     }
-    &.dr-radio-checked {
-      .dr-radio-inner {
+    &.dr-checkbox-checked {
+      .dr-checkbox-inner {
         border-color: $border-color;
         &::after {
-          background-color: $disabled-color;
+          border-color: $disabled-color;
         }
       }
     }
@@ -89,44 +93,44 @@
     border-radius: 4px;
     padding: 12px 16px 8px 10px;
     border: 1px solid $border-color;
-    &.dr-radio-disabled {
+    &.dr-checkbox-disabled {
       border: 1px solid $disabled-color;
     }
-    &.dr-radio-checked {
-      &:not(.dr-radio-disabled) {
-        border: 1px solid $theme-color;
-        .dr-radio-label {
+    &.dr-checkbox-checked {
+      border: 1px solid $theme-color;
+      &:not(.dr-checkbox-disabled) {
+        .dr-checkbox-label {
           color: $theme-color;
         }
       }
     }
-    &.dr-radio-medium {
+    &.dr-checkbox-medium {
       padding: 10px 14px 6px 8px;
     }
-    &.dr-radio-small {
+    &.dr-checkbox-small {
       padding: 8px 12px 4px 6px;
-      @include mini-radio;
+      @include mini-checkbox;
     }
-    &.dr-radio-mini {
+    &.dr-checkbox-mini {
       padding: 6px 8px 2px 4px;
-      @include mini-radio;
+      @include mini-checkbox;
     }
   }
 }
 
-// radio-group
-.dr-radio-group {
+// checkbox-group
+.dr-checkbox-group {
   &-default {
     @include buttonGroupDefault;
   }
   &-button {
-    .dr-radio {
+    .dr-checkbox {
       &-default {
         margin-right: 0;
         padding: 12px 20px 10px;
         border: 1px solid $border-color;
         border-radius: $btn-radius-base;
-        &:not(.dr-radio-checked):hover {
+        &:not(.dr-checkbox-checked):hover {
           color: $theme-color;
         }
         &:not(:first-child) {
@@ -135,12 +139,12 @@
         @include groupRadius;
       }
       &-checked {
-        &.dr-radio-disabled {
+        &.dr-checkbox-disabled {
           background-color: $disabled-bg-color;
           border: 1px solid $border-color;
         }
-        &:not(.dr-radio-disabled) {
-          .dr-radio-label {
+        &:not(.dr-checkbox-disabled) {
+          .dr-checkbox-label {
             color: $btn-text-color;
           }
         }
@@ -157,20 +161,20 @@
         padding-left: 0;
       }
     }
-    &.dr-radio-group {
+    &.dr-checkbox-group {
       &-medium {
-        .dr-radio-default {
+        .dr-checkbox-default {
           padding: 10px 16px 8px;
         } 
       }
       &-small {
-        .dr-radio-default {
+        .dr-checkbox-default {
           padding: 8px 12px 7px;
           font-size: 12px;
         } 
       }
       &-mini {
-        .dr-radio-default {
+        .dr-checkbox-default {
           padding: 6px 8px 5px;
           font-size: 12px;
         } 

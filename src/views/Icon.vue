@@ -55,6 +55,8 @@ export default {
       p {
         margin: 10px 0;
         text-align: center;
+        font-size: 20px;
+        font-weight: bold;
       }
       i {
         margin: 0 15px;

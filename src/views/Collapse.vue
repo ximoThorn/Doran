@@ -160,6 +160,8 @@ export default {
     > p {
       margin-bottom: 20px;
       text-align: center;
+      font-size: 20px;
+      font-weight: bold;
     }
     > div {
       margin: 0 auto 30px;

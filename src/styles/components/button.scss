@@ -4,10 +4,7 @@
     vertical-align: middle;
   }
   &-default, &-dashed, &-text  {
-    &:not([disabled]):hover {
-      color: $btn-border-hover-color;
-      border-color: $btn-border-hover-color;
-    }
+    @include notDisabled($btn-border-hover-color, $btn-border-hover-color);
   }
   &-dashed {
     border-style: dashed;
@@ -15,10 +12,7 @@
   &-text {
     border-color: transparent;
     padding: 0;
-    &:not([disabled]):hover {
-      color: $btn-border-hover-color;
-      border-color: transparent;
-    }
+    @include notDisabled($btn-border-hover-color, transparent);
   }
   &-medium {
     font-size: $font-size-base;

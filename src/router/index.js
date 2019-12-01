@@ -25,6 +25,10 @@ const routes = [
   {
     path: '/radio',
     component: () => import('../views/Radio.vue')
+  },
+  {
+    path: '/checkbox',
+    component: () => import('../views/Checkbox.vue')
   }
 ]
 

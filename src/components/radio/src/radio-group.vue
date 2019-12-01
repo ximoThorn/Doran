@@ -1,10 +1,13 @@
 <template>
-  <div class="dr-radio-group">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <script>
+import { validValue } from '@/utils/validate';
+const drPreFixRadioGroup = 'dr-radio-group';
+
 export default {
   name: 'DrRadioGroup',
   props: {
@@ -13,13 +16,23 @@ export default {
       validator(val) {
         return val === 'button';
       }
+    },
+    size: {
+      validator(val) {
+        const arr = ['medium', 'small', 'mini'];
+        return validValue(val, arr);
+      }
     }
   },
-  mounted() {
-    this.radioTypeInit();
-  },
-  methods: {
-    radioTypeInit() {
+  computed: {
+    classes() {
+      return [
+        `${drPreFixRadioGroup}-default`,
+        {
+          [`${drPreFixRadioGroup}-${this.type}`]: this.type,
+          [`${drPreFixRadioGroup}-${this.size}`]: this.size && (this.type === 'button')
+        }
+      ]
     }
   }
 }

@@ -21,13 +21,37 @@
         <DrRadio label="d">乱世狂刀</DrRadio>
       </DrRadioGroup>
     </div>
-    <p>单选按钮组</p>
-    <div>
+    <p>单选按钮组(size之下button为true的时候有用)</p>
+    <div class="drRadioGroupSize">
       <DrRadioGroup v-model="radioButtonGroup" type="button" @change="handleGroupChange">
-        <DrRadio label="a">风之痕</DrRadio>
-        <DrRadio label="b">倦收天</DrRadio>
-        <DrRadio label="c">原无乡</DrRadio>
-        <DrRadio label="d">乱世狂刀</DrRadio>
+        <DrRadio label="a">寄昙说</DrRadio>
+        <DrRadio label="b">楚天行</DrRadio>
+        <DrRadio label="c">生命练习生</DrRadio>
+        <DrRadio label="d">红尘雪</DrRadio>
+      </DrRadioGroup>
+      <br>
+      <br>
+      <DrRadioGroup v-model="radioButtonGroupmMedium" size="medium" type="button" @change="handleGroupChange">
+        <DrRadio label="a">寄昙说</DrRadio>
+        <DrRadio label="b">楚天行</DrRadio>
+        <DrRadio label="c">生命练习生</DrRadio>
+        <DrRadio label="d">红尘雪</DrRadio>
+      </DrRadioGroup>
+      <br>
+      <br>
+      <DrRadioGroup v-model="radioButtonGroupSmall" size="small" type="button" @change="handleGroupChange">
+        <DrRadio label="a">寄昙说</DrRadio>
+        <DrRadio label="b">楚天行</DrRadio>
+        <DrRadio label="c" disabled>生命练习生</DrRadio>
+        <DrRadio label="d">红尘雪</DrRadio>
+      </DrRadioGroup>
+      <br>
+      <br>
+      <DrRadioGroup v-model="radioButtonGroupMini" size="mini" type="button" @change="handleGroupChange">
+        <DrRadio label="a" disabled>寄昙说</DrRadio>
+        <DrRadio label="b" disabled>楚天行</DrRadio>
+        <DrRadio label="c" disabled>生命练习生</DrRadio>
+        <DrRadio label="d" disabled>红尘雪</DrRadio>
       </DrRadioGroup>
     </div>
     <p>带边框</p>
@@ -62,7 +86,10 @@ export default {
       borderRadio1: '1',
       borderRadio2: '1',
       borderRadio3: '1',
-      radioButtonGroup: '1'
+      radioButtonGroup: 'a',
+      radioButtonGroupmMedium: 'a',
+      radioButtonGroupSmall: 'a',
+      radioButtonGroupMini: 'a'
     };
   },
   methods: {
@@ -82,11 +109,19 @@ export default {
   > p {
     margin: 0 auto;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
   }
   > div {
     width: 50%;
     margin: 20px auto;
     text-align: center;
+    // &.drRadioGroupSize {
+    //   text-align: left;
+    // }
+    > label {
+      margin: 10px 30px 10px 0;
+    }
   }
 }
 </style>

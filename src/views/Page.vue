@@ -12,6 +12,9 @@
     <div id="nav">
       <router-link to="/radio">Radio</router-link>
     </div>
+    <div id="nav">
+      <router-link to="/checkbox">Checkbox</router-link>
+    </div>
   </div>
 </template>
 

@@ -49,7 +49,7 @@ export default {
           [`${drPrefixRadio}-checked`]: this.checked,
           [`${drPrefixRadio}-disabled`]: this.disabled,
           [`${drPrefixRadio}-border`]: this.border,
-          [`${drPrefixRadio}-${this.size}`]: !!this.size
+          [`${drPrefixRadio}-${this.size}`]: this.size && this.border
         }
       ];
     },
@@ -87,10 +87,5 @@ export default {
       };
     }
   }
-  // watch: {
-  //   checked(newValue) {
-  //     console.log(newValue, 'newValue');
-  //   }
-  // }
 }
 </script>

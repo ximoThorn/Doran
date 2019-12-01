@@ -5,7 +5,8 @@ import DrCollapse from './components/collapse';
 import DrCollapseItem from './components/collapse-item';
 import DrRadio from './components/radio';
 import DrRadioGroup from './components/radio-group';
-import DrRadioButton from './components/radio-button';
+import DrCheckbox from './components/checkbox';
+import DrCheckboxGroup from './components/checkbox-group';
 
 const DoranComponents = [
   DrButton,
@@ -15,7 +16,8 @@ const DoranComponents = [
   DrCollapseItem,
   DrRadio,
   DrRadioGroup,
-  DrRadioButton
+  DrCheckbox,
+  DrCheckboxGroup
 ];
 
 const install = function (Vue, opt = {}) {
@@ -35,5 +37,6 @@ export default {
   DrCollapseItem,
   DrRadio,
   DrRadioGroup,
-  DrRadioButton
+  DrCheckbox,
+  DrCheckboxGroup
 };
