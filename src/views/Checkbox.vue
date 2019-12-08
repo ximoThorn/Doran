@@ -34,7 +34,7 @@
           v-for="(item, index) in valuesInit"
           :key="index"
           :label="item">
-          {{item}}
+          {{item.name}}
         </DrCheckbox>
       </DrCheckboxGroup>
     </div>
@@ -96,7 +96,7 @@
 </template>
 
 <script>
-const valuesInit = ['麒麟星', '苍鹰', '云中兽', '金狮', '天虎令', '炽风翼'];
+const valuesInit = [{ name: '麒麟星' }, { name: '苍鹰' }, { name: '云中兽' }, { name: '金狮' }, { name: '天虎令' }, { name: '炽风翼' }];
 
 export default {
   data() {
@@ -104,8 +104,8 @@ export default {
       checkoutBase: false,
       checkoutbase2: '',
       checkoutGroupValues: ['叶小钗', '地冥'],
-      indeterminateFlag: true,
-      checkoutIndeterminate: ['麒麟星', '苍鹰'],
+      indeterminateFlag: false,
+      checkoutIndeterminate: [],
       valuesInit,
       indeterminateCheckAll: false,
       borderCheckbox1: true,
@@ -120,6 +120,9 @@ export default {
       ButtonSmallCheckbox: ['剑非道'],
       ButtonMiniCheckbox: ['剑非道']
     };
+  },
+  mounted() {
+    this.indeterminateFlag = !!this.checkoutIndeterminate.length;
   },
   methods: {
     handleChangeBase(val) {
@@ -137,6 +140,7 @@ export default {
     },
     handleIndeterminate(val) {
       const length = val.length;
+      console.log(val)
       this.indeterminateCheckAll = length === this.valuesInit.length;
       this.indeterminateFlag = length > 0 && length < this.valuesInit.length;
     }

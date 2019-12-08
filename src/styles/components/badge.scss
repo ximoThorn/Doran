@@ -1,0 +1,50 @@
+.dr-badge {
+  &-default {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+  &-sup {
+    display: inline-block;
+    height: 20px;
+    min-width: 20px;
+    line-height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    color: $body-white;
+    font-size: $font-size-small;
+    &-absolute {
+      position: absolute;
+      top: -10px;
+      transform: translateX(-50%);
+    }
+    &-primary {
+      background-color: $theme-color;
+    }
+    &-info {
+      background-color: $info-color;
+    }
+    &-success {
+      background-color: $success-color;
+    }
+    &-warning {
+      background-color: $warning-color;
+    }
+    &-error {
+      background-color: $error-color;
+    }
+    &-dot {
+      width: 10px;
+      height: 10px;
+      min-width: 8px;
+      border-radius: 50%;
+      padding: 0;
+      border: 1px solid $body-white;
+      &.dr-badge-sup-absolute {
+        position: absolute;
+        top: -5px;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

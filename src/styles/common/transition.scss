@@ -1,0 +1,8 @@
+// badge
+.sup-zoom-enter-active, .sup-zoom-leave-active {
+  transition: opacity .1s;
+}
+.sup-zoom-enter, .sup-zoom-leave-to {
+  opacity: 0;
+}
+

@@ -29,6 +29,18 @@ const routes = [
   {
     path: '/checkbox',
     component: () => import('../views/Checkbox.vue')
+  },
+  {
+    path: '/switch',
+    component: () => import('../views/Switch.vue')
+  },
+  {
+    path: '/badge',
+    component: () => import('../views/Badge.vue')
+  },
+  {
+    path: '/avatar',
+    component: () => import('../views/Avatar.vue')
   }
 ]
 

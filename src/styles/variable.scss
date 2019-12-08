@@ -1,11 +1,19 @@
 
 $font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 $theme-color: #2d8cf0;
+$info-color: #2db7f5;
+$success-color: #19be6b;
+$warning-color: #ff9900;
+$error-color: #ed4014;
 $font-size: 14px;
+$font-size-small: 12px;
 $border-color: #dcdfe6;
 $disabled-color: #c0c4cc;
 $disabled-bg-color: #f5f7fa;
+$fail-color: #333333;
+$body-white: #fff;
 $border-hsla-color: hsla(0, 0%, 100%, .5);
+$aaa: rgb(212, 209, 18);
 
 
 $btn-radius-base: 4px;
@@ -14,18 +22,16 @@ $btn-border-color: $border-color;
 $btn-border-hover-color: #57a3f3;
 $btn-font-weight: normal;
 $font-size-base: $font-size;
-$font-size-small: 12px;
 $btn-text-color: #ffffff;
 $btn-primary-color: $theme-color;
-$btn-info-color: #2db7f5;
-$btn-success-color: #19be6b;
-$btn-warning-color: #ff9900;
-$btn-error-color: #ed4014;
+$btn-info-color: $info-color;
+$btn-success-color: $success-color;
+$btn-warning-color: $warning-color;
+$btn-error-color: $error-color;
 // $font-size-large: 16px;
 
 $line-height-base: 1;
 $text-color: #515a6e;
-$body-white: #fff;
 $link-color: $theme-color;
 $link-hover-color: $link-color;
 $link-active-color: $link-color;

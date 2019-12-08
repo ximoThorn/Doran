@@ -21,7 +21,7 @@
         <DrRadio label="d">乱世狂刀</DrRadio>
       </DrRadioGroup>
     </div>
-    <p>单选按钮组(size之下button为true的时候有用)</p>
+    <p>单选按钮组(size只在button为true的时候有用)</p>
     <div class="drRadioGroupSize">
       <DrRadioGroup v-model="radioButtonGroup" type="button" @change="handleGroupChange">
         <DrRadio label="a">寄昙说</DrRadio>

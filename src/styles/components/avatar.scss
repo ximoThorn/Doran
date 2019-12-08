@@ -1,0 +1,64 @@
+@mixin avatarIcon ($lh, $fs) {
+  line-height: $lh;
+  font-size: $fs;
+}
+
+.dr-avatar {
+  &-default {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: $disabled-color;
+    text-align: center;
+    color: $body-white;
+    font-size: 24px;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+    .dr-icon-default {
+      @include avatarIcon(40px, 24px);
+    }
+  }
+  &-square {
+    border-radius: $btn-radius-base;
+    > img {
+      border-radius: $btn-radius-base;
+    }
+  }
+  &-circle {
+    border-radius: 50%;
+    > img {
+      border-radius: 50%;
+    }
+  }
+  &-large {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 30px;
+    .dr-icon-default {
+      @include avatarIcon(48px, 30px);
+    }
+  }
+  &-medium {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    .dr-icon-default {
+      @include avatarIcon(32px, 18px);
+    }
+  }
+  &-small {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    .dr-icon-default {
+      @include avatarIcon(24px, 12px);
+    }
+  }
+}

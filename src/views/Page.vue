@@ -1,19 +1,28 @@
 <template>
   <div class="catalogue">
     <div id="nav">
-      <router-link to="/icon">Icon</router-link>
+      <router-link to="/icon">Icon (图标)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/button">Button</router-link>
+      <router-link to="/button">Button (按钮)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/collapse">Collapse</router-link>
+      <router-link to="/collapse">Collapse (折叠面板)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/radio">Radio</router-link>
+      <router-link to="/radio">Radio (单选)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/checkbox">Checkbox</router-link>
+      <router-link to="/checkbox">Checkbox (多选)</router-link>
+    </div>
+    <div id="nav">
+      <router-link to="/switch">Switch (开关)</router-link>
+    </div>
+    <div id="nav">
+      <router-link to="/badge">Badge (微标)</router-link>
+    </div>
+    <div id="nav">
+      <router-link to="/avatar">Avatar (头像)</router-link>
     </div>
   </div>
 </template>

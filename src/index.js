@@ -7,6 +7,9 @@ import DrRadio from './components/radio';
 import DrRadioGroup from './components/radio-group';
 import DrCheckbox from './components/checkbox';
 import DrCheckboxGroup from './components/checkbox-group';
+import DrSwitch from './components/switch';
+import DrBadge from './components/badge';
+import DrAvatar from './components/avatar';
 
 const DoranComponents = [
   DrButton,
@@ -17,7 +20,10 @@ const DoranComponents = [
   DrRadio,
   DrRadioGroup,
   DrCheckbox,
-  DrCheckboxGroup
+  DrCheckboxGroup,
+  DrSwitch,
+  DrBadge,
+  DrAvatar
 ];
 
 const install = function (Vue, opt = {}) {
@@ -38,5 +44,8 @@ export default {
   DrRadio,
   DrRadioGroup,
   DrCheckbox,
-  DrCheckboxGroup
+  DrCheckboxGroup,
+  DrSwitch,
+  DrBadge,
+  DrAvatar
 };
