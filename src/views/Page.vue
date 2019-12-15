@@ -24,6 +24,9 @@
     <div id="nav">
       <router-link to="/avatar">Avatar (头像)</router-link>
     </div>
+    <div id="nav">
+      <router-link to="/grid">Grid (栅格)</router-link>
+    </div>
   </div>
 </template>
 

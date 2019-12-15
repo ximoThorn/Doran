@@ -1,0 +1,30 @@
+.dr-row {
+  &-default{
+    position: relative;
+    box-sizing: border-box;
+  }
+  &-default:not(.dr-row-flex) {
+    @include clearFix;
+  }
+  &-flex {
+    display: flex;
+    &.dr-row-justify-center {
+      justify-content: center;
+    }
+    &.dr-row-justify-end {
+      justify-content: flex-end;
+    }
+    &.dr-row-justify-space-between {
+      justify-content: space-between;
+    }
+    &.dr-row-justify-space-around {
+      justify-content: space-around;
+    }
+    &.dr-row-align-middle {
+      align-items: center;
+    }
+    &.dr-row-align-bottom {
+      align-items: flex-end;
+    }
+  }
+}

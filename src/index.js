@@ -10,6 +10,8 @@ import DrCheckboxGroup from './components/checkbox-group';
 import DrSwitch from './components/switch';
 import DrBadge from './components/badge';
 import DrAvatar from './components/avatar';
+import DrRow from './components/row';
+import DrCol from './components/col';
 
 const DoranComponents = [
   DrButton,
@@ -23,7 +25,9 @@ const DoranComponents = [
   DrCheckboxGroup,
   DrSwitch,
   DrBadge,
-  DrAvatar
+  DrAvatar,
+  DrRow,
+  DrCol
 ];
 
 const install = function (Vue, opt = {}) {
@@ -47,5 +51,7 @@ export default {
   DrCheckboxGroup,
   DrSwitch,
   DrBadge,
-  DrAvatar
+  DrAvatar,
+  DrRow,
+  DrCol
 };

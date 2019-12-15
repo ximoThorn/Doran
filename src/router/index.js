@@ -41,6 +41,10 @@ const routes = [
   {
     path: '/avatar',
     component: () => import('../views/Avatar.vue')
+  },
+  {
+    path: '/grid',
+    component: () => import('../views/Grid.vue')
   }
 ]
 
