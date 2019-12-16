@@ -16,11 +16,6 @@ export default {
     pull: [String, Number],
     push: [String, Number]
   },
-  data() {
-    return {
-      gutter: ''
-    };
-  },
   computed: {
     classes() {
       return [
@@ -41,12 +36,19 @@ export default {
         obj.paddingRight = `${this.gutter / 2}px`;
       };
       return obj;
+    },
+    gutter() {
+      let getter = '';
+      let parent = this.$parent;
+      while (parent) {
+        if (parent.$options.name === 'DrRow') {
+          return parent.gutter;
+        } else {
+          parent = parent.$parent;
+        }
+      };
+      return getter || 0;
     }
-  },
-  mounted() {
-  },
-  methods: {
-
   }
 };
 </script>

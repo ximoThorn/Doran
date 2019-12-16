@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { patchChildren } from '@/utils/utils';
 import { validValue } from '@/utils/validate';
 
 const drPreFixRow = 'dr-row';
@@ -47,7 +46,7 @@ export default {
           [`${drPreFixRow}-align-${this.align}`]: this.align !== 'top',
           [`${drPreFixRow}-${this.type}`]: !!this.type
         }
-      ]
+      ];
     },
     styles() {
       let obj = {};
@@ -58,24 +57,6 @@ export default {
         };
       };
       return obj;
-    }
-  },
-  mounted() {
-    this.gutterSet(this.gutter);
-  },
-  methods: {
-    gutterSet(val) {
-      // 在iview中 把 Col 里的 Row 里的 Col 也找到 同时根据最上层的row的gutter来改变的，我觉得这样的处理是并不好的
-      // Col 里的 Row 里的 Col的间距还是交给它的上层 Row 的gutter去处理
-      const rols = patchChildren(this, 'DrCol') || [];
-      rols.forEach((child) => {
-        child.$options.name === 'DrCol' && (child.gutter = val);
-      });
-    }
-  },
-  watch: {
-    gutter(val) {
-      this.gutterSet(val);
     }
   }
 };
