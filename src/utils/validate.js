@@ -10,7 +10,7 @@ const class2type = {
   '[object Object]': 'object',
   '[object Error]': 'error',
   '[object Symbol]': 'symbol'
-}
+};
 const toString = Object.prototype.toString;
 
 export function typeValide(obj) {

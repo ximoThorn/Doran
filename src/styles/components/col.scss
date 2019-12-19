@@ -23,3 +23,24 @@
     }
   }
 }
+
+@each $key in xs, sm, md, lg, xl {
+  @include responsive($key) {
+    .dr-col {
+      @for $i from 1 through 24 {
+        &-#{$key}-#{$i} {
+          width: (1 / 24 * $i * 100) * 1%;
+        }
+        &-#{$key}-offset-#{$i} {
+          margin-left: (1 / 24 * $i * 100) * 1%;
+        }
+        &-#{$key}-pull-#{$i} {
+          right: (1 / 24 * $i * 100) * 1%;
+        }
+        &-#{$key}-push-#{$i} {
+          left: (1 / 24 * $i * 100) * 1%;
+        }
+      }
+    }
+  }
+}

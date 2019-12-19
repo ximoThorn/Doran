@@ -53,3 +53,17 @@ $form-transition-time: .15s;
 $form-transition-type: ease-in;
 
 $checkbox-radius: 2px;
+
+$sm: 768px;
+$md: 1024px;
+$lg: 1200px;
+$xl: 1920px;
+
+$media-points: (
+  'xs': (max-width: $sm - 1),
+  'sm': (min-width: $sm),
+  'md': (min-width: $md),
+  'lg': (min-width: $lg),
+  'xl': (min-width: $xl),
+);
+

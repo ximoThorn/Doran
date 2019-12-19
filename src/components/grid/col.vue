@@ -5,7 +5,10 @@
 </template>
 
 <script>
+import { typeValide } from '@/utils/validate';
+
 const drPreFixCol = 'dr-col';
+const medias = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export default {
   name: 'DrCol',
@@ -14,20 +17,37 @@ export default {
     offset: [String, Number],
     order: [String, Number], // row为flex布局下才有用
     pull: [String, Number],
-    push: [String, Number]
+    push: [String, Number],
+    xs: [Number, Object],
+    sm: [Number, Object],
+    md: [Number, Object],
+    lg: [Number, Object],
+    xl: [Number, Object]
   },
   computed: {
     classes() {
-      return [
+      let arrs = [
         `${drPreFixCol}-default`,
         {
           [`${drPreFixCol}-${this.span}`]: this.span,
-          [`${drPreFixCol}-offset-${this.offset}`]: this.offset,
-          [`${drPreFixCol}-order-${this.order}`]: this.order,
-          [`${drPreFixCol}-pull-${this.pull}`]: this.pull,
-          [`${drPreFixCol}-push-${this.push}`]: this.push
+          [`${drPreFixCol}-offset-${this.offset}`]: !!this.offset,
+          [`${drPreFixCol}-order-${this.order}`]: !!this.order,
+          [`${drPreFixCol}-pull-${this.pull}`]: !!this.pull,
+          [`${drPreFixCol}-push-${this.push}`]: !!this.push
         }
       ];
+      medias.forEach(item => {
+        if (typeValide(this[item]) === 'number') {
+          arrs.push(`${drPreFixCol}-${item}-${this[item]}`);
+        } else if (typeValide(this[item]) === 'object') {
+          const obj = this[item];
+          Object.keys(obj).forEach(child => {
+            let str = child !== 'span' ? `${drPreFixCol}-${item}-${child}-${obj[child]}` : `${drPreFixCol}-${item}-${obj[child]}`;
+            arrs.push(str);
+          })
+        }
+      });
+      return arrs;
     },
     styles() {
       let obj = {};

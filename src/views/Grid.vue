@@ -292,6 +292,21 @@
         </dr-col>
       </dr-row>
     </div>
+    <p>响应式布局(五个响应尺寸:xs(小于768)、sm(≥768)、md(≥1024)、lg(≥1200)、xl(≥1920))</p>
+    <div>
+      <dr-row :gutter="10">
+        <dr-col :xs="8" :sm="6" :md="4" :lg="3" :xl="2"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="4" :sm="6" :md="8" :lg="9" :xl="10"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="4" :sm="6" :md="8" :lg="9" :xl="10"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="8" :sm="6" :md="4" :lg="3" :xl="2"><div class="col-demo">col</div></dr-col>
+      </dr-row>
+      <dr-row>
+        <dr-col :xs="8" :sm="6" :md="4" :lg="{span: 4, offset: 1}" :xl="{span: 2, offset: 2}"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="8" :sm="6" :md="4" :lg="{span: 2, offset: 2}" :xl="{span: 2, offset: 2}"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="4" :sm="6" :md="8" :lg="{span: 8, offset: 2}" :xl="{span: 6, offset: 2}"><div class="col-demo">col</div></dr-col>
+        <dr-col :xs="4" :sm="6" :md="8" :lg="{span: 4, offset: 1}" :xl="{span: 6, offset: 2}"><div class="col-demo">col</div></dr-col>
+      </dr-row>
+    </div>
   </div>
 </template>
 
