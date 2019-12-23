@@ -12,6 +12,9 @@ import DrBadge from './components/badge';
 import DrAvatar from './components/avatar';
 import DrRow from './components/row';
 import DrCol from './components/col';
+import DrBreadcrumb from './components/breadcrumb';
+import DrBreadcrumbItem from './components/breadcrumb-item';
+import DrTag from './components/tag';
 
 const DoranComponents = [
   DrButton,
@@ -27,7 +30,10 @@ const DoranComponents = [
   DrBadge,
   DrAvatar,
   DrRow,
-  DrCol
+  DrCol,
+  DrBreadcrumb,
+  DrBreadcrumbItem,
+  DrTag
 ];
 
 const install = function (Vue, opt = {}) {
@@ -53,5 +59,8 @@ export default {
   DrBadge,
   DrAvatar,
   DrRow,
-  DrCol
+  DrCol,
+  DrBreadcrumb,
+  DrBreadcrumbItem,
+  DrTag
 };

@@ -1,0 +1,20 @@
+.dr-breadcrumb {
+  &-item {
+    vertical-align: middle;
+    &:last-child {
+      .dr-breadcrumb-separator, .dr-icon-default {
+        display: none;
+      }
+      .dr-breadcrumb-label {
+        font-weight: bold;
+        cursor: auto;
+      }
+    }
+  }
+  &-label {
+    cursor: pointer;
+  }
+  &-separator {
+    margin: 0 10px;
+  }
+}

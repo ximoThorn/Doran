@@ -6,3 +6,12 @@
   opacity: 0;
 }
 
+
+.tag-fade-enter-active, .tag-fade-leave-active {
+  transition: all .3s linear;
+}
+.tag-fade-enter, .tag-fade-leave-to {
+  transform: scaleX(0);
+  opacity: 0;
+  transform-origin: center center;
+}

@@ -45,6 +45,14 @@ const routes = [
   {
     path: '/grid',
     component: () => import('../views/Grid.vue')
+  },
+  {
+    path: '/breadcrumb',
+    component: () => import('../views/Breadcrumb.vue')
+  },
+  {
+    path: '/tag',
+    component: () => import('../views/Tag.vue')
   }
 ]
 

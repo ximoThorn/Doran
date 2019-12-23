@@ -1,0 +1,119 @@
+.dr-tag {
+  &-default {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $disabled-bg-color;
+    border: 1px solid $border-color;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: $btn-radius-base;
+    .dr-icon-default {
+      margin-left: 10px;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 30px;
+      position: relative;
+      top: -1px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  &-medium {
+    height: 28px;
+    line-height: 26px;
+  }
+  &-small {
+    height: 24px;
+    line-height: 22px;
+    .dr-icon-default {
+      line-height: 22px;
+      font-size: 12px;
+    }
+  }
+  &-mini {
+    height: 20px;
+    line-height: 18px;
+    .dr-icon-default {
+      line-height: 20px;
+      font-size: 12px;
+    }
+  }
+  &-primary {
+    color: $theme-color;
+    border-color: $light-primary-border-color;
+    background-color: $light-primary-color;
+  }
+  &-info {
+    color: $info-color;
+    border-color: $light-info-border-color;
+    background-color: $light-info-color;
+  }
+  &-success {
+    color: $success-color;
+    border-color: $light-success-border-color;
+    background-color: $light-success-color;
+  }
+  &-warning {
+    color: $warning-color;
+    border-color: $light-warning-border-color;
+    background-color: $light-warning-color;
+  }
+  &-error {
+    color: $error-color;
+    border-color: $light-error-border-color;
+    background-color: $light-error-color;
+  }
+  &-dark {
+    &.dr-tag-primary {
+      background-color: $theme-color;
+      color: $body-white;
+    }
+    &.dr-tag-info {
+      background-color: $info-color;
+      color: $body-white;
+    }
+    &.dr-tag-success {
+      background-color: $success-color;
+      color: $body-white;
+    }
+    &.dr-tag-warning {
+      background-color: $warning-color;
+      color: $body-white;
+    }
+    &.dr-tag-error {
+      background-color: $error-color;
+      color: $body-white;
+    }
+    .dr-icon-default {
+      color: $body-white;
+    }
+  }
+  &-hollow {
+    &.dr-tag-primary {
+      border-color: $theme-color;
+      color: $theme-color;
+      background-color: $body-white;
+    }
+    &.dr-tag-info {
+      border-color: $info-color;
+      color: $info-color;
+      background-color: $body-white;
+    }
+    &.dr-tag-success {
+      border-color: $success-color;
+      color: $success-color;
+      background-color: $body-white;
+    }
+    &.dr-tag-warning {
+      border-color: $warning-color;
+      color: $warning-color;
+      background-color: $body-white;
+    }
+    &.dr-tag-error {
+      border-color: $error-color;
+      color: $error-color;
+      background-color: $body-white;
+    }
+  }
+}

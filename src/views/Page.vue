@@ -4,10 +4,13 @@
       <router-link to="/icon">Icon (图标)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/button">Button (按钮)</router-link>
+      <router-link to="/grid">Grid (栅格)</router-link>
     </div>
     <div id="nav">
       <router-link to="/collapse">Collapse (折叠面板)</router-link>
+    </div>
+    <div id="nav">
+      <router-link to="/button">Button (按钮)</router-link>
     </div>
     <div id="nav">
       <router-link to="/radio">Radio (单选)</router-link>
@@ -25,7 +28,10 @@
       <router-link to="/avatar">Avatar (头像)</router-link>
     </div>
     <div id="nav">
-      <router-link to="/grid">Grid (栅格)</router-link>
+      <router-link to="/breadcrumb">Breadcrumb (面包屑)</router-link>
+    </div>
+    <div id="nav">
+      <router-link to="/tag">Tag (标签)</router-link>
     </div>
   </div>
 </template>
