@@ -32,21 +32,22 @@
     }
   }
   &-inner {
-    display: inline-block;
     width: 100%;
     border-radius: 100px;
     background-color: $gray-color;
     position: relative;
+    height: 8px;
   }
   &-bar {
     display: inline-block;
-    height: 8px;
+    height: 100%;
     background-color: $theme-color;
     text-align: right;
     border-radius: 100px;
     white-space: nowrap;
-    position: relative;
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: all .2s linear;
     &::after {
       content: '';

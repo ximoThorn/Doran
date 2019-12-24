@@ -1,8 +1,8 @@
 <template>
   <div :class="classes">
     <div class="dr-progress-outer">
-      <div class="dr-progress-inner">
-        <div class="dr-progress-bar" :style="innerStyles">
+      <div class="dr-progress-inner" :style="innerStyles">
+        <div class="dr-progress-bar" :style="barStyles">
           <span class="dr-progress-inner-text" v-if="showText && textInside">
             {{percent}}%
           </span>
@@ -78,9 +78,13 @@ export default {
     },
     innerStyles() {
       let obj = {};
+      this.strokeWidth && (obj.height = `${this.strokeWidth}px`);
+      return obj;
+    },
+    barStyles() {
+      let obj = {};
       const { strokeColor, progressColor } = this;
       this.percent !== undefined && (obj.width = `${this.percent}%`);
-      this.strokeWidth && (obj.height = `${this.strokeWidth}px`);
       if (strokeColor && !progressColor.length) { // 颜色、渐变色处理  progressColor的优先级高于strokeColor
         if (typeValide(strokeColor) === 'string') {
           obj.backgroundColor = strokeColor;
