@@ -33,6 +33,9 @@
     <div id="nav">
       <router-link to="/tag">Tag (标签)</router-link>
     </div>
+    <div id="nav">
+      <router-link to="/progress">Progress (进度条)</router-link>
+    </div>
   </div>
 </template>
 

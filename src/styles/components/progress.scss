@@ -1,0 +1,96 @@
+.dr-progress {
+  &-default {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    white-space: nowrap;
+  }
+  &-active {
+    .dr-progress-bar {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $body-white;
+        border-radius: 100px;
+        opacity: .3;
+        animation: progress-active 2s infinite;
+      }
+    }
+  }
+  &-outer {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+  &-show-text {
+    .dr-progress-outer {
+      padding-right: 55px;
+      margin-right: -55px;
+    }
+  }
+  &-inner {
+    display: inline-block;
+    width: 100%;
+    border-radius: 100px;
+    background-color: $gray-color;
+    position: relative;
+  }
+  &-bar {
+    display: inline-block;
+    height: 8px;
+    background-color: $theme-color;
+    text-align: right;
+    border-radius: 100px;
+    white-space: nowrap;
+    position: relative;
+    transition: all .2s linear;
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+  &-inner-text {
+    display: inline-block;
+    color: $body-white;
+    margin: 0 5px;
+    font-size: 12px;
+    vertical-align: middle;
+  }
+  &-success {
+    .dr-progress-bar {
+      background-color: $success-color;
+    }
+    .dr-icon-default {
+      color: $success-color;
+    }
+  }
+  &-warning {
+    .dr-progress-bar {
+      background-color: $warning-color;
+    }
+    .dr-icon-default {
+      color: $warning-color;
+    }
+  }
+  &-error {
+    .dr-progress-bar {
+      background-color: $error-color;
+    }
+    .dr-icon-default {
+      color: $error-color;
+    }
+  }
+  &-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    .dr-icon-default {
+      font-size: 14px;
+    }
+  }
+}

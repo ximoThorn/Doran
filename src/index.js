@@ -15,6 +15,7 @@ import DrCol from './components/col';
 import DrBreadcrumb from './components/breadcrumb';
 import DrBreadcrumbItem from './components/breadcrumb-item';
 import DrTag from './components/tag';
+import DrProgress from './components/progress';
 
 const DoranComponents = [
   DrButton,
@@ -33,7 +34,8 @@ const DoranComponents = [
   DrCol,
   DrBreadcrumb,
   DrBreadcrumbItem,
-  DrTag
+  DrTag,
+  DrProgress
 ];
 
 const install = function (Vue, opt = {}) {
@@ -62,5 +64,6 @@ export default {
   DrCol,
   DrBreadcrumb,
   DrBreadcrumbItem,
-  DrTag
+  DrTag,
+  DrProgress
 };

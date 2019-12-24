@@ -53,6 +53,10 @@ const routes = [
   {
     path: '/tag',
     component: () => import('../views/Tag.vue')
+  },
+  {
+    path: '/progress',
+    component: () => import('../views/Progress.vue')
   }
 ]
 
