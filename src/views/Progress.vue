@@ -2,7 +2,7 @@
   <div class="progress-page">
     <p>基本用法</p>
     <div>
-      <DrProgress :percent="25">100%</DrProgress>
+      <DrProgress :percent="25"></DrProgress>
       <br>
       <br>
       <DrProgress :percent="100" status="success"></DrProgress>
@@ -29,25 +29,38 @@
       <br>
       <DrProgress :percent="100" status="success" :strokeWidth="20" textInside></DrProgress>
     </div>
-    <p>动态进度条/动态更改颜色</p>
-    <div>
-      <DrProgress :percent="progressPersent" :strokeWidth="20" textInside></DrProgress>
-      <br>
-      <br>
-      <DrProgress :percent="progressPersent" :progressColor="customColors" :strokeWidth="20" textInside></DrProgress>
-      <br>
-      <br>
-      <DrButtonGroup>
-        <DrButton icon="dr-icon-move" @click="handleMinus"></DrButton>
-        <DrButton icon="dr-icon-add" @click="handleAdd"></DrButton>
-      </DrButtonGroup>
-    </div>
     <p>更改进度条颜色/渐变色</p>
     <div>
       <DrProgress :percent="100" strokeColor="#E066FF" :strokeWidth="20"></DrProgress>
       <br>
       <br>
       <DrProgress :percent="100" :strokeColor="strokeColor" :strokeWidth="20"></DrProgress>
+    </div>
+    <p>进度环</p>
+    <div class="progress-circle">
+      <DrProgress :percent="0" type="circle"></DrProgress>
+      <DrProgress :percent="25" type="circle"></DrProgress>
+      <DrProgress :percent="100" type="circle" status="success"></DrProgress>
+      <DrProgress :percent="75" type="circle" status="warning"></DrProgress>
+      <DrProgress :percent="50" type="circle" status="error"></DrProgress>
+    </div>
+    <p>动态进度条(环)/动态更改颜色</p>
+    <div class="progress-dashboard">
+      <DrProgress :percent="progressPersent" :strokeWidth="20" textInside></DrProgress>
+      <br>
+      <br>
+      <DrProgress :percent="progressPersent" :progressColor="customColors" :strokeWidth="20" textInside></DrProgress>
+      <br>
+      <br>
+      <DrProgress :percent="progressPersent" type="circle"></DrProgress>
+      <DrProgress :percent="progressPersent" :progressColor="customColors" type="circle"></DrProgress>
+      <DrProgress :percent="progressPersent" :progressColor="customColors" type="dashboard"></DrProgress>
+      <br>
+      <br>
+      <DrButtonGroup>
+        <DrButton icon="dr-icon-move" @click="handleMinus"></DrButton>
+        <DrButton icon="dr-icon-add" @click="handleAdd"></DrButton>
+      </DrButtonGroup>
     </div>
   </div>
 </template>
@@ -62,23 +75,23 @@ export default {
       customColors: [
         {
           color: '#f56c6c',
-          percentage: 20
+          percent: 20
         },
         {
           color: '#e6a23c',
-          percentage: 40
+          percent: 40
         },
         {
           color: '#5cb87a',
-          percentage: 60
+          percent: 60
         },
         {
-          color: '#1989fa',
-          percentage: 80
+          color: '#ed4014',
+          percent: 80
         },
         {
           color: '#6f7ad3',
-          percentage: 100
+          percent: 100
         }
       ]
     };
@@ -114,6 +127,14 @@ export default {
     > div {
       width: 400px;
       margin: 20px auto;
+      &.progress-circle {
+        width: 800px;
+        text-align: center;
+      }
+      &.progress-dashboard {
+        width: 500px;
+        text-align: center;
+      }
       > p {
         margin: 20px 0;
         text-align: center;

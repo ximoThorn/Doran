@@ -95,4 +95,20 @@
       font-size: 14px;
     }
   }
+
+  // circle
+  &-circle-default {
+    width: auto;
+    position: relative;
+    .dr-progress-text {
+      @include absolute-middle;
+      margin-left: 0;
+    }
+    .dr-icon-default {
+      font-size: 16px;
+    }
+  }
+  &-circle {
+    display: inline-block;
+  }
 }

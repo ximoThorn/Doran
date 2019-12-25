@@ -23,13 +23,13 @@
       <br>
       <p>动态删除</p>
       <DrTag
-        v-for="(item, index) in tags"
-        :key="index"
+        v-for="item in tags"
+        :key="item"
         type="primary"
-        @close="handleClose(index)"
+        @close="handleClose(item)"
         fade
         closable>
-        {{item}}{{index + 1}}
+        {{item}}
       </DrTag>
       <DrButton @click="tags.push('标签')" size="small">增加标签</DrButton>
     </div>
@@ -67,11 +67,12 @@
 export default {
   data() {
     return {
-      tags: ['标签', '标签']
+      tags: ['标签一', '标签二', '标签三']
     }
   },
   methods: {
-    handleClose(index) {
+    handleClose(item) {
+      const index = this.tags.indexOf(item);
       this.tags.splice(index, 1);
     }
   }
