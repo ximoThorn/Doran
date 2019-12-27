@@ -57,6 +57,10 @@ const routes = [
   {
     path: '/progress',
     component: () => import('../views/Progress.vue')
+  },
+  {
+    path: '/rate',
+    component: () => import('../views/Rate.vue')
   }
 ]
 
