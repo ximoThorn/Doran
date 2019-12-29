@@ -31,7 +31,7 @@
         closable>
         {{item}}
       </DrTag>
-      <DrButton @click="tags.push('标签')" size="small">增加标签</DrButton>
+      <DrButton @click="tags.push(`标签${Math.random().toFixed(4)}`)" size="small">增加标签</DrButton>
     </div>
     <p>不同尺寸</p>
     <div>
@@ -67,7 +67,7 @@
 export default {
   data() {
     return {
-      tags: ['标签一', '标签二', '标签三']
+      tags: ['标签0', '标签1', '标签2']
     }
   },
   methods: {

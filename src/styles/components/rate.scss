@@ -1,0 +1,51 @@
+.dr-rate {
+  &-default {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &-wrap, &-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+  }
+  &-item {
+    margin-right: 6px;
+    cursor: pointer;
+    transition: all .3s linear;
+  }
+  &-icon, &-icon-half {
+    &:hover {
+      &::before {
+        transform: scale(1.2);
+        transition: transform .3s linear;
+      }
+    }
+  }
+  &-icon {
+    color: $rate-bg-color;
+    position: relative;
+  }
+  &-icon-half {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &-text {
+    margin-left: 4px;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+  &-disabled {
+    .dr-rate-item {
+      cursor: unset;
+    }
+    .dr-rate-icon, .dr-rate-icon-half {
+      &:hover {
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

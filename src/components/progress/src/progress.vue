@@ -11,7 +11,7 @@
       </div>
     </div>
     <!-- 进度条 end-->
-    <!-- 进度环 start (因为本人对svg不熟悉， 所以这里照搬了element-ui)-->
+    <!-- 进度环 start (因为本人对svg不熟悉， 所以这里照参考了element-ui)-->
     <div class="dr-progress-circle" :style="circleStyles" v-else>
       <svg viewBox="0 0 100 100">
         <path

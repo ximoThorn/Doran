@@ -5,7 +5,7 @@
       <DrCollapse v-model="activeNames1" @change="handleChange">
         <DrCollapseItem name="1" title="素还真">
           <div>
-            神半圣亦半仙，全儒全道是全贤，脑中真书藏万卷，掌握文武半边天。
+            半神半圣亦半仙，全儒全道是全贤，脑中真书藏万卷，掌握文武半边天。
           </div>
           <div>
             霹雳化身最多的首席男主角，温文儒雅、器宇轩昂、超凡脱俗、武学莫测高深、足智多谋、博学多才、谦虚有礼，处世圆融冷静、
