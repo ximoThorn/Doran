@@ -1,4 +1,6 @@
 # doran-ui
+基于vue的一套中后台ui框架
+注：因为没有系统的测试和推广，该ui目前仅供学习组件开发，暂时不推荐项目中使用
 
 ## Project setup
 ```
@@ -9,21 +11,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
