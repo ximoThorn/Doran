@@ -98,7 +98,7 @@ export default {
         if (num === Math.ceil(this.value)) {
           const widthNum = this.value * 100 - Math.floor(this.value) * 100;
           obj.width = `${widthNum}%`;
-        }
+        };
         return obj;
       };
     },
