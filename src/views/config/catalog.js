@@ -55,6 +55,11 @@ export const catalogList = [
     dsc: '标签'
   },
   {
+    link: '/progress',
+    name: 'Progress',
+    dsc: '进度条'
+  },
+  {
     link: '/rate',
     name: 'Rate',
     dsc: '评分'

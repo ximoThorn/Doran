@@ -18,6 +18,7 @@ Badge (微标)
 Avatar (头像)
 Breadcrumb (面包屑)
 Tag (标签)
+Progress (进度条)
 Rate (评分)
 Divider (分割线)
 ```
