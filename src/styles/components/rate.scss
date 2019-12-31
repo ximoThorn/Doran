@@ -14,10 +14,12 @@
     transition: all .3s linear;
   }
   &-icon, &-icon-half {
+    &::before {
+      transition: all .3s linear;
+    }
     &:hover {
       &::before {
         transform: scale(1.2);
-        transition: transform .3s linear;
       }
     }
   }

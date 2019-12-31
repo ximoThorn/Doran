@@ -1,0 +1,40 @@
+.dr-divider {
+  &-default {
+    display: block;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid $border-color;
+    margin: 24px 0;
+    position: relative;
+  }
+  &-dashed {
+    border-top: 1px dashed $border-color;
+  }
+  &-text {
+    background-color: $body-white;
+    padding: 0 20px;
+    position: absolute;
+    top: 50%;
+  }
+  &-left {
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  &-center {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  &-right {
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  &-vertical {
+    display: inline-block;
+    margin: 0 8px;
+    vertical-align: middle;
+    width: 0;
+    height: 1em;
+    border-left: 1px solid $border-color;
+    border-top: none;
+  }
+}

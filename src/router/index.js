@@ -61,6 +61,10 @@ const routes = [
   {
     path: '/rate',
     component: () => import('../views/Rate.vue')
+  },
+  {
+    path: '/divider',
+    component: () => import('../views/Divider.vue')
   }
 ]
 

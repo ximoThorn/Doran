@@ -58,5 +58,10 @@ export const catalogList = [
     link: '/rate',
     name: 'Rate',
     dsc: '评分'
+  },
+  {
+    link: '/divider',
+    name: 'Divider',
+    dsc: '分割线'
   }
 ];
