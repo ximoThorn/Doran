@@ -66,16 +66,12 @@ export default {
       return this.value;
     },
     styles() {
-      let obj;
+      let obj = {};
       if (this.checked) {
-        obj = {
-          'background-color': this.trueColor
-        }
+        obj.backgroundColor = this.trueColor;
       } else {
-        obj = {
-          'background-color': this.falseColor
-        }
-      }
+        obj.backgroundColor = this.falseColor;
+      };
       return obj;
     }
   },

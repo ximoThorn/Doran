@@ -68,5 +68,10 @@ export const catalogList = [
     link: '/divider',
     name: 'Divider',
     dsc: '分割线'
+  },
+  {
+    link: '/input',
+    name: 'Input',
+    dsc: '输入框'
   }
 ];

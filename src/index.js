@@ -18,6 +18,7 @@ import DrTag from './components/tag';
 import DrProgress from './components/progress';
 import DrRate from './components/rate';
 import DrDivider from './components/divider';
+import DrInput from './components/input';
 
 const DoranComponents = [
   DrButton,
@@ -39,7 +40,8 @@ const DoranComponents = [
   DrTag,
   DrProgress,
   DrRate,
-  DrDivider
+  DrDivider,
+  DrInput
 ];
 
 const install = function (Vue, opt = {}) {
@@ -71,5 +73,6 @@ export default {
   DrTag,
   DrProgress,
   DrRate,
-  DrDivider
+  DrDivider,
+  DrInput
 };

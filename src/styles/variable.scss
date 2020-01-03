@@ -13,6 +13,7 @@ $disabled-bg-color: #f5f7fa;
 $gray-color: #ebeef5;
 $fail-color: #333333;
 $body-white: #fff;
+$font-color: #515a6e;
 $border-hsla-color: hsla(0, 0%, 100%, .5);
 
 $light-primary-color: #ecf5ff;
@@ -67,6 +68,13 @@ $form-transition-time: .15s;
 $form-transition-type: ease-in;
 
 $checkbox-radius: 2px;
+
+$input-width: 180px;
+$input-height: 36px;
+$input-medium-height: 32px;
+$input-small-height: 28px;
+$input-placeholder-color: #c0c4cc;
+
 
 $sm: 768px;
 $md: 1024px;

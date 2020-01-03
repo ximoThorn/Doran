@@ -1,0 +1,60 @@
+.dr-input {
+  &-default {
+    display: inline-block;
+    width: $input-width;
+    position: relative;
+  }
+  &-inner {
+    outline: none;
+    appearance: none;
+    background-color: $body-white;
+    background-image: none;
+    display: inline-block;
+    border: 1px solid $border-color;
+    width: 100%;
+    padding: 0 15px;
+    height: $input-height;
+    line-height: $input-height;
+    border-radius: $btn-radius-base;
+    color: $font-color;
+    font-size: $font-size;
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+    &:hover {
+      border-color: $theme-color;
+    }
+    &:focus {
+      border-color: $theme-color;
+    }
+  }
+  &--suffix {
+    .dr-input-inner {
+      padding-right: 30px;
+    }
+  }
+  &-suffix {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    .dr-icon-default {
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 3px;
+    }
+  }
+  &-disabled {
+    .dr-input-inner {
+      cursor: not-allowed;
+      background-color: $disabled-bg-color;
+      color: $disabled-color;
+      &:hover {
+        border-color: $border-color;
+      }
+      &:focus {
+        border-color: $border-color;
+      }
+    }
+  }
+}
