@@ -28,7 +28,7 @@
     line-height: 22px;
     .dr-icon-default {
       line-height: 22px;
-      font-size: 12px;
+      font-size: $font-size-small;
     }
   }
   &-mini {
@@ -36,7 +36,7 @@
     line-height: 18px;
     .dr-icon-default {
       line-height: 20px;
-      font-size: 12px;
+      font-size: $font-size-small;
     }
   }
   &-primary {

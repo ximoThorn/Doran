@@ -1,7 +1,7 @@
 @mixin mini-radio {
   .dr-radio-inner {
-    width: 12px;
-    height: 12px;
+    width: $font-size-small;
+    height: $font-size-small;
     &::after {
       width: 4px;
       height: 4px;
@@ -51,7 +51,7 @@
   }
   &-label {
     padding-left: 10px;
-    user-select: none; 
+    user-select: none;
   }
   &-checked {
     .dr-radio-inner {
@@ -64,7 +64,7 @@
     .dr-radio-label {
       color: $theme-color;
     }
-  } 
+  }
   &-disabled {
     cursor: not-allowed;
     .dr-radio-inner {
@@ -105,12 +105,12 @@
     }
     &.dr-radio-small {
       padding: 8px 12px 4px 6px;
-      font-size: 12px;
+      font-size: $font-size-small;
       @include mini-radio;
     }
     &.dr-radio-mini {
       padding: 6px 8px 3px 4px;
-      font-size: 12px;
+      font-size: $font-size-small;
       @include mini-radio;
     }
   }
@@ -163,19 +163,19 @@
       &-medium {
         .dr-radio-default {
           padding: 10px 16px 8px;
-        } 
+        }
       }
       &-small {
         .dr-radio-default {
           padding: 8px 12px 7px;
-          font-size: 12px;
-        } 
+          font-size: $font-size-small;
+        }
       }
       &-mini {
         .dr-radio-default {
           padding: 6px 8px 5px;
-          font-size: 12px;
-        } 
+          font-size: $font-size-small;
+        }
       }
     }
   }

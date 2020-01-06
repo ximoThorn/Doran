@@ -1,10 +1,10 @@
 .dr-input {
   &-default {
     display: inline-block;
-    width: $input-width;
+    width: 100%;
     position: relative;
   }
-  &-inner {
+  &-inner, &-textarea {
     outline: none;
     appearance: none;
     background-color: $body-white;
@@ -12,9 +12,6 @@
     display: inline-block;
     border: 1px solid $border-color;
     width: 100%;
-    padding: 0 15px;
-    height: $input-height;
-    line-height: $input-height;
     border-radius: $btn-radius-base;
     color: $font-color;
     font-size: $font-size;
@@ -28,25 +25,62 @@
       border-color: $theme-color;
     }
   }
+  &-inner {
+    padding: 0 15px;
+    height: $input-height;
+    line-height: $input-height;
+  }
+  &-medium {
+    .dr-input-inner {
+      height: $input-medium-height;
+      line-height: $input-medium-height;
+    }
+  }
+  &-small {
+    .dr-input-inner {
+      height: $input-small-height;
+      line-height: $input-small-height;
+      font-size: $font-size-small;
+    }
+    .dr-icon-default {
+      font-size: 13px;
+    }
+  }
+  &-textarea {
+    padding: 7px 15px;
+    min-height: 30px;
+  }
   &--suffix {
     .dr-input-inner {
       padding-right: 30px;
     }
   }
-  &-suffix {
+  &--prefix {
+    .dr-input-inner {
+      padding-left: 30px;
+    }
+  }
+  &-suffix, &-prefix {
     position: absolute;
-    right: 7px;
     top: 50%;
     transform: translateY(-50%);
     .dr-icon-default {
       font-size: 14px;
-      cursor: pointer;
       margin-left: 3px;
       color: $disabled-color;
     }
+    .dr-icon-roundclose, .dr-icon-attentionfill, .dr-icon-attention {
+      cursor: pointer;
+    }
+  }
+  &-suffix {
+    right: 7px;
+  }
+  &-prefix {
+    left: 7px;
   }
   &-disabled {
-    .dr-input-inner {
+    .dr-input-inner, .dr-input-textarea {
       cursor: not-allowed;
       background-color: $disabled-bg-color;
       color: $disabled-color;
@@ -57,5 +91,14 @@
         border-color: $border-color;
       }
     }
+  }
+  &-count {
+    color: $disabled-color;
+  }
+  &-limit {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    color: $disabled-color;
   }
 }
