@@ -55,6 +55,24 @@
       <br>
       <DrInput type="textarea" v-model="input12" placeholder="请输入内容" maxlength="20" showWordLimit></DrInput>
     </div>
+    <p>设置自适应文本高度的文本域</p>
+    <div class="textarea-wrap">
+      <DrInput type="textarea" v-model="input13" placeholder="请输入内容" autosize></DrInput>
+      <br>
+      <br>
+      <DrInput type="textarea" v-model="input14" placeholder="请输入内容" :autosize="{minRows: 2, maxRows: 4}"></DrInput>
+    </div>
+    <p>复合型输入框</p>
+    <div class="textarea-wrap">
+      <DrInput v-model="input15" placeholder="请输入内容">
+        <template slot="prepend">Http://</template>
+      </DrInput>
+      <br>
+      <br>
+      <DrInput v-model="input16" placeholder="请输入内容">
+        <template slot="append">.com</template>
+      </DrInput>
+    </div>
   </div>
 </template>
 
@@ -74,6 +92,10 @@ export default {
       input10: '',
       input11: '',
       input12: '',
+      input13: '',
+      input14: '',
+      input15: '',
+      input16: '',
       inputSize: ''
     }
   }

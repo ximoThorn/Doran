@@ -4,6 +4,9 @@
      @mouseleave="hovering = false"
     :class="classes">
     <template v-if="type !== 'textarea'">
+      <div class="dr-input-prepend" v-if="$slots.prepend">
+        <slot name="prepend"></slot>
+      </div>
       <input
         :value="value"
         :disabled="disabled"
@@ -48,7 +51,7 @@
         <i
           v-if="showPassword"
           @mousedown.prevent
-          @click="handlerPassword"
+          @click="passwordVisible = !passwordVisible"
           :class="{
             'dr-icon-attentionfill': passwordVisible,
             'dr-icon-attention': !passwordVisible
@@ -59,6 +62,9 @@
           {{valueLength}}/{{maxlength}}
         </span>
       </span>
+      <div class="dr-input-append" v-if="$slots.append">
+        <slot name="append"></slot>
+      </div>
     </template>
     <textarea v-else
       :value="value"
@@ -67,6 +73,7 @@
       :type="type"
       :rows="rows"
       :maxlength="maxlength"
+      :style="textareaStytles"
       @input="handlerInput"
       @change="handlerChange"
       @focus="handlerFocus"
@@ -85,6 +92,7 @@
 
 <script>
 import { validValue } from '@/utils/validate';
+import calcTextareaHeight from '@/utils/calcTextareaHeight';
 
 const drPreFixInput = 'dr-input';
 
@@ -121,16 +129,19 @@ export default {
         return validValue(val, arr);
       }
     },
+    resize: String, // css resize属性
     maxlength: [Number, String],
     disabled: Boolean,
     clearable: Boolean,
     password: Boolean,
-    showWordLimit: Boolean
+    showWordLimit: Boolean,
+    autosize: [Boolean, Object]
   },
   data() {
     return {
       hovering: false,
-      passwordVisible: false
+      passwordVisible: false,
+      calcTextareaObj: {}
     };
   },
   computed: {
@@ -141,7 +152,9 @@ export default {
           [`${drPreFixInput}-disabled`]: this.disabled,
           [`${drPreFixInput}--suffix`]: this.clearable || !!this.suffixIcon || !!this.$slots.suffix || this.showWordLimit,
           [`${drPreFixInput}--prefix`]: !!this.prefixIcon || !!this.$slots.prefix,
-          [`${drPreFixInput}-${this.size}`]: !!this.size
+          [`${drPreFixInput}-${this.size}`]: !!this.size,
+          [`${drPreFixInput}--prepend`]: this.$slots.prepend,
+          [`${drPreFixInput}--append`]: this.$slots.append
         }
       ];
     },
@@ -161,7 +174,13 @@ export default {
     },
     inputDom() {
       return this.$refs.input || this.$refs.textarea;
+    },
+    textareaStytles() {
+      return Object.assign({}, this.calcTextareaObj, { resize: this.resize });
     }
+  },
+  mounted() {
+    this.handlerTextareaHeight();
   },
   methods: {
     focus() {
@@ -206,8 +225,23 @@ export default {
       this.$emit('change', '');
       this.$emit('clear', '');
     },
-    handlerPassword() {
-      this.passwordVisible = !this.passwordVisible;
+    handlerTextareaHeight() {
+      if (this.$isServer || this.type !== 'textarea') {
+        return;
+      };
+      if (!this.autosize) {
+        this.calcTextareaObj = {
+          minHeight: calcTextareaHeight(this.$refs.textarea).minHeight
+        };
+        return;
+      };
+      const { minRows, maxRows } = this.autosize;
+      this.calcTextareaObj = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
+    }
+  },
+  watch: {
+    value() {
+      this.$nextTick(this.handlerTextareaHeight);
     }
   }
 };

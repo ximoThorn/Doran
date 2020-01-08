@@ -1,6 +1,6 @@
 .dr-input {
   &-default {
-    display: inline-block;
+    display: inline-table;
     width: 100%;
     position: relative;
   }
@@ -100,5 +100,38 @@
     right: 7px;
     bottom: 7px;
     color: $disabled-color;
+  }
+  &-prepend, &-append {
+    background-color: $disabled-bg-color;
+    color: $disabled-text-color;
+    border-radius: $btn-radius-base;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid $border-color;
+    padding: 0 20px;
+    white-space: nowrap;
+    position: relative;
+  }
+  &--prepend {
+    .dr-input-inner {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+  &--append {
+    .dr-input-inner {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  &-prepend {
+    border-right: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &-append {
+    border-left: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 }
