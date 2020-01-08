@@ -8,6 +8,8 @@
   &-input {
     .dr-input-inner {
       cursor: pointer;
+      height: auto;
+      min-height: 36px;
     }
     .dr-icon-arrow-right {
       font-size: 18px;
