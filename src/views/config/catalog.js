@@ -73,5 +73,10 @@ export const catalogList = [
     link: '/input',
     name: 'Input',
     dsc: '输入框'
+  },
+  {
+    link: '/select',
+    name: 'Select',
+    dsc: '选择器'
   }
 ];

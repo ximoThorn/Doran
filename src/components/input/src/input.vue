@@ -12,6 +12,11 @@
         :disabled="disabled"
         :placeholder="placeholder"
         :maxlength="maxlength"
+        :name="name"
+        :max="max"
+        :min="min"
+        :step="step"
+        :readonly="readonly"
         :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
         @input="handlerInput"
         @change="handlerChange"
@@ -21,6 +26,9 @@
         @keyup="handlerKeyup"
         @keypress="handlerKeypress"
         @keydown="handlerKeydown"
+        @compositionstart="handlerComposition"
+        @compositionupdate="handlerComposition"
+        @compositionend="handlerComposition"
         ref="input"
         class="dr-input-inner">
       <!-- 前置内容 -->
@@ -73,6 +81,8 @@
       :type="type"
       :rows="rows"
       :maxlength="maxlength"
+      :name="name"
+      :readonly="readonly"
       :style="textareaStytles"
       @input="handlerInput"
       @change="handlerChange"
@@ -82,6 +92,9 @@
       @keyup="handlerKeyup"
       @keypress="handlerKeypress"
       @keydown="handlerKeydown"
+      @compositionstart="handlerComposition"
+      @compositionupdate="handlerComposition"
+      @compositionend="handlerComposition"
       ref="textarea"
       class="dr-input-textarea"></textarea>
     <span v-if="showWordLimit && type === 'textarea'" class="dr-input-limit">
@@ -129,19 +142,25 @@ export default {
         return validValue(val, arr);
       }
     },
+    name: String,
     resize: String, // css resize属性
     maxlength: [Number, String],
     disabled: Boolean,
     clearable: Boolean,
     password: Boolean,
     showWordLimit: Boolean,
-    autosize: [Boolean, Object]
+    autosize: [Boolean, Object],
+    max: [Number, String],
+    min: [Number, String],
+    step: [Number, String],
+    readonly: Boolean
   },
   data() {
     return {
       hovering: false,
       passwordVisible: false,
-      calcTextareaObj: {}
+      calcTextareaObj: {},
+      isOnComposition: false
     };
   },
   computed: {
@@ -163,10 +182,10 @@ export default {
       return value !== undefined && value !== '' && value !== null
     },
     showClear() { // 是否展示可清除icon
-      return this.hovering && this.isCorrectValue && this.clearable && !this.disabled;
+      return this.hovering && this.isCorrectValue && this.clearable && !this.disabled && !this.readonly;
     },
     showPassword() { // 是否展示密码显示icon
-      return this.type === 'password' && this.password && this.isCorrectValue && !this.disabled;
+      return this.type === 'password' && this.password && this.isCorrectValue && !this.disabled && !this.readonly;
     },
     valueLength() {
       const val = `${this.value || ''}`;
@@ -193,6 +212,9 @@ export default {
       this.inputDom.select();
     },
     handlerInput(e) {
+      if (this.isOnComposition) {
+        return;
+      };
       const targetValue = e.target.value;
       if (targetValue !== undefined) {
         this.$emit('input', targetValue);
@@ -237,6 +259,13 @@ export default {
       };
       const { minRows, maxRows } = this.autosize;
       this.calcTextareaObj = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
+    },
+    handlerComposition(e) { // 对在ios上非直接输入时(例如：输入汉字时的打拼音的过程)，也会触发input事件的优化
+      if (e.type === 'compositionend') {
+        this.isOnComposition = false;
+      } else {
+        this.isOnComposition = true;
+      };
     }
   },
   watch: {

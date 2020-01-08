@@ -1,0 +1,27 @@
+.dr-select {
+  &-default {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+  &-input {
+    .dr-input-inner {
+      cursor: pointer;
+    }
+    .dr-icon-arrow-right {
+      font-size: 18px;
+      &::before {
+        transform: rotate(90deg);
+        transition: transform $collapse-transition-time $collapse-transition;
+      }
+    }
+  }
+  &-visible {
+    .dr-icon-arrow-right {
+      &::before {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

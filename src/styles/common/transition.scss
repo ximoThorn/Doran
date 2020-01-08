@@ -15,3 +15,13 @@
   opacity: 0;
   transform-origin: center center;
 }
+
+.select-suggestion-enter-active, .select-suggestion-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: $popper-suggest-transition;
+}
+.select-suggestion-enter, .select-suggestion-leave-to {
+  transform: scaleY(0);
+  opacity: 0;
+}

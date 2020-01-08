@@ -22,6 +22,7 @@ Progress (进度条)
 Rate (评分)
 Divider (分割线)
 Input (输入框)
+Select (选择器)
 ```
 
 ## demo
