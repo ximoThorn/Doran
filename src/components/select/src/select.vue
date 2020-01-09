@@ -1,6 +1,10 @@
 <template>
-  <div :class="classes">
-    <div class="dr-select-wrap">
+  <div
+    v-click-outside="handlerClickOutside"
+    :class="classes">
+    <div
+      ref="reference"
+      class="dr-select-wrap">
       <dr-input
         :placeholder="placeholder"
         :readonly="!filterable"
@@ -12,7 +16,14 @@
       </dr-input>
     </div>
     <transition name="select-suggestion">
-
+      <div
+        v-show="isVisible"
+        ref="popper"
+        class="dr-select-poppper">
+        popper <br>
+        popper <br>
+        popper
+      </div>
     </transition>
     <slot></slot>
   </div>
@@ -20,10 +31,16 @@
 
 <script>
 import DrInput from '../../input';
+import popper from '@/mixins/popper.js';
+import { directive as clickOutside } from 'v-click-outside-x'; // 点击dom外部时
 
 const drPreFixSelect = 'dr-select';
 export default {
   name: 'DrSelect',
+  mixins: [popper],
+  directives: {
+    clickOutside
+  },
   props: {
     value: [String, Number],
     placeholder: {
@@ -58,12 +75,28 @@ export default {
       ];
     }
   },
+  mounted() {
+    this.$nextTick(this.createPopper({
+      placement: 'bottom-start',
+      modifiers: {
+        computeStyle: {
+          gpuAcceleration: false
+        },
+        offset: {
+          offset: '0, 5px'
+        }
+      }
+    }));
+  },
   methods: {
     handlerInput(val) {
       console.log(val);
     },
     handlerClick() {
       this.isVisible = !this.isVisible;
+    },
+    handlerClickOutside() {
+      this.isVisible = false;
     }
   }
 };

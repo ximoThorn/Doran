@@ -65,3 +65,9 @@
     }
   }
 }
+
+@mixin popper {
+  background-color: $body-white;
+  box-shadow: $popper-box-shadow;
+  border-radius: $btn-radius-base;
+}

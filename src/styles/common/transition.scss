@@ -17,8 +17,8 @@
 }
 
 .select-suggestion-enter-active, .select-suggestion-leave-active {
-  opacity: 1;
   transform: scaleY(1);
+  opacity: 1;
   transition: $popper-suggest-transition;
 }
 .select-suggestion-enter, .select-suggestion-leave-to {
