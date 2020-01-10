@@ -70,4 +70,17 @@
   background-color: $body-white;
   box-shadow: $popper-box-shadow;
   border-radius: $btn-radius-base;
+  z-index: 2020;
+}
+
+@mixin optionItem {
+  text-align: left;
+  padding: 7px 16px;
+  line-height: normal;
+  clear: both;
+  font-size: $font-size;
+  color: $font-color;
+  white-space: nowrap;
+  transition: background .2s ease-in-out;
+  cursor: pointer;
 }

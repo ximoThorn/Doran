@@ -1,0 +1,15 @@
+.dr-option {
+  &-default {
+    @include optionItem;
+    &:not(.dr-option-disabled):hover {
+      background-color: $disabled-bg-color;
+    }
+  }
+  &-disabled {
+    color: $disabled-color;
+    cursor: not-allowed;
+  }
+  &-active {
+    color: $theme-color;
+  }
+}

@@ -26,10 +26,21 @@
       }
     }
   }
-  &-poppper {
-    width: 240px;
-    height: 200px;
-    transform-origin: top center;
-    @include popper;
+  &-clear {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $body-white;
+    font-size: 14px;
+    margin-left: 3px;
+    color: $disabled-color;
+  }
+  &-empty {
+    @include optionItem;
+    text-align: center;
+  }
+  &-disabled {
+    cursor: not-allowed;
   }
 }

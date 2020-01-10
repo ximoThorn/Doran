@@ -81,7 +81,7 @@
   }
   &-disabled {
     .dr-input-inner, .dr-input-textarea {
-      cursor: not-allowed;
+      cursor: not-allowed !important;
       background-color: $disabled-bg-color;
       color: $disabled-color;
       &:hover {

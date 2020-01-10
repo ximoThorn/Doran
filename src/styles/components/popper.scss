@@ -1,0 +1,5 @@
+.dr-popper {
+  width: 240px;
+  transform-origin: top center;
+  @include popper;
+}
