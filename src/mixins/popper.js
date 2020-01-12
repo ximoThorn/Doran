@@ -9,9 +9,20 @@ export default {
   },
   methods: {
     createPopper(optipns = {}) {
-      const reference = this.$refs.reference || this.$parent.$refs.reference || '';
-      const popperDom = this.$refs.popper || this.$el;
-      this.currentPopper = new Popper(reference, popperDom, optipns);
+      if (this.$isServer) {
+        return;
+      };
+      if (this.currentPopper) {
+        this.$nextTick(() => {
+          this.currentPopper.update();
+        });
+      } else {
+        const reference = this.$refs.reference || this.$parent.$refs.reference || '';
+        const popperDom = this.$refs.popper || this.$el;
+        this.$nextTick(() => {
+          this.currentPopper = new Popper(reference, popperDom, optipns);
+        });
+      };
     }
   }
 }

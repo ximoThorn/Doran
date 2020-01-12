@@ -1,10 +1,11 @@
 <template>
   <div
     v-click-outside="handlerClickOutside"
-    @mouseenter="hover = true"
     :class="classes">
     <div
       ref="reference"
+      @mouseenter="hover = true"
+      @mouseleave="hover = false"
       class="dr-select-wrap">
       <dr-input
         :placeholder="placeholder"
@@ -22,13 +23,21 @@
         @click="handlerClear"
         class="dr-icon-default dr-icon-roundclose dr-select-clear"></i>
     </div>
-    <transition name="select-suggestion">
+    <transition
+      @before-leave="beforeTransition"
+      @before-enter="beforeTransition"
+      @after-leave="afterTransition"
+      @after-enter="afterTransition"
+      name="select-suggestion">
       <dr-popper
         v-show="isVisible"
+        :placement="placement"
         ref="popper">
-        <slot>
-          <p class="dr-select-empty" v-if="!$slots.empty">{{noDataText}}</p>
-        </slot>
+        <ul class="dr-select-option-wrap">
+          <slot>
+            <p class="dr-select-empty" v-if="!$slots.empty">{{noDataText}}</p>
+          </slot>
+        </ul>
         <slot v-if="!$slots.default" name="empty"></slot>
       </dr-popper>
     </transition>
@@ -40,12 +49,16 @@ import DrInput from '../../input';
 import DrPopper from '@/base/popper';
 import { directive as clickOutside } from 'v-click-outside-x'; // 点击dom外部时
 
+import { validValue } from '@/utils/validate';
+import emitter from '@/mixins/emitter';
+
 const drPreFixSelect = 'dr-select';
 export default {
   name: 'DrSelect',
   directives: {
     clickOutside
   },
+  mixins: [emitter],
   props: {
     value: {
       required: true
@@ -53,6 +66,12 @@ export default {
     placeholder: {
       type: String,
       default: '请选择'
+    },
+    placement: {
+      validator (value) {
+        return validValue(value, ['top', 'bottom', 'top-start', 'bottom-start', 'top-end', 'bottom-end']);
+      },
+      default: 'bottom-start'
     },
     filterable: Boolean,
     noDataText: {
@@ -69,7 +88,9 @@ export default {
       currentValues: this.multiple ? [] : '',
       isOnComposition: false,
       isVisible: false,
-      hover: true
+      hover: false,
+      togglePopperFlag: true,
+      slotUpdate: this.$slots.default
     };
   },
   components: {
@@ -112,10 +133,18 @@ export default {
       if (this.disabled) {
         return;
       };
-      this.isVisible = !this.isVisible;
+      if (this.togglePopperFlag) { // 防止连续点击, 出现动画bug
+        this.isVisible = !this.isVisible;
+      };
     },
     handlerClickOutside() {
       this.isVisible = false;
+    },
+    beforeTransition() {
+      this.togglePopperFlag = false;
+    },
+    afterTransition() {
+      this.togglePopperFlag = true;
     },
     handlerClear() {
       this.$emit('input', '');
@@ -134,11 +163,20 @@ export default {
     },
     setCurrentValues() {
       this.currentValues = this.value;
+      if (!this.value) {
+        this.currentLabel = '';
+      };
     }
   },
   watch: {
     value(newValue, oldValue) {
-      this.currentValues = newValue;
+      this.setCurrentValues();
+    },
+    isVisible(newValue) { // 在显示/隐藏popper时，触发popper的更新与销毁
+      this.broadcast('DrPopper', newValue ? 'onUpdatePopper' : 'onDestoryPopper');
+    },
+    slotUpdate(newValue) {
+      newValue && this.broadcast('DrPopper', 'onUpdatePopper');
     }
   }
 };
