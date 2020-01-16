@@ -95,7 +95,7 @@ export default {
       > p {
         margin: 20px 0;
       }
-      > div {
+      > span {
         margin-right: 20px;
       }
     }

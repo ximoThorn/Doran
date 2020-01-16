@@ -1,6 +1,7 @@
 .dr-option {
   &-default {
     @include optionItem;
+    @include clearFix;
     &:not(.dr-option-disabled):hover {
       background-color: $disabled-bg-color;
     }
@@ -11,5 +12,31 @@
   }
   &-active {
     color: $theme-color;
+  }
+  &-group {
+    padding: 6px 0 10px;
+    position: relative;
+  }
+  &-group-title {
+    line-height: 30px;
+    text-align: left;
+    font-size: $font-size-small;
+    color: $disabled-text-color;
+    padding: 0 16px;
+    cursor: unset;
+  }
+}
+.dr-select-option-wrap {
+  > .dr-option-group:not(:last-of-type) {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 2px;
+      height: 1px;
+      background-color: $border-color;
+    }
   }
 }

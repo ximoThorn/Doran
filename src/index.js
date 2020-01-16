@@ -21,6 +21,7 @@ import DrDivider from './components/divider';
 import DrInput from './components/input';
 import DrSelect from './components/select';
 import DrOption from './components/option';
+import DrOptionGroup from './components/option-group';
 
 const DoranComponents = [
   DrButton,
@@ -45,7 +46,8 @@ const DoranComponents = [
   DrDivider,
   DrInput,
   DrSelect,
-  DrOption
+  DrOption,
+  DrOptionGroup
 ];
 
 const install = function (Vue, opt = {}) {
@@ -80,5 +82,6 @@ export default {
   DrDivider,
   DrInput,
   DrSelect,
-  DrOption
+  DrOption,
+  DrOptionGroup
 };

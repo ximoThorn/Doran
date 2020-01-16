@@ -1,9 +1,10 @@
 <template>
   <li
     @click.stop="handlerSelectOption"
+    :style="styles"
     :class="classes">
     <slot>
-      <span>{{label}}</span>
+      <span>{{label || value}}</span>
     </slot>
   </li>
 </template>
@@ -26,8 +27,12 @@ export default {
       select: ''
     };
   },
-  mounted() {
+  created() {
     this._parentInit();
+    this.select.slotOptionsData.push({
+      value: this.value,
+      label: this.label
+    });
   },
   computed: {
     classes() {
@@ -43,8 +48,16 @@ export default {
       if (!this.select.multiple) {
         return this.value === this.select.value;
       } else {
-        return this.select.value.indexOf(this.value);
+        return this.select.value.indexOf(this.value) > -1;
       };
+    },
+    styles() {
+      let obj = {};
+      if (this.select.filterable && this.select.filterOptionValue) {
+        const lowValue = this.select.filterOptionValue.toLowerCase();
+        !this.label.includes(lowValue) && (obj.display = 'none');
+      };
+      return obj;
     }
   },
   methods: {

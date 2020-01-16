@@ -72,6 +72,21 @@
       <DrInput v-model="input16" placeholder="请输入内容">
         <template slot="append">.com</template>
       </DrInput>
+      <br>
+      <br>
+      <DrInput class="select-input" v-model="input16" placeholder="请输入内容">
+        <template slot="prepend">
+          <dr-select v-model="selectValue">
+            <dr-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </dr-option>
+          </dr-select>
+        </template>
+        <template slot="append">.com</template>
+      </DrInput>
     </div>
   </div>
 </template>
@@ -96,7 +111,18 @@ export default {
       input14: '',
       input15: '',
       input16: '',
-      inputSize: ''
+      inputSize: '',
+      selectValue: '',
+      options: [
+        {
+          value: 'https',
+          label: 'https://'
+        },
+        {
+          value: 'http',
+          label: 'http://'
+        }
+      ]
     }
   }
 }
@@ -124,6 +150,12 @@ export default {
       &.textarea-wrap {
         .dr-input-default {
           width: 360px;
+        }
+        .select-input {
+          ::v-deep .dr-input-prepend {
+            background-color: #fff;
+            width: 100px;
+          }
         }
       }
       > p {

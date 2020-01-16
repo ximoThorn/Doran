@@ -5,25 +5,11 @@
     position: relative;
   }
   &-inner, &-textarea {
-    outline: none;
-    appearance: none;
-    background-color: $body-white;
-    background-image: none;
     display: inline-block;
     border: 1px solid $border-color;
     width: 100%;
     border-radius: $btn-radius-base;
-    color: $font-color;
-    font-size: $font-size;
-    &::placeholder {
-      color: $input-placeholder-color;
-    }
-    &:hover {
-      border-color: $theme-color;
-    }
-    &:focus {
-      border-color: $theme-color;
-    }
+    @include inputStyle;
   }
   &-inner {
     padding: 0 15px;
@@ -116,6 +102,14 @@
     .dr-input-inner {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
+    }
+    .dr-select-default {
+      margin: -2px -20px;
+      width: auto;
+      .dr-input-inner {
+        border-color: transparent;
+        background-color: transparent;
+      }
     }
   }
   &--append {

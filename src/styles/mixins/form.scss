@@ -18,3 +18,21 @@
   z-index: -1;
   opacity: 0;
 }
+
+@mixin inputStyle {
+  outline: none;
+  appearance: none;
+  background-color: $body-white;
+  background-image: none;
+  font-size: $font-size;
+  color: $font-color;
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+  &:hover {
+    border-color: $theme-color;
+  }
+  &:focus {
+    border-color: $theme-color;
+  }
+}

@@ -328,6 +328,7 @@ export default {
     > div {
       margin: 0 auto 30px;
       width: 600px;
+      overflow: hidden;
       > p {
         margin-bottom: 20px;
         text-align: center;
@@ -336,6 +337,7 @@ export default {
       }
       .dr-row-default {
         margin-bottom: 20px;
+        background-color: rgba(0, 0, 0, .3);
         .dr-col-default {
           .col-demo {
             height: 40px;

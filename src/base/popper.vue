@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     popperUpdate() {
+      const _this = this;
       this.createPopper({
         placement: this.placement,
         modifiers: {
@@ -36,9 +37,9 @@ export default {
           }
         },
         onCreate: () => {
-          this.resetTransformOrigin();
-          this.$nextTick(() => {
-            this.currentPopper && this.currentPopper.update();
+          _this.resetTransformOrigin();
+          _this.$nextTick(() => {
+            _this.currentPopper && _this.currentPopper.scheduleUpdate();
           });
         },
         onUpdate: () => {
@@ -51,17 +52,8 @@ export default {
         setTimeout(() => { // 动画结束后才销毁popper
           this.currentPopper.destroy();
           this.currentPopper = null;
-        }, 350);
+        }, 330);
       };
-    },
-    resetTransformOrigin() { // 当popper的位置有变化时，更新动画的origin
-      let x_placement = this.currentPopper.popper.getAttribute('x-placement');
-      let placementStart = x_placement.split('-')[0];
-      let placementEnd = x_placement.split('-')[1];
-      const leftOrRight = x_placement === 'left' || x_placement === 'right';
-      if (!leftOrRight) {
-        this.currentPopper.popper.style.transformOrigin = placementStart === 'bottom' || (placementStart !== 'top' && placementEnd === 'start') ? 'center top' : 'center bottom';
-      }
     }
   }
 };

@@ -6,12 +6,13 @@
     border: 1px solid $border-color;
     height: 32px;
     line-height: 30px;
-    padding: 0 10px;
+    padding: 0 8px;
     border-radius: $btn-radius-base;
+    font-size: $font-size;
     .dr-icon-default {
-      margin-left: 10px;
+      margin-left: 6px;
       vertical-align: middle;
-      font-size: 14px;
+      font-size: $font-size;
       line-height: 30px;
       position: relative;
       top: -1px;
@@ -26,6 +27,7 @@
   &-small {
     height: 24px;
     line-height: 22px;
+    font-size: $font-size-small;
     .dr-icon-default {
       line-height: 22px;
       font-size: $font-size-small;
@@ -34,6 +36,7 @@
   &-mini {
     height: 20px;
     line-height: 18px;
+    font-size: $font-size-small;
     .dr-icon-default {
       line-height: 20px;
       font-size: $font-size-small;

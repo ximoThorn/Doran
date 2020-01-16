@@ -1,9 +1,9 @@
 <template>
   <transition appear :name="fade ? 'tag-fade' : ''">
-    <div :class="classes" :style="styles">
+    <span :class="classes" :style="styles">
       <slot></slot>
       <DrIcon v-if="closable" @click="handleClick" icon="dr-icon-close"></DrIcon>
-    </div>
+    </span>
   </transition>
 </template>
 

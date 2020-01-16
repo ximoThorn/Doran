@@ -263,6 +263,7 @@ export default {
     handlerComposition(e) { // 对在ios上非直接输入时(例如：输入汉字时的打拼音的过程)，也会触发input事件的优化
       if (e.type === 'compositionend') {
         this.isOnComposition = false;
+        this.handlerInput(e); // input事件比compositionend事件晚触发，所以这里要重新执行一次
       } else {
         this.isOnComposition = true;
       };
