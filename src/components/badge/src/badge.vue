@@ -1,7 +1,7 @@
 <template>
   <div class="dr-badge-default">
     <slot></slot>
-    <transition name="sup-zoom" >
+    <transition name="sup-zoom">
       <sup v-show="!hidden" :class="classes" :style="styles">{{currentValue}}</sup>
     </transition>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 import { validValue } from '@/utils/validate';
-const drPreFixBadge = 'dr-badge'
+const drPreFixBadge = 'dr-badge';
 
 export default {
   name: 'DrBadge',

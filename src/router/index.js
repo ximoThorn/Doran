@@ -67,6 +67,10 @@ const routes = [
     component: () => import('../views/Divider.vue')
   },
   {
+    path: '/input-number',
+    component: () => import('../views/Input-number.vue')
+  },
+  {
     path: '/input',
     component: () => import('../views/Input.vue')
   },

@@ -3,7 +3,7 @@ let path = require('path');
 function resolve(dir) {
   return path.join(__dirname, dir)
 };
-
+console.log(process.argv, 'process.argv');
 module.exports = {
   chainWebpack: config => {
     config.resolve.alias

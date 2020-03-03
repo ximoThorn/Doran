@@ -22,6 +22,7 @@ import DrInput from './components/input';
 import DrSelect from './components/select';
 import DrOption from './components/option';
 import DrOptionGroup from './components/option-group';
+import DrInputNumber from './components/input-number';
 
 const DoranComponents = [
   DrButton,
@@ -47,7 +48,8 @@ const DoranComponents = [
   DrInput,
   DrSelect,
   DrOption,
-  DrOptionGroup
+  DrOptionGroup,
+  DrInputNumber
 ];
 
 const install = function (Vue, opt = {}) {
@@ -83,5 +85,6 @@ export default {
   DrInput,
   DrSelect,
   DrOption,
-  DrOptionGroup
+  DrOptionGroup,
+  DrInputNumber
 };

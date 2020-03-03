@@ -70,6 +70,11 @@ export const catalogList = [
     dsc: '分割线'
   },
   {
+    link: '/input-number',
+    name: 'InputNumber',
+    dsc: '数字输入框'
+  },
+  {
     link: '/input',
     name: 'Input',
     dsc: '输入框'

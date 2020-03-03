@@ -1,0 +1,103 @@
+.dr-input-number {
+  &-default {
+    display: inline-block;
+    width: 80px;
+    position: relative;
+    &:not(.dr-input-number-disabled):hover {
+      .dr-input-number-inner {
+        border-color: $theme-color;
+      }
+      .dr-input-number-handler {
+        opacity: 1;
+      }
+    }
+  }
+  &-inner {
+    width: 100%;
+    height: 36px;
+    border-radius: $btn-radius-base;
+    border: 1px solid $border-color;
+    padding: 0 7px;
+    outline: none;
+    appearance: none;
+    background-color: $body-white;
+    background-image: none;
+    font-size: $font-size;
+    color: $font-color;
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+    &:focus {
+      border-color: $theme-color;
+    }
+  }
+  &-handler {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    border-left: $collapse-border;
+    width: 22px;
+    opacity: 0;
+    background-color: $body-white;
+    transition: all $collapse-transition-time $collapse-transition;
+    border-top-right-radius: $btn-radius-base;
+    border-bottom-right-radius: $btn-radius-base;
+  }
+  &-up, &-down {
+    height: 18px;
+    line-height: 0;
+    text-align: center;
+    overflow: hidden;
+    color: $disabled-text-color;
+    cursor: pointer;
+    position: relative;
+    transition: all $collapse-transition-time $collapse-transition;
+    i {
+      line-height: 1;
+    }
+    &:hover {
+      color: $theme-color;
+    }
+    &-disabled {
+      cursor: not-allowed;
+      color: $disabled-color;
+      &:hover {
+        color: $disabled-color;
+      }
+    }
+  }
+  &-down {
+    border-top: $collapse-border;
+    top: -1px;
+  }
+
+  &-small {
+    .dr-input-number-inner {
+      height: 32px;
+    }
+    .dr-input-number-up, .dr-input-number-down {
+      height: 16px;
+    }
+  }
+
+  &-mini {
+    .dr-input-number-inner {
+      height: 28px;
+    }
+    .dr-input-number-up, .dr-input-number-down {
+      height: 14px;
+    }
+  }
+
+  &-disabled {
+    .dr-input-number-inner {
+      cursor: not-allowed;
+      background-color: $disabled-bg-color;
+      color: $disabled-text-color;
+    }
+    .dr-input-number-up, .dr-input-number-down {
+      cursor: not-allowed;
+    }
+  }
+}

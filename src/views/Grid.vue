@@ -348,12 +348,12 @@ export default {
           }
           &:nth-child(odd) {
             .col-demo {
-              background-color: rgba(0,153,229,.9);
+              background-color: rgba(0, 153, 229, .9);
             }
           }
           &:nth-child(even) {
             .col-demo {
-              background-color: rgba(0,153,229,.7);
+              background-color: rgba(0, 153, 229, .4);
             }
           }
         }

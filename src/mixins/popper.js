@@ -23,7 +23,7 @@ export default {
         };
       });
     },
-    resetTransformOrigin() { // 当popper的位置有变化时，更新动画的origi
+    resetTransformOrigin() { // 当popper的位置有变化时，更新动画的origin
       if (!this.currentPopper) {
         return;
       };
@@ -33,7 +33,7 @@ export default {
       const leftOrRight = x_placement === 'left' || x_placement === 'right';
       if (!leftOrRight) {
         this.currentPopper.popper.style.transformOrigin = placementStart === 'bottom' || (placementStart !== 'top' && placementEnd === 'start') ? 'center top' : 'center bottom';
-      }
+      };
     }
   }
 }
