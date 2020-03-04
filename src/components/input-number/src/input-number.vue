@@ -81,7 +81,7 @@ export default {
     },
     size: {
       validator(value) {
-        const arr = ['default', 'small', 'mini'];
+        const arr = ['default', 'medium', 'small'];
         return validValue(value, arr);
       },
       default: 'default'

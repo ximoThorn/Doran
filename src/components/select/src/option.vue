@@ -53,9 +53,14 @@ export default {
     },
     styles() {
       let obj = {};
-      if (this.select.filterable && this.select.filterOptionValue) {
+      if (!this.select.filterable) {
+        return obj;
+      };
+      if (this.select.filterOptionValue) {
         const lowValue = this.select.filterOptionValue.toLowerCase();
         !this.label.includes(lowValue) && (obj.display = 'none');
+      } else {
+        obj.display = 'block';
       };
       return obj;
     }

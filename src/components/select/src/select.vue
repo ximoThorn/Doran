@@ -37,6 +37,7 @@
         ref="selectInput"
         :placeholder="placeholder"
         :readonly="!filterable && !multiple && isVisible"
+        :size="size"
         @input="debounceQueryInputChange"
         @focus="handlerInputFocus"
         v-model="currentLabel"
@@ -104,6 +105,12 @@ export default {
       },
       default: 'bottom-start'
     },
+    size: {
+      validator (value) {
+        return validValue(value, ['default', 'medium', 'small']);
+      },
+      default: 'default'
+    },
     filterable: Boolean,
     noDataText: {
       type: String,
@@ -160,7 +167,9 @@ export default {
       return [
         `${drPreFixSelect}-default`,
         {
-          [`${drPreFixSelect}-disabled`]: this.disabled
+          [`${drPreFixSelect}-disabled`]: this.disabled,
+          [`${drPreFixSelect}-multiple`]: this.multiple,
+          [`${drPreFixSelect}-${this.size}`]: this.size !== 'default'
         }
       ];
     },
@@ -262,9 +271,12 @@ export default {
       });
     },
     queryHandlerInput(val) {
-      if (this.isOnComposition || !val) {
+      if (this.isOnComposition) {
         return;
       };
+      if (!val) {
+
+      }
       if (this.filterable && !this.multiple && !this.remote) {
         if (this.filterMethod) {
           this.filterMethod(val);

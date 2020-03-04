@@ -30,10 +30,10 @@
       默认：<dr-input-number v-model="value7" :step="2"></dr-input-number>
       <br>
       <br>
-      small：<dr-input-number v-model="value8" size="small" :step="2"></dr-input-number>
+      small：<dr-input-number v-model="value8" size="medium" :step="2"></dr-input-number>
       <br>
       <br>
-      mini：<dr-input-number v-model="value9" size="mini" :step="2"></dr-input-number>
+      mini：<dr-input-number v-model="value9" size="small" :step="2"></dr-input-number>
       <br>
       <br>
     </div>

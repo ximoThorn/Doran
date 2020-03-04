@@ -7,7 +7,7 @@
   &-wrap {
     position: relative;
   }
-  &-input {
+  &-multiple {
     .dr-input-inner {
       cursor: pointer;
       min-height: $input-height;
@@ -41,6 +41,7 @@
     @include optionItem;
     text-align: center;
   }
+
   &-disabled {
     cursor: not-allowed;
   }
@@ -83,6 +84,31 @@
       cursor: pointer;
     }
   }
+
+  &-medium {
+    &.dr-select-multiple {
+      .dr-input-inner {
+        min-height: $input-medium-height;
+      }
+      .dr-select-tag {
+        height: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &-small {
+    &.dr-select-multiple {
+      .dr-input-inner {
+        min-height: $input-small-height;
+      }
+      .dr-select-tag {
+        height: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
 
   // 可搜索
   &-filter-input {

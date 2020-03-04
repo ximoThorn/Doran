@@ -113,6 +113,39 @@
       </dr-select>
     </div>
     <p class="remark">注：暂时没有搜索多选的功能</p>
+    <br>
+    <br>
+    <p>不同尺寸</p>
+    <div>
+      <dr-select v-model="value9">
+        <dr-option
+          v-for="(item, index) in selectOptions"
+          :key="index"
+          :label="item.label"
+          :value="item.value">
+        </dr-option>
+      </dr-select>
+      <br>
+      <br>
+      <dr-select size="medium" v-model="value10">
+        <dr-option
+          v-for="(item, index) in selectOptions"
+          :key="index"
+          :label="item.label"
+          :value="item.value">
+        </dr-option>
+      </dr-select>
+      <br>
+      <br>
+      <dr-select size="small" v-model="value11">
+        <dr-option
+          v-for="(item, index) in selectOptions"
+          :key="index"
+          :label="item.label"
+          :value="item.value">
+        </dr-option>
+      </dr-select>
+    </div>
   </div>
 </template>
 
@@ -141,6 +174,11 @@ const selectOptions = [
   {
     label: '君奉天',
     value: 'junfengtian',
+    disabled: false
+  },
+  {
+    label: '素续缘',
+    value: 'suxuyuan',
     disabled: false
   }
 ];
@@ -217,7 +255,10 @@ export default {
       filterOptions: selectOptions,
       loading: false,
       value8: '',
-      remoteOptions: []
+      remoteOptions: [],
+      value9: '',
+      value10: '',
+      value11: ''
     };
   },
   mounted() {

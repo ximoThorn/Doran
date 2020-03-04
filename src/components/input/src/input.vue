@@ -138,9 +138,10 @@ export default {
     },
     size: {
       validator(val) {
-        const arr = ['medium', 'small'];
+        const arr = ['default', 'medium', 'small'];
         return validValue(val, arr);
-      }
+      },
+      default: 'default'
     },
     name: String,
     resize: String, // css resize属性
@@ -171,7 +172,7 @@ export default {
           [`${drPreFixInput}-disabled`]: this.disabled,
           [`${drPreFixInput}--suffix`]: this.clearable || !!this.suffixIcon || !!this.$slots.suffix || this.showWordLimit,
           [`${drPreFixInput}--prefix`]: !!this.prefixIcon || !!this.$slots.prefix,
-          [`${drPreFixInput}-${this.size}`]: !!this.size,
+          [`${drPreFixInput}-${this.size}`]: this.size !== 'default',
           [`${drPreFixInput}--prepend`]: this.$slots.prepend,
           [`${drPreFixInput}--append`]: this.$slots.append
         }
