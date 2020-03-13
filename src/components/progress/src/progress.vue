@@ -160,7 +160,7 @@ export default {
       const { strokeColor, progressColor } = this;
       if (this.type !== 'line') {
         if (progressColor.length) { // progressColor颜色处理
-          return this.handleProgressColor(progressColor.slice());
+          return this.handleProgressColor(progressColor.slice()); // slice()一下防止无限循环
         } else if (strokeColor && typeValide(strokeColor) === 'string') {
           return strokeColor;
         };

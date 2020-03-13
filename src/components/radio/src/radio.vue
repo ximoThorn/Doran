@@ -64,7 +64,7 @@ export default {
     finalSize() {
       if (this.radioGroup.type === 'button') {
         return '';
-      }
+      };
       return this.size || this.radioGroup.size || '';
     }
   },

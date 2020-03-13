@@ -14,7 +14,6 @@ export default {
       };
       this.$nextTick(() => {
         if (this.currentPopper) {
-          this.resetTransformOrigin();
           this.currentPopper.update();
         } else {
           const reference = this.$refs.reference || this.$parent.$refs.reference || '';
@@ -27,7 +26,7 @@ export default {
       if (!this.currentPopper) {
         return;
       };
-      let x_placement = this.currentPopper.popper.getAttribute('x-placement');
+      let x_placement = this.currentPopper.popper.getAttribute('x-placement') || 'bottom-start';
       let placementStart = x_placement.split('-')[0];
       let placementEnd = x_placement.split('-')[1];
       const leftOrRight = x_placement === 'left' || x_placement === 'right';

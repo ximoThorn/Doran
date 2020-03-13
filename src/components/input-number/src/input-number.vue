@@ -103,7 +103,7 @@ export default {
           [`${drPreFixInputNumber}-disabled`]: this.disabled,
           [`${drPreFixInputNumber}-${this.size}`]: this.size !== 'default'
         }
-      ]
+      ];
     },
     handlerUpClasses() {
       return [
@@ -111,7 +111,7 @@ export default {
         {
           [`${drPreFixInputNumber}-up-disabled`]: this.upDisabled
         }
-      ]
+      ];
     },
     handlerDownClasses() {
       return [
@@ -119,7 +119,7 @@ export default {
         {
           [`${drPreFixInputNumber}-down-disabled`]: this.downDisabled
         }
-      ]
+      ];
     },
     currentValue() {
       if (this.value === undefined || this.value === null) {
@@ -142,11 +142,10 @@ export default {
   },
   methods: {
     handlerChange(e) {
-      console.log(e.target.value, 'e');
+      this.$emit('change', e.target.value);
     },
     handlerInput(e) {
       const value = e.target.value.trim();
-
       const cacheVal = this.currentValue;
 
       // 检验输入的值是否是数字

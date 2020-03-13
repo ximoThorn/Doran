@@ -38,9 +38,6 @@ export default {
         },
         onCreate: () => {
           _this.resetTransformOrigin();
-          _this.$nextTick(() => {
-            _this.currentPopper && _this.currentPopper.scheduleUpdate();
-          });
         },
         onUpdate: () => {
           this.resetTransformOrigin();

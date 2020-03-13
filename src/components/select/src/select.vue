@@ -267,7 +267,7 @@ export default {
       this.$nextTick(() => {
         const selectTagsHeight = +this.$refs.selectTags.clientHeight + 4;
         this.$refs.selectInput.$el.children[0].style.height = `${selectTagsHeight}px`;
-        this.broadcast('DrPopper', 'onUpdatePopper');
+        this.isVisible && this.broadcast('DrPopper', 'onUpdatePopper');
       });
     },
     queryHandlerInput(val) {
@@ -331,7 +331,7 @@ export default {
     },
     currentMultipleLabels() {
       this.updateSelectHeight();
-      this.broadcast('DrPopper', 'onUpdatePopper');
+      this.isVisible && this.broadcast('DrPopper', 'onUpdatePopper');
     }
   },
   beforeDestroy() {
