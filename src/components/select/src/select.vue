@@ -274,9 +274,6 @@ export default {
       if (this.isOnComposition) {
         return;
       };
-      if (!val) {
-
-      }
       if (this.filterable && !this.multiple && !this.remote) {
         if (this.filterMethod) {
           this.filterMethod(val);

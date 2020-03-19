@@ -1,7 +1,7 @@
 <template>
   <div class="switch-page">
     <p>基本用法</p>
-    <div>
+    <div style="width: 100px">
       <DrSwitch v-model="defaultSwitch" @change="handlerChange"></DrSwitch>
     </div>
     <p>失效状态</p>
