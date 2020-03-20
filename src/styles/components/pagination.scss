@@ -1,0 +1,71 @@
+.dr-pagination {
+  &-default {
+    .dr-input-inner {
+      width: 100px;
+    }
+  }
+  &-pager {
+    display: inline-block;
+    li {
+      display: inline-block;
+      border: 1px solid $border-color;
+      padding: 0 6px;
+      min-width: 28px;
+      height: 28px;
+      line-height: 26px;
+      border-radius: $btn-radius-base;
+      text-align: center;
+      margin: 0 4px;
+      vertical-align: middle;
+      cursor: pointer;
+      color: $font-color;
+      transition: all $collapse-transition-time $collapse-transition;
+      &:hover {
+        color: $theme-color;
+        border-color: $theme-color;
+      }
+      i {
+        &::before {
+          float: left;
+        }
+      }
+      &.dr-pagination-more {
+        border: none;
+        color: $disabled-text-color;
+        .dr-icon-arrows-left, .dr-icon-arrows-right {
+          display: none;
+        }
+        &:hover {
+          color: $theme-color;
+          .dr-icon-more {
+            display: none;
+          }
+          .dr-icon-arrows-left, .dr-icon-arrows-right {
+            display: block;
+          }
+        }
+      }
+    }
+    &-prev, &-next {
+
+    }
+  }
+
+  &-sizes {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  &-jumper {
+    display: inline-block;
+  }
+  &-jumper-num {
+    width: 40px;
+    height: 28px;
+    border-radius: $btn-radius-base;
+    border: 1px solid $border-color;
+    padding: 0 7px;
+    margin: 0 7px;
+    @include inputStyle;
+  }
+}

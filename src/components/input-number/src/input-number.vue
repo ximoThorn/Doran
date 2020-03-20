@@ -1,15 +1,15 @@
 <template>
   <div :class="classes">
     <input type="text"
-       @change="handlerChange"
-       @input="handlerInput"
-       @focus="handlerFocus"
-       @blur="handlerBlur"
+      @change="handlerChange"
+      @input="handlerInput"
+      @focus="handlerFocus"
+      @blur="handlerBlur"
       :value="currentValue"
       :disabled="disabled"
       :readonly="readonly || !editable"
       :placeholder="placeholder"
-       ref="inputNumber"
+      ref="inputNumber"
       class="dr-input-number-inner">
     <div class="dr-input-number-handler">
       <div

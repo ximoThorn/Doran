@@ -69,5 +69,7 @@ export const drIcons = [
   'arrow-down',
   'arrow-up',
   'arrow-left',
-  'arrow-right'
+  'arrow-right',
+  'arrows-left',
+  'arrows-right'
 ];

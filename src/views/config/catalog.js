@@ -83,5 +83,10 @@ export const catalogList = [
     link: '/select',
     name: 'Select',
     dsc: '选择器'
+  },
+  {
+    link: '/pagination',
+    name: 'Pagination',
+    dsc: '分页'
   }
 ];

@@ -26,6 +26,7 @@
   background-image: none;
   font-size: $font-size;
   color: $font-color;
+  transition: all $collapse-transition-time $collapse-transition;
   &::placeholder {
     color: $input-placeholder-color;
   }

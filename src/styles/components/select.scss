@@ -3,6 +3,13 @@
     display: inline-block;
     width: 100%;
     position: relative;
+    .dr-icon-arrow-right {
+      font-size: 18px;
+      &::before {
+        transform: rotate(90deg);
+        transition: transform $collapse-transition-time $collapse-transition;
+      }
+    }
   }
   &-wrap {
     position: relative;
@@ -11,13 +18,6 @@
     .dr-input-inner {
       cursor: pointer;
       min-height: $input-height;
-    }
-    .dr-icon-arrow-right {
-      font-size: 18px;
-      &::before {
-        transform: rotate(90deg);
-        transition: transform $collapse-transition-time $collapse-transition;
-      }
     }
   }
   &-visible {
