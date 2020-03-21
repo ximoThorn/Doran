@@ -1,12 +1,18 @@
 .dr-pagination {
   &-default {
+    display: inline-block;
     .dr-input-inner {
       width: 100px;
     }
   }
+  &-total {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
   &-pager {
     display: inline-block;
-    li {
+    &-item {
       display: inline-block;
       border: 1px solid $border-color;
       padding: 0 6px;
@@ -20,7 +26,7 @@
       cursor: pointer;
       color: $font-color;
       transition: all $collapse-transition-time $collapse-transition;
-      &:hover {
+      &:not(.dr-pagination-pager-item-disabled):hover {
         color: $theme-color;
         border-color: $theme-color;
       }
@@ -29,25 +35,56 @@
           float: left;
         }
       }
-      &.dr-pagination-more {
-        border: none;
+      &-disabled {
         color: $disabled-text-color;
-        .dr-icon-arrows-left, .dr-icon-arrows-right {
+        background-color: $disabled-bg-color;
+        cursor: not-allowed;
+      }
+    }
+    &-active {
+      color: $theme-color;
+      border-color: $theme-color;
+    }
+    &-more {
+      border: none;
+      color: $disabled-text-color;
+      .dr-icon-arrows-left, .dr-icon-arrows-right {
+        display: none;
+      }
+      &:hover {
+        color: $theme-color;
+        .dr-icon-more {
           display: none;
         }
-        &:hover {
-          color: $theme-color;
-          .dr-icon-more {
-            display: none;
-          }
-          .dr-icon-arrows-left, .dr-icon-arrows-right {
-            display: block;
-          }
+        .dr-icon-arrows-left, .dr-icon-arrows-right {
+          display: block;
         }
       }
     }
-    &-prev, &-next {
-
+    &-disabled {
+      .dr-pagination-pager-item {
+        color: $disabled-text-color;
+        background-color: $disabled-bg-color;
+        border-color: $border-color;
+        cursor: not-allowed;
+        &:hover {
+          border-color: $border-color;
+          color: $disabled-text-color;
+        }
+      }
+    }
+    &-simple {
+      .dr-pagination-pager-item {
+        border: none;
+        &-disabled {
+          background-color: transparent;
+        }
+      }
+      &.dr-pagination-pager-disabled {
+        .dr-pagination-pager-item {
+          background-color: transparent;
+        }
+      }
     }
   }
 
@@ -58,6 +95,18 @@
 
   &-jumper {
     display: inline-block;
+    &-disabled {
+      color: $disabled-text-color;
+      .dr-pagination-jumper-num {
+        color: $disabled-text-color;
+        background-color: $disabled-bg-color;
+        border-color: $border-color;
+        cursor: not-allowed;
+        &:hover {
+          border-color: $border-color;
+        }
+      }
+    }
   }
   &-jumper-num {
     width: 40px;
@@ -67,5 +116,9 @@
     padding: 0 7px;
     margin: 0 7px;
     @include inputStyle;
+  }
+
+  &-disabled {
+    cursor: not-allowed;
   }
 }

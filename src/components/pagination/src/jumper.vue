@@ -1,9 +1,10 @@
 <template>
-  <div class="dr-pagination-jumper">
+  <div :class="classes">
     <span>前往</span>
     <input
       @input="jumperInput"
       @keyup.enter="changePage"
+      :disabled="disabled"
       v-model="jumperPage"
       class="dr-pagination-jumper-num"
       type="text">
@@ -12,39 +13,49 @@
 </template>
 
 <script>
+const drPreFixJumper = 'dr-pagination-jumper';
+
 export default {
   props: {
     currentPage: {
       type: Number,
       default: 1
-    }
-  },
-  data() {
-    return {
-      jumperPage: this.currentPage
-    };
+    },
+    disabled: Boolean
   },
   computed: {
-    // jumperPage: {
-    //   get() {
-    //     return this.currentPage || 1;
-    //   },
-    //   set() {
-    //     // this.$emit()
-    //   }
-    // }
+    jumperPage: {
+      get() {
+        return this.currentPage;
+      },
+      set() {}
+    },
+    classes() {
+      return [
+        `${drPreFixJumper}`,
+        {
+          [`${drPreFixJumper}-disabled`]: this.disabled
+        }
+      ];
+    }
   },
   methods: {
     jumperInput(e) {
+      if (this.disabled) {
+        return;
+      };
       const target = e.target;
       const cacheValue = this.currentPage;
       const value = Number(target.value);
-      if (isNaN(value)) {
+      if (isNaN(value) || target.value === '0') {
         this.jumperPage = cacheValue;
       };
     },
     changePage() {
-      this.$emit('enterChange', this.jumperPage);
+      if (this.disabled) {
+        return;
+      };
+      this.$parent.changePage(Number(this.jumperPage));
     }
   }
 };

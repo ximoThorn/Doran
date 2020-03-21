@@ -24,6 +24,7 @@ Divider (分割线)
 InputNumber (数字输入框)
 Input (输入框)
 Select (选择器)
+Pagination (分页器)
 ```
 
 ## demo

@@ -3,12 +3,16 @@
     display: inline-block;
     width: 100%;
     position: relative;
+    cursor: pointer;
     .dr-icon-arrow-right {
       font-size: 18px;
       &::before {
         transform: rotate(90deg);
         transition: transform $collapse-transition-time $collapse-transition;
       }
+    }
+    .dr-input-inner {
+      cursor: pointer;
     }
   }
   &-wrap {

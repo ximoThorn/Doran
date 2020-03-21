@@ -1,15 +1,75 @@
 <template>
   <div class="pagination-page">
-    <p></p>
+    <p>基本用法</p>
     <div>
-      <dr-pagination></dr-pagination>
+      <dr-pagination
+        :total="100"
+        @prevClick="prevClick"
+        @nextClick="nextClick"
+        :pageSize.sync="pageSize1"
+        :currentPage.sync="currentPage1">
+      </dr-pagination>
+    </div>
+    <p>完整功能用法</p>
+    <div>
+      <dr-pagination
+        :total="100"
+        :showTotal="true"
+        :showSizes="true"
+        :showJumper="true"
+        @prevClick="prevClick"
+        @nextClick="nextClick"
+        :pageSize.sync="pageSize2"
+        :pageSizes="[10, 30, 50]"
+        :currentPage.sync="currentPage2">
+      </dr-pagination>
+    </div>
+    <p>自定义翻页文字</p>
+    <div>
+      <dr-pagination
+        :total="100"
+        :showTotal="true"
+        :showSizes="true"
+        :showJumper="true"
+        prevText="prev"
+        nextText="next"
+        :pageSize.sync="pageSize3"
+        :currentPage.sync="currentPage3">
+      </dr-pagination>
+    </div>
+    <p>设置不可用</p>
+    <div>
+      <dr-pagination
+        :showTotal="true"
+        :showSizes="true"
+        :showJumper="true"
+        :disabled="true"
+        :total="100">
+      </dr-pagination>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      currentPage1: 1,
+      pageSize1: 10,
+      currentPage2: 1,
+      pageSize2: 10,
+      currentPage3: 1,
+      pageSize3: 10
+    }
+  },
+  methods: {
+    prevClick(val) {
+      console.log(val);
+    },
+    nextClick(val) {
+      console.log(val);
+    }
+  }
 };
 </script>
 
@@ -23,7 +83,7 @@ export default {
       font-weight: bold;
     }
     > div {
-      width: 600px;
+      width: 700px;
       margin: 20px auto;
       text-align: center;
     }

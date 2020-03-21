@@ -36,7 +36,7 @@
       <dr-input
         ref="selectInput"
         :placeholder="placeholder"
-        :readonly="!filterable && !multiple && isVisible"
+        :readonly="!filterable && !multiple"
         :size="size"
         @input="debounceQueryInputChange"
         @focus="handlerInputFocus"
