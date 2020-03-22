@@ -5,7 +5,7 @@
       @input="jumperInput"
       @keyup.enter="changePage"
       :disabled="disabled"
-      v-model="jumperPage"
+      :value="jumperPage"
       class="dr-pagination-jumper-num"
       type="text">
     <span>页</span>
@@ -48,14 +48,15 @@ export default {
       const cacheValue = this.currentPage;
       const value = Number(target.value);
       if (isNaN(value) || target.value === '0') {
-        this.jumperPage = cacheValue;
+        target.value = cacheValue;
       };
     },
-    changePage() {
-      if (this.disabled) {
+    changePage(e) {
+      const value = Number(e.target.value);
+      if (this.disabled || value > this.allPage) {
         return;
       };
-      this.$parent.changePage(Number(this.jumperPage));
+      this.$parent.changePage(value);
     }
   }
 };

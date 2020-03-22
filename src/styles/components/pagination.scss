@@ -1,5 +1,6 @@
 .dr-pagination {
   &-default {
+    user-select: none;
     display: inline-block;
     .dr-input-inner {
       width: 100px;
@@ -73,7 +74,7 @@
         }
       }
     }
-    &-simple {
+    &-small {
       .dr-pagination-pager-item {
         border: none;
         &-disabled {
@@ -86,13 +87,63 @@
         }
       }
     }
+    &-simple {
+      i {
+        cursor: pointer;
+        &:hover {
+          color: $theme-color;
+        }
+        &.dr-pagination-pager-next-disabled, &.dr-pagination-pager-prev-disabled {
+          cursor: not-allowed;
+          color: $disabled-text-color;
+          background-color: transparent;
+        }
+      }
+      &-disabled {
+        cursor: not-allowed;
+        i {
+          cursor: not-allowed;
+          color: $disabled-text-color;
+          &:hover {
+            color: $disabled-text-color;
+          }
+        }
+        .dr-pagination-jumper-num {
+          color: $disabled-text-color;
+          background-color: $disabled-bg-color;
+          border-color: $border-color;
+          cursor: not-allowed;
+          &:hover {
+            border-color: $border-color;
+          }
+        }
+      }
+    }
+    &-label {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 7px;
+      padding-right: 7px;
+      .dr-pagination-jumper-num {
+        width: 32px;
+        height: 24px;
+      }
+    }
   }
 
   &-sizes {
     display: inline-block;
     margin: 0 10px;
   }
-
+  &-jumper-num {
+    width: 40px;
+    height: 28px;
+    border-radius: $btn-radius-base;
+    border: 1px solid $border-color;
+    padding: 0 7px;
+    margin: 0 7px;
+    @include inputStyle;
+  }
   &-jumper {
     display: inline-block;
     &-disabled {
@@ -107,18 +158,5 @@
         }
       }
     }
-  }
-  &-jumper-num {
-    width: 40px;
-    height: 28px;
-    border-radius: $btn-radius-base;
-    border: 1px solid $border-color;
-    padding: 0 7px;
-    margin: 0 7px;
-    @include inputStyle;
-  }
-
-  &-disabled {
-    cursor: not-allowed;
   }
 }

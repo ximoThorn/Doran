@@ -37,6 +37,27 @@
         :currentPage.sync="currentPage3">
       </dr-pagination>
     </div>
+    <p>小型分页</p>
+    <div>
+      <dr-pagination
+        :total="100"
+        :small="true"
+        :showTotal="true"
+        :showSizes="true"
+        :showJumper="true"
+        :pageSize.sync="pageSize4"
+        :currentPage.sync="currentPage4">
+      </dr-pagination>
+    </div>
+    <p>简约型分页</p>
+    <div>
+      <dr-pagination
+        :total="100"
+        :simple="true"
+        :pageSize.sync="pageSize5"
+        :currentPage.sync="currentPage5">
+      </dr-pagination>
+    </div>
     <p>设置不可用</p>
     <div>
       <dr-pagination
@@ -59,7 +80,11 @@ export default {
       currentPage2: 1,
       pageSize2: 10,
       currentPage3: 1,
-      pageSize3: 10
+      pageSize3: 10,
+      currentPage4: 1,
+      pageSize4: 10,
+      currentPage5: 1,
+      pageSize5: 10
     }
   },
   methods: {
@@ -83,7 +108,7 @@ export default {
       font-weight: bold;
     }
     > div {
-      width: 700px;
+      width: 800px;
       margin: 20px auto;
       text-align: center;
     }

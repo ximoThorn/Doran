@@ -91,7 +91,7 @@ export default {
       default: 1
     },
     disabled: Boolean,
-    simple: Boolean,
+    small: Boolean,
     prevText: String,
     nextText: String
   },
@@ -105,7 +105,7 @@ export default {
         `${drPreFixPager}`,
         {
           [`${drPreFixPager}-disabled`]: this.disabled,
-          [`${drPreFixPager}-simple`]: this.simple
+          [`${drPreFixPager}-small`]: this.small
         }
       ];
     }

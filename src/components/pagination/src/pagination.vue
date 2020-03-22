@@ -4,13 +4,20 @@
       共 {{total}} 条
     </div>
     <page-item
+      v-if="!simple"
       :disabled="disabled"
       :currentPage="currentPage"
-      :simple="simple"
+      :small="small"
       :prevText="prevText"
       :nextText="nextText"
       :allPage="allPage">
     </page-item>
+    <simple-pager
+      v-if="simple"
+      :disabled="disabled"
+      :currentPage="currentPage"
+      :allPage="allPage">
+    </simple-pager>
     <page-sizes
       v-if="showSizes"
       :disabled="disabled"
@@ -29,6 +36,7 @@
 import pageItem from './pager.vue';
 import pageSizes from './sizes.vue';
 import pageJumper from './jumper.vue';
+import simplePager from './simplePager.vue';
 
 const drPreFixPagination = 'dr-pagination';
 
@@ -58,13 +66,15 @@ export default {
     showJumper: Boolean,
     showSizes: Boolean,
     simple: Boolean,
+    small: Boolean,
     prevText: String,
     nextText: String
   },
   components: {
     pageItem,
     pageSizes,
-    pageJumper
+    pageJumper,
+    simplePager
   },
   computed: {
     classes() {
