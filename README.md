@@ -1,8 +1,8 @@
-# doran-ui
+# Doran-ui
 基于vue的一套中后台ui框架
 >注：因为没有经过系统的测试和推广，该ui目前仅供学习。
 
-## version
+## Version
 1.x
 
 ## Completed components
@@ -27,9 +27,11 @@ Select (选择器)
 Pagination (分页器)
 ```
 
-## demo
+## Demo
 ```
 git clone
+
+cd Doran
 
 npm install
 

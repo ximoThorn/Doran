@@ -24,11 +24,8 @@ export default {
     disabled: Boolean
   },
   computed: {
-    jumperPage: {
-      get() {
-        return this.currentPage;
-      },
-      set() {}
+    jumperPage() {
+      return this.currentPage;
     },
     classes() {
       return [
