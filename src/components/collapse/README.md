@@ -19,3 +19,9 @@ change|切换面板时触发，返回当前已展开的面板的name集合|array
 title|面板标题|string||
 name|唯一标志符|string/number||
 hideArrow|隐藏箭头|boolean||false
+
+# Collapse-item Slos
+
+name|说明
+-|-|
+title|自定义面板标题（会覆盖title属性）

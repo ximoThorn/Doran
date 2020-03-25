@@ -17,6 +17,6 @@ clickChange|点击item的回调事件|当前item绑定的name值
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-name|绑定该项的值|string/name||
+name|绑定该项的值|string||
 disabled|是否禁用该选项|string||false
 divided|是否添加分割线|boolean||false

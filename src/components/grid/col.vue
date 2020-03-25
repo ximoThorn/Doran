@@ -13,7 +13,10 @@ const medias = ['xs', 'sm', 'md', 'lg', 'xl'];
 export default {
   name: 'DrCol',
   props: {
-    span: [String, Number],
+    span: {
+      type: [String, Number],
+      default: 24
+    },
     offset: [String, Number],
     order: [String, Number], // row为flex布局下才有用
     pull: [String, Number],

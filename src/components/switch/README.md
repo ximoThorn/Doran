@@ -3,9 +3,9 @@
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
-value/v-model|绑定值|String/number/Boolean||0
-trueLabel|switch 打开时的值|String/number/Boolean||
-falseLabel|switch 关闭时的值|String/number/Boolean||
+value/v-model|绑定值|string/number/Boolean||0
+trueLabel|switch 打开时的值|string/number/Boolean||
+falseLabel|switch 关闭时的值|string/number/Boolean||
 trueColor|switch 打开时的颜色|string||#f5a623
 falseColor|switch 关闭时的颜色|string||#ed4014
 loading|是否开启loading|boolean||false

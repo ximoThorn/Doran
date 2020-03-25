@@ -4,7 +4,7 @@
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
 value/v-model|绑定值|string/number||
-type|类型|string|输入框类型，可选值为 text、password、textarea、url、email、date、number、tel|text
+type|类型|string|输入框类型，可选值为 text/password/textarea/url/email/date/number/tel|text
 placeholder|占位文本|string||
 disabled|是否禁用输入框|boolean||false
 size|尺寸|string|default/medium/small|default
@@ -46,9 +46,9 @@ select|选中 input 中的文字|
 
 # Input Slots
 
-name|说明|
--|-|-|
-prefix|输入框头部内容，只对 type!=="textarea" 有效|
-suffix|输入框尾部内容，只对 type!=="textarea" 有效|
-prepend|输入框前置内容，只对 type!=="textarea" 有效|
-append|输入框后置内容，只对 type!=="textarea" 有效|
+name|说明
+-|-|
+prefix|输入框头部内容，只对 type!=="textarea" 有效
+suffix|输入框尾部内容，只对 type!=="textarea" 有效
+prepend|输入框前置内容，只对 type!=="textarea" 有效
+append|输入框后置内容，只对 type!=="textarea" 有效
