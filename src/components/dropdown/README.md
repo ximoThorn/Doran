@@ -4,8 +4,8 @@
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
 placement|菜单弹出位置|string|top/top-start/top-end/bottom/bottom-start/bottom-end|bottom-start
-trigger|触发方式，可选值为 hover（悬停）click（点击）contextMenu（右键）custom（自定义），使用 custom 时，需配合 visible 一起使用|string||hover
-visible|手动控制下拉框的显示，在 trigger = 'custom' 时使用|boolean||false
+trigger|触发方式，可选值为 hover（悬停）click（点击）contextMenu（右键）custom（自定义），使用 custom 时，**需配合 visible 一起使用**|string||hover
+visible|手动控制下拉框的显示，**在 trigger = 'custom' 时使用**|boolean||false
 
 # Dropdown Events
 
