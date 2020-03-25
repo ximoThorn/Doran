@@ -33,7 +33,7 @@
       <i class="dr-icon-default dr-icon-more"></i>
       <i class="dr-icon-default dr-icon-arrows-left"></i>
     </li>
-    <li v-if="currentPage > 4" @click.stop="changePage(currentPage - 3)" class="dr-pagination-pager-item">{{currentPage - 3}}</li>
+    <li v-if="currentPage === 5" @click.stop="changePage(currentPage - 3)" class="dr-pagination-pager-item">{{currentPage - 3}}</li>
     <li v-if="currentPage > 3" @click.stop="changePage(currentPage - 2)" class="dr-pagination-pager-item">{{currentPage - 2}}</li>
     <li v-if="currentPage > 2" @click.stop="changePage(currentPage - 1)" class="dr-pagination-pager-item">{{currentPage - 1}}</li>
     <li v-if="currentPage !== 1 && currentPage !== allPage" class="dr-pagination-pager-active dr-pagination-pager-item">{{currentPage}}</li>

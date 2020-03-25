@@ -144,6 +144,7 @@ export default {
         return;
       };
       this.$emit('input', num);
+      this.$emit('change', num);
     },
     handlerMove(num) {
       if (this.disabled) {

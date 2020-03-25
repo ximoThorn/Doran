@@ -88,5 +88,10 @@ export const catalogList = [
     link: '/pagination',
     name: 'Pagination',
     dsc: '分页'
+  },
+  {
+    link: '/dropdown',
+    name: 'Dropdown',
+    dsc: '下拉菜单'
   }
 ];

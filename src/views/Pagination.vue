@@ -13,7 +13,7 @@
     <p>完整功能用法</p>
     <div>
       <dr-pagination
-        :total="100"
+        :total="200"
         :showTotal="true"
         :showSizes="true"
         :showJumper="true"
@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pagination-page {
+  .pagination-page {
     margin: 20px auto 100px;
     > p {
       margin: 0 auto;

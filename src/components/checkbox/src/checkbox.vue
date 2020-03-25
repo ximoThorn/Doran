@@ -52,9 +52,10 @@ export default {
     border: Boolean,
     size: {
       validator(value) {
-        const arr = ['medium', 'small', 'mini'];
+        const arr = ['default', 'medium', 'small', 'mini'];
         return validValue(value, arr);
-      }
+      },
+      default: 'default'
     }
   },
   data() {
@@ -73,7 +74,7 @@ export default {
           [`${drPreFixCheckbox}-checked`]: this.checked,
           [`${drPreFixCheckbox}-disabled`]: this.disabled,
           [`${drPreFixCheckbox}-border`]: this.border,
-          [`${drPreFixCheckbox}-${this.finalSize}`]: !!this.finalSize
+          [`${drPreFixCheckbox}-${this.finalSize}`]: this.finalSize !== 'default'
         }
       ];
     },

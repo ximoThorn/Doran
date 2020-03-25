@@ -81,6 +81,10 @@ const routes = [
   {
     path: '/pagination',
     component: () => import('../views/Pagination.vue')
+  },
+  {
+    path: '/dropdown',
+    component: () => import('../views/Dropdown.vue')
   }
 ];
 

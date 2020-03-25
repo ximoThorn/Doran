@@ -82,6 +82,7 @@
       :rows="rows"
       :maxlength="maxlength"
       :name="name"
+      :step="step"
       :readonly="readonly"
       :style="textareaStytles"
       @input="handlerInput"

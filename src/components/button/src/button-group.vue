@@ -11,9 +11,10 @@ export default {
   props: {
     size: {
       validator(value) {
-        const arr = ['medium', 'small', 'mini'];
+        const arr = ['default', 'medium', 'small', 'mini'];
         return validValue(value, arr);
-      }
+      },
+      default: 'default'
     },
     vertical: {
       type: Boolean,

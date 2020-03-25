@@ -25,9 +25,10 @@ export default {
     size: {
       type: String,
       validator(value) {
-        const arr = ['large', 'medium', 'small'];
+        const arr = ['large', 'medium', 'small', 'mini'];
         return validValue(value, arr);
-      }
+      },
+      default: 'medium'
     },
     src: String,
     alt: String,
@@ -45,9 +46,10 @@ export default {
     classes() {
       return [
         `${drPreFixAvatar}-default`,
-        `${drPreFixAvatar}-${this.size}`,
         `${drPreFixAvatar}-${this.shape}`,
-        {}
+        {
+          [`${drPreFixAvatar}-${this.size}`]: this.size !== 'medium'
+        }
       ];
     },
     styles() {

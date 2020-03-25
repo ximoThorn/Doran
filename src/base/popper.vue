@@ -14,6 +14,10 @@ export default {
     placement: {
       type: String,
       default: 'bottom-start'
+    },
+    offset: {
+      type: String,
+      default: '0, 5px'
     }
   },
   created() {
@@ -30,7 +34,7 @@ export default {
             gpuAcceleration: false
           },
           offset: {
-            offset: '0, 5px'
+            offset: _this.offset
           },
           preventOverflow: {
             boundariesElement: 'window'
@@ -47,7 +51,7 @@ export default {
     popperDetory() {
       if (this.currentPopper) {
         setTimeout(() => { // 动画结束后才销毁popper
-          this.currentPopper.destroy();
+          this.currentPopper && this.currentPopper.destroy();
           this.currentPopper = null;
         }, 330);
       };

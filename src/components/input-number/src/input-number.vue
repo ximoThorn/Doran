@@ -187,6 +187,9 @@ export default {
     },
     focus() { // methods focus
       this.$refs.inputNumber.focus();
+    },
+    blur() { // methods focus
+      this.$refs.inputNumber.blur();
     }
   }
 };

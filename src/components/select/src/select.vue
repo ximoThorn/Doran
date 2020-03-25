@@ -252,7 +252,7 @@ export default {
       const optionIndex = this.currentMultipleLabels.findIndex(item => item.value === obj.value);
       this.currentMultipleLabels.splice(optionIndex, 1);
       this.currentValues.splice(optionIndex, 1);
-      this.$emit('removeTag', obj);
+      this.$emit('removeTag', obj.value);
     },
     getSelectWidth() { // 更改popper的宽度
       this.$nextTick(() => {
@@ -329,6 +329,9 @@ export default {
     currentMultipleLabels() {
       this.updateSelectHeight();
       this.isVisible && this.broadcast('DrPopper', 'onUpdatePopper');
+    },
+    filterModel(query) {
+      this.$emit('filterChange', query);
     }
   },
   beforeDestroy() {

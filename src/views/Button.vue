@@ -180,7 +180,8 @@
       </DrButton>
       <DrButton
         type="primary">
-        点赞 <DrIcon icon="dr-icon-appreciate" />
+        <span style="vertical-align: middle;">点赞</span>
+        <DrIcon icon="dr-icon-appreciate" />
       </DrButton>
       <DrButton
         type="primary"

@@ -1,0 +1,39 @@
+.dr-dropdown {
+  &-default {
+    display: inline-block;
+    .dr-popper {
+      margin: 5px 0;
+    }
+  }
+  &-link {
+    cursor: pointer;
+  }
+
+  &-menu {
+    padding: 6px 0;
+    min-width: 80px;
+  }
+
+  &-item {
+    text-align: left;
+    padding: 8px 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: $disabled-bg-color;
+      color: $theme-color;
+    }
+    &-divided {
+      border-top: 1px solid $border-color;
+    }
+    &-disabled {
+      cursor: not-allowed;
+      color: $disabled-text-color;
+      background-color: $disabled-bg-color;
+      &:hover {
+        background-color: $disabled-bg-color;
+        color: $disabled-text-color;
+      }
+    }
+  }
+  
+}

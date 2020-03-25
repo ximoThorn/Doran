@@ -4,34 +4,34 @@
     <div>
       <DrAvatar size="large"></DrAvatar>
       <DrAvatar></DrAvatar>
-      <DrAvatar size="medium"></DrAvatar>
       <DrAvatar size="small"></DrAvatar>
+      <DrAvatar size="mini"></DrAvatar>
       <br>
       <br>
       <DrAvatar size="large" shape="circle"></DrAvatar>
       <DrAvatar shape="circle"></DrAvatar>
-      <DrAvatar size="medium" shape="circle"></DrAvatar>
       <DrAvatar size="small" shape="circle"></DrAvatar>
+      <DrAvatar size="mini" shape="circle"></DrAvatar>
     </div>
     <p>基本用法</p>
     <div>
       <DrAvatar :src="avatar" size="large"></DrAvatar>
       <DrAvatar :src="avatar"></DrAvatar>
-      <DrAvatar :src="avatar" size="medium"></DrAvatar>
       <DrAvatar :src="avatar" size="small"></DrAvatar>
+      <DrAvatar :src="avatar" size="mini"></DrAvatar>
       <br>
       <br>
       <DrAvatar :src="avatar" size="large" shape="circle"></DrAvatar>
       <DrAvatar :src="avatar" shape="circle"></DrAvatar>
-      <DrAvatar :src="avatar" size="medium" shape="circle"></DrAvatar>
       <DrAvatar :src="avatar" size="small" shape="circle"></DrAvatar>
+      <DrAvatar :src="avatar" size="mini" shape="circle"></DrAvatar>
     </div>
     <p>自定义icon和内容</p>
     <div>
       <DrAvatar icon="dr-icon-favor" size="large"></DrAvatar>
       <DrAvatar icon="dr-icon-location"></DrAvatar>
-      <DrAvatar icon="dr-icon-likefill" size="medium"></DrAvatar>
-      <DrAvatar icon="dr-icon-scan" size="small"></DrAvatar>
+      <DrAvatar icon="dr-icon-likefill" size="small"></DrAvatar>
+      <DrAvatar icon="dr-icon-scan" size="mini"></DrAvatar>
       <br>
       <br>
       <DrAvatar>u</DrAvatar>

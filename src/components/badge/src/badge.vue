@@ -14,7 +14,7 @@ const drPreFixBadge = 'dr-badge';
 export default {
   name: 'DrBadge',
   props: {
-    count: [String, Number],
+    count: Number,
     text: String,
     type: {
       type: String,

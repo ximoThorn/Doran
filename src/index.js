@@ -24,6 +24,9 @@ import DrOption from './components/option';
 import DrOptionGroup from './components/option-group';
 import DrInputNumber from './components/input-number';
 import DrPagination from './components/pagination';
+import DrDropdown from './components/dropdown';
+import DrDropdownItem from './components//dropdown-item';
+import DrDropdownMenu from './components//dropdown-menu';
 
 const DoranComponents = [
   DrButton,
@@ -51,7 +54,10 @@ const DoranComponents = [
   DrOption,
   DrOptionGroup,
   DrInputNumber,
-  DrPagination
+  DrPagination,
+  DrDropdown,
+  DrDropdownItem,
+  DrDropdownMenu
 ];
 
 const install = function (Vue, opt = {}) {
@@ -89,5 +95,8 @@ export default {
   DrOption,
   DrOptionGroup,
   DrInputNumber,
-  DrPagination
+  DrPagination,
+  DrDropdown,
+  DrDropdownItem,
+  DrDropdownMenu
 };
