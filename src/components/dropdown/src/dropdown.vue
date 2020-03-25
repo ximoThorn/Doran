@@ -87,7 +87,9 @@ export default {
       };
     },
     handlerClickOutside() {
-      this.isVisible = false;
+      if (this.trigger !== 'custom') {
+        this.isVisible = false;
+      };
     },
     beforeTransition() {
       this.togglePopperFlag = false;

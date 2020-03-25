@@ -17,5 +17,5 @@ change|切换面板时触发，返回当前已展开的面板的name集合|array
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
 title|面板标题|string||
-name|唯一标志符|staing/number||
+name|唯一标志符|string/number||
 hideArrow|隐藏箭头|boolean||false
