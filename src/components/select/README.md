@@ -18,6 +18,7 @@ loading|是否正在从远程获取数据|boolean||false
 loadingText|远程加载时显示的文字|string||加载中
 filterMethod|自定义过滤方法|function||
 remoteMethod|远程搜索方法|function||
+transfer|默认将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false，弹出框将跟在目标dom后面|boolean||true
 
 # Select Events
 

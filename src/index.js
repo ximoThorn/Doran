@@ -64,6 +64,11 @@ const install = function (Vue, opt = {}) {
   DoranComponents.forEach(component => {
     Vue.component(component.name, component);
   });
+
+  Vue.prototype.$DORAN = {
+    transfer: opt.transfer !== undefined ? opt.transfer : true, // popper默认放在body的最后面
+    zIndex: opt.zIndex || 2020
+  };
 };
 
 typeof window !== 'undefined' && window.Vue && install(window.Vue);

@@ -130,7 +130,13 @@ export default {
       default: '加载中...'
     },
     filterMethod: Function,
-    remoteMethod: Function
+    remoteMethod: Function,
+    transfer: {
+      type: Boolean,
+      default() {
+        return !!this.$DORAN.transfer
+      }
+    }
   },
   data() {
     return {

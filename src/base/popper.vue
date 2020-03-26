@@ -1,15 +1,23 @@
 <template>
-  <div class="dr-popper">
+  <div
+    v-transfer-dom="transfer"
+    :data-transfer="transfer"
+    :style="`z-index: ${zIndex};`"
+    class="dr-popper">
     <slot></slot>
   </div>
 </template>
 
 <script>
 import popper from '@/mixins/popper.js';
+import transferDom from '@/directives/body-append';
 
 export default {
   name: 'DrPopper',
   mixins: [popper],
+  directives: {
+    transferDom
+  },
   props: {
     placement: {
       type: String,
@@ -17,8 +25,19 @@ export default {
     },
     offset: {
       type: String,
-      default: '0, 5px'
+      default: '0, 0px'
+    },
+    transfer: { // 是否将popper放置在body的最后面， 默认为true
+      type: Boolean,
+      default() {
+        return !!this.$DORAN.transfer
+      }
     }
+  },
+  data() {
+    return {
+      zIndex: this.$DORAN.zIndex
+    };
   },
   created() {
     this.$on('onUpdatePopper', this.popperUpdate);

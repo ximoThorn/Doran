@@ -20,7 +20,7 @@
       <dr-popper
         @mouseenter="handlerMouseenter"
         @mouseleave="handlerMouseleave"
-        offset="0, 0px"
+        :transfer="transfer"
         :placement="placement"
         v-show="isVisible || (visible && trigger === 'custom')">
         <slot name="dropdown"></slot>
@@ -56,6 +56,12 @@ export default {
         return validValue(value, ['hover', 'click', 'contextMenu', 'custom']);
       },
       default: 'hover'
+    },
+    transfer: {
+      type: Boolean,
+      default() {
+        return !!this.$DORAN.transfer
+      }
     },
     visible: Boolean
   },
