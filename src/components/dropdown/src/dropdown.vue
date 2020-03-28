@@ -18,8 +18,8 @@
       @after-enter="afterTransition"
       name="select-suggestion">
       <dr-popper
-        @mouseenter="handlerMouseenter"
-        @mouseleave="handlerMouseleave"
+        @mouseenter.native="handlerMouseenter"
+        @mouseleave.native="handlerMouseleave"
         :transfer="transfer"
         :placement="placement"
         v-show="isVisible || (visible && trigger === 'custom')">
