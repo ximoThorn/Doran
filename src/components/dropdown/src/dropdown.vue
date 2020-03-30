@@ -18,8 +18,8 @@
       @after-enter="afterTransition"
       name="select-suggestion">
       <dr-popper
-        @mouseenter="handlerMouseenter"
-        @mouseleave="handlerMouseleave"
+        @mouseenter.native="handlerMouseenter"
+        @mouseleave.native="handlerMouseleave"
         :transfer="transfer"
         :placement="placement"
         v-show="isVisible || (visible && trigger === 'custom')">
@@ -108,9 +108,10 @@ export default {
         return;
       };
       // 延迟出现，防止鼠标快速hover时的显示bug
+      // 移入或者移出的时候互相清除对方内部的计时器，执行自己内部的计时器
       this.timeOut && clearTimeout(this.timeOut);
       this.timeOut = setTimeout(() => {
-        this.togglePopperFlag && (this.isVisible = true);
+        this.isVisible = true;
       }, 251);
     },
     handlerMouseleave() {
