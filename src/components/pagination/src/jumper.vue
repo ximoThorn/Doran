@@ -16,6 +16,7 @@
 const drPreFixJumper = 'dr-pagination-jumper';
 
 export default {
+  inheritAttrs: false,
   props: {
     currentPage: {
       type: Number,

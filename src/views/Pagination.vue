@@ -7,6 +7,7 @@
         @prevClick="prevClick"
         @nextClick="nextClick"
         :pageSize.sync="pageSize1"
+        :layout="['total', 'pager', 'sizes']"
         :currentPage.sync="currentPage1">
       </dr-pagination>
     </div>
@@ -14,13 +15,11 @@
     <div>
       <dr-pagination
         :total="200"
-        :showTotal="true"
-        :showSizes="true"
-        :showJumper="true"
         @prevClick="prevClick"
         @nextClick="nextClick"
         :pageSize.sync="pageSize2"
         :pageSizes="[10, 30, 50]"
+        :layout="['total', 'pager', 'sizes', 'jumper']"
         :currentPage.sync="currentPage2">
       </dr-pagination>
     </div>
@@ -28,11 +27,9 @@
     <div>
       <dr-pagination
         :total="100"
-        :showTotal="true"
-        :showSizes="true"
-        :showJumper="true"
         prevText="prev"
         nextText="next"
+        :layout="['total', 'pager', 'sizes', 'jumper']"
         :pageSize.sync="pageSize3"
         :currentPage.sync="currentPage3">
       </dr-pagination>
@@ -42,9 +39,7 @@
       <dr-pagination
         :total="100"
         :small="true"
-        :showTotal="true"
-        :showSizes="true"
-        :showJumper="true"
+        :layout="['total', 'pager', 'sizes', 'jumper']"
         :pageSize.sync="pageSize4"
         :currentPage.sync="currentPage4">
       </dr-pagination>
@@ -53,7 +48,7 @@
     <div>
       <dr-pagination
         :total="100"
-        :simple="true"
+        :layout="['simplePager']"
         :pageSize.sync="pageSize5"
         :currentPage.sync="currentPage5">
       </dr-pagination>
@@ -61,9 +56,7 @@
     <p>设置不可用</p>
     <div>
       <dr-pagination
-        :showTotal="true"
-        :showSizes="true"
-        :showJumper="true"
+        :layout="['total', 'pager', 'sizes', 'jumper']"
         :disabled="true"
         :total="100">
       </dr-pagination>

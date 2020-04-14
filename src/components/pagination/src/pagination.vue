@@ -1,34 +1,19 @@
 <template>
   <div :class="classes">
-    <div v-if="showTotal" class="dr-pagination-total">
-      共 {{total}} 条
-    </div>
-    <page-item
-      v-if="!simple"
+    <component
+      :is="componentMaps[key]"
       :disabled="disabled"
       :currentPage="currentPage"
       :small="small"
       :prevText="prevText"
       :nextText="nextText"
-      :allPage="allPage">
-    </page-item>
-    <simple-pager
-      v-if="simple"
-      :disabled="disabled"
-      :currentPage="currentPage"
-      :allPage="allPage">
-    </simple-pager>
-    <page-sizes
-      v-if="showSizes"
-      :disabled="disabled"
+      :allPage="allPage"
+      :total="total"
+      :pageSizes="pageSizes"
       :pageSize="pageSize"
-      :pageSizes="pageSizes">
-    </page-sizes>
-    <page-jumper
-      v-if="showJumper"
-      :disabled="disabled"
-      :currentPage="currentPage">
-    </page-jumper>
+      v-for="key in layout"
+      :key="key">
+    </component>
   </div>
 </template>
 
@@ -37,8 +22,17 @@ import pageItem from './pager.vue';
 import pageSizes from './sizes.vue';
 import pageJumper from './jumper.vue';
 import simplePager from './simplePager.vue';
+import pageTotal from './total.vue';
 
 const drPreFixPagination = 'dr-pagination';
+
+const componentMaps = {
+  total: pageTotal,
+  jumper: pageJumper,
+  sizes: pageSizes,
+  simplePager: simplePager,
+  pager: pageItem
+}
 
 export default {
   name: 'DrPagination',
@@ -62,19 +56,20 @@ export default {
       }
     },
     disabled: Boolean,
-    showTotal: Boolean,
-    showJumper: Boolean,
-    showSizes: Boolean,
-    simple: Boolean,
     small: Boolean,
     prevText: String,
-    nextText: String
+    nextText: String,
+    layout: {
+      type: Array,
+      default() {
+        return ['total', 'pager', 'sizes', 'jumper'];
+      }
+    }
   },
-  components: {
-    pageItem,
-    pageSizes,
-    pageJumper,
-    simplePager
+  data() {
+    return {
+      componentMaps
+    }
   },
   computed: {
     classes() {

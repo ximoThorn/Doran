@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     allPage: {
       type: Number,

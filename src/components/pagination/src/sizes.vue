@@ -20,6 +20,7 @@ import DrSelect from '../../select';
 import DrOption from '../../option';
 
 export default {
+  inheritAttrs: false,
   props: {
     showSizer: Boolean,
     pageSize: {

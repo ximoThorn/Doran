@@ -9,10 +9,11 @@
   &-total {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 6px;
+    margin: 0 5px;
   }
   &-pager {
     display: inline-block;
+    margin: 0 5px;
     &-item {
       display: inline-block;
       border: 1px solid $border-color;
@@ -88,6 +89,8 @@
       }
     }
     &-simple {
+      display: inline-block;
+      margin: 0 5px;
       i {
         cursor: pointer;
         &:hover {
@@ -133,7 +136,7 @@
 
   &-sizes {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px;
   }
   &-jumper-num {
     width: 40px;
@@ -141,10 +144,11 @@
     border-radius: $btn-radius-base;
     border: 1px solid $border-color;
     padding: 0 7px;
-    margin: 0 7px;
+    margin: 0 5px;
     @include inputStyle;
   }
   &-jumper {
+    margin: 0 5px;
     display: inline-block;
     &-disabled {
       color: $disabled-text-color;

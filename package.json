@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name doran src/index.js",
+    "build": "vue-cli-service build",
+    "lib:build": "vue-cli-service build --target lib --name doran src/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

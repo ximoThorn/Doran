@@ -7,13 +7,10 @@ total|总条目数|number||
 pageSize|每页显示条目个数，支持 .sync 修饰符|number||
 pageSizes|每页显示个数选择器的选项设置|array||[10, 20, 30, 40, 50, 100]
 disabled|是否禁用分页器|boolean||false
-showTotal|是否展示总条目数|boolean||false
-showJumper|是否展示快进输入框|boolean||false
-showSizes|是否展示每页显示个数选择器|boolean||false
-simple|是否展示简洁版分页器|boolean||false
 small|是否展示小型分页器|boolean||false
 prevText|自定义prev显示文本|string||
 nextText|自定义next显示文本|string||
+layout|组件布局|Array|total/pager/sizes/jumper/simplePager|['total', 'pager', 'sizes', 'jumper']
 
 # Pagination Events
 

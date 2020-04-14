@@ -81,6 +81,7 @@
 const drPreFixPager = 'dr-pagination-pager';
 
 export default {
+  inheritAttrs: false,
   props: {
     allPage: {
       type: Number,
