@@ -47,8 +47,9 @@ export default {
         };
       };
     },
-    handlerClick() {
+    handlerClick(e) {
       if (this.disabled) {
+        e.stopPropagation();
         return;
       };
       this.parent.itemClick(this.name);

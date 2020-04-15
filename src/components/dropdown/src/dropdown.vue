@@ -84,7 +84,7 @@ export default {
     }
   },
   methods: {
-    handlerClick() {
+    handlerClick(e) {
       if (this.trigger !== 'click') {
         return;
       };
