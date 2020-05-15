@@ -57,7 +57,7 @@ function addNum (num1, num2) {
 export default {
   name: 'DrInputNumber',
   props: {
-    value: Number,
+    value: [Number, String],
     placeholder: {
       type: String
     },
@@ -125,7 +125,7 @@ export default {
       if (this.value === undefined || this.value === null) {
         return '';
       };
-      return this.precision ? this.value.toFixed(this.precision) : this.value;
+      return this.value;
     },
     upDisabled() {
       if (this.max === undefined || this.max === null) {
@@ -140,6 +140,11 @@ export default {
       return this.currentValue <= this.min;
     }
   },
+  mounted() {
+    if (!isNaN(this.precision) && !`${this.value}`.includes('.')) {
+      this.$emit('input', this.numToPrecision(this.value));
+    };
+  },
   methods: {
     handlerChange(e) {
       this.$emit('change', e.target.value);
@@ -147,14 +152,13 @@ export default {
     handlerInput(e) {
       const value = e.target.value.trim();
       const cacheVal = this.currentValue;
-
       // 检验输入的值是否是数字
-      const val = Number(value);
+      let val = Number(value);
       if (isNaN(val)) {
         e.target.value = cacheVal;
       } else {
-        this.$emit('input', val);
-        this.$emit('change', val);
+        this.$emit('input', value);
+        this.$emit('change', value);
       };
     },
     upStep() {
@@ -176,6 +180,7 @@ export default {
       } else if (opre === 'down') {
         val = addNum(this.value, -this.step);
       };
+      val = this.numToPrecision(val);
       this.$emit('input', val);
       this.$emit('change', val);
     },
@@ -183,6 +188,7 @@ export default {
       this.$emit('focus', e);
     },
     handlerBlur(e) {
+      this.$emit('input', this.numToPrecision(e.target.value));
       this.$emit('blur', e);
     },
     focus() { // methods focus
@@ -190,6 +196,21 @@ export default {
     },
     blur() { // methods focus
       this.$refs.inputNumber.blur();
+    },
+    numToPrecision(val) {
+      const precision = this.precision;
+      if (!isNaN(precision)) {
+        const isFloat = `${val}`.includes('.');
+        if (!isFloat) {
+          return (+val).toFixed(precision);
+        };
+        const floatNum = `${val}`.split('.')[1] || '0';
+        if (+floatNum === 0) {
+          return (+val).toFixed(precision);
+        };
+        return parseFloat(Math.round(val * Math.pow(10, precision)) / Math.pow(10, precision));
+      };
+      return val;
     }
   }
 };
