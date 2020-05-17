@@ -1,3 +1,5 @@
+import './styles/index.scss';
+
 import DrButton from './components/button';
 import DrIcon from './components/icon';
 import DrButtonGroup from './components/button-group';
