@@ -341,7 +341,6 @@ export default {
     }
   },
   beforeDestroy() {
-    console.log(222)
     this.$refs.popper.$el.style.display = 'none';
     this.broadcast('DrPopper', 'onDestoryPopper');
     removeResizeListener(this.$el || '', this.getSelectWidth || function () {});
