@@ -341,7 +341,7 @@ export default {
     }
   },
   beforeDestroy() {
-    this.$refs.popper.$el.style.display = 'none';
+    this.$refs.popper.$el.style.display = 'none'; // 这里不能设置isVisible=false
     this.broadcast('DrPopper', 'onDestoryPopper');
     removeResizeListener(this.$el || '', this.getSelectWidth || function () {});
   }
