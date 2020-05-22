@@ -60,6 +60,7 @@
       <dr-popper
         v-show="isVisible"
         :placement="placement"
+        :transfer="transfer"
         ref="popper">
         <ul class="dr-select-option-wrap">
           <slot>
