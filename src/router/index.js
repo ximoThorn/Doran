@@ -85,6 +85,14 @@ const routes = [
   {
     path: '/dropdown',
     component: () => import('../views/Dropdown.vue')
+  },
+  {
+    path: '/card',
+    component: () => import('../views/Card.vue')
+  },
+  {
+    path: '/notification',
+    component: () => import('../views/Notification.vue')
   }
 ];
 

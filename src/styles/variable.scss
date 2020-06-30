@@ -1,89 +1,91 @@
 
-$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-$theme-color: #2d8cf0;
-$info-color: #2db7f5;
-$success-color: #19be6b;
-$warning-color: #ff9900;
-$error-color: #ed4014;
-$font-size: 14px;
-$font-size-small: 12px;
-$border-color: #dcdfe6;
-$disabled-color: #c0c4cc;
-$disabled-bg-color: #f5f7fa;
-$disabled-text-color: #909399;
-$gray-color: #ebeef5;
-$fail-color: #333333;
-$body-white: #fff;
-$font-color: #515a6e;
-$border-hsla-color: hsla(0, 0%, 100%, .5);
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !default;
+$theme-color: #2d8cf0 !default;
+$info-color: #2db7f5 !default;
+$success-color: #19be6b !default;
+$warning-color: #ff9900 !default;
+$error-color: #ed4014 !default;
+$font-size: 14px !default;
+$font-size-small: 12px !default;
+$border-color: #dcdfe6 !default;
+$disabled-color: #c0c4cc !default;
+$disabled-bg-color: #f5f7fa !default;
+$disabled-text-color: #909399 !default;
+$gray-color: #ebeef5 !default;
+$fail-color: #333333 !default;
+$body-white: #fff !default;
+$font-color: #515a6e !default;
+$border-hsla-color: hsla(0, 0%, 100%, .5) !default;
 
-$light-primary-color: #ecf5ff;
-$light-primary-border-color: #d9ecff;
-$light-info-color: #f4f4f5;
-$light-info-border-color: #e9e9eb;
-$light-success-color: #f0f9eb;
-$light-success-border-color: #e1f3d8;
-$light-warning-color: #fdf6ec;
-$light-warning-border-color: #faecd8;
-$light-error-color: #fef0f0;
-$light-error-border-color: #fde2e2;
-
-
-$btn-radius-base: 4px;
-$btn-radius-small: 3px;
-$btn-border-color: $border-color;
-$btn-border-hover-color: #57a3f3;
-$btn-font-weight: normal;
-$font-size-base: $font-size;
-$btn-text-color: #ffffff;
-$btn-primary-color: $theme-color;
-$btn-info-color: $info-color;
-$btn-success-color: $success-color;
-$btn-warning-color: $warning-color;
-$btn-error-color: $error-color;
-// $font-size-large: 16px;
-
-$line-height-base: 1;
-$text-color: #515a6e;
-$link-color: $theme-color;
-$link-hover-color: $link-color;
-$link-active-color: $link-color;
-
-$transition-time: .2s;
-$animation-time: .3s;
-
-$cursor-disabled: not-allowed;
-
-$code-family: Consolas, Menlo, Courier, monospace;
+$light-primary-color: #ecf5ff !default;
+$light-primary-border-color: #d9ecff !default;
+$light-info-color: #f4f4f5 !default;
+$light-info-border-color: #e9e9eb !default;
+$light-success-color: #f0f9eb !default;
+$light-success-border-color: #e1f3d8 !default;
+$light-warning-color: #fdf6ec !default;
+$light-warning-border-color: #faecd8 !default;
+$light-error-color: #fef0f0 !default;
+$light-error-border-color: #fde2e2 !default;
 
 
-$collapse-border: 1px solid #dcdee2;
-$collapse-transition: ease-in-out;
-$collapse-transition-time: .3s;
+$btn-radius-base: 4px !default;
+$btn-radius-small: 3px !default;
+$btn-border-color: $border-color !default;
+$btn-border-hover-color: #57a3f3 !default;
+$btn-font-weight: normal !default;
+$font-size-base: $font-size !default;
+$btn-text-color: #ffffff !default;
+$btn-primary-color: $theme-color !default;
+$btn-info-color: $info-color !default;
+$btn-success-color: $success-color !default;
+$btn-warning-color: $warning-color !default;
+$btn-error-color: $error-color !default;
+// $font-size-large: 16px !default;
+
+$line-height-base: 1 !default;
+$text-color: #515a6e !default;
+$link-color: $theme-color !default;
+$link-hover-color: $link-color !default;
+$link-active-color: $link-color !default;
+
+$transition-time: .2s !default;
+$animation-time: .3s !default;
+
+$cursor-disabled: not-allowed !default;
+
+$code-family: Consolas, Menlo, Courier, monospace !default;
 
 
-$rate-bg-color: #e9e9e9;
+$collapse-border: 1px solid #dcdee2 !default;
+$collapse-transition: ease-in-out !default;
+$collapse-transition-time: .3s !default;
 
 
-$form-transition-time: .15s;
-$form-transition-type: ease-in;
-
-$checkbox-radius: 2px;
-
-$input-width: 180px;
-$input-height: 36px;
-$input-medium-height: 32px;
-$input-small-height: 28px;
-$input-placeholder-color: #c0c4cc;
-
-$popper-suggest-transition: all .3s cubic-bezier(0.23, 1, 0.32, 1);
-$popper-box-shadow: 0 1px 6px rgba(0,0,0,.2);
+$rate-bg-color: #e9e9e9 !default;
 
 
-$sm: 768px;
-$md: 1024px;
-$lg: 1200px;
-$xl: 1920px;
+$form-transition-time: .15s !default;
+$form-transition-type: ease-in !default;
+
+$checkbox-radius: 2px !default;
+
+$input-width: 180px !default;
+$input-height: 36px !default;
+$input-medium-height: 32px !default;
+$input-small-height: 28px !default;
+$input-placeholder-color: #c0c4cc !default;
+
+$popper-suggest-transition: all .3s cubic-bezier(0.23, 1, 0.32, 1) !default;
+$popper-box-shadow: 0 1px 6px rgba(0,0,0,.2) !default;
+
+$card-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
+$card-divider: $gray-color !default;
+
+$sm: 768px !default;
+$md: 1024px !default;
+$lg: 1200px !default;
+$xl: 1920px !default;
 
 $media-points: (
   'xs': (max-width: $sm - 1),
@@ -91,5 +93,5 @@ $media-points: (
   'md': (min-width: $md),
   'lg': (min-width: $lg),
   'xl': (min-width: $xl),
-);
+) !default;
 

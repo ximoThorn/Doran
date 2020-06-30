@@ -1,0 +1,26 @@
+.dr-card {
+  &-default {
+    width: 100%;
+    background-color: $body-white;
+    border: 1px solid $card-divider;
+    border-radius: $btn-radius-small;
+  }
+  &-header {
+    padding: 20px;
+    border-bottom: 1px solid $card-divider;
+  }
+  &-body {
+    padding: 20px;
+  }
+  &-always {
+    box-shadow: $card-box-shadow;
+  }
+  &-hover {
+    &:hover {
+      box-shadow: $card-box-shadow;
+    }
+  }
+  &-never {
+    box-shadow: none
+  }
+}

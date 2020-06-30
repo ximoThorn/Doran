@@ -29,6 +29,8 @@ import DrPagination from './components/pagination';
 import DrDropdown from './components/dropdown';
 import DrDropdownItem from './components/dropdown-item';
 import DrDropdownMenu from './components/dropdown-menu';
+import DrCard from './components/card'
+import Notification from './components/notification'
 
 const DoranComponents = [
   DrButton,
@@ -59,7 +61,8 @@ const DoranComponents = [
   DrPagination,
   DrDropdown,
   DrDropdownItem,
-  DrDropdownMenu
+  DrDropdownMenu,
+  DrCard
 ];
 
 const install = function (Vue, opt = {}) {
@@ -71,6 +74,8 @@ const install = function (Vue, opt = {}) {
     transfer: opt.transfer !== undefined ? opt.transfer : true, // popper默认放在body的最后面
     zIndex: opt.zIndex || 2020
   };
+
+  Vue.prototype.$Notice = Notification;
 };
 
 typeof window !== 'undefined' && window.Vue && install(window.Vue);
@@ -105,5 +110,6 @@ export default {
   DrPagination,
   DrDropdown,
   DrDropdownItem,
-  DrDropdownMenu
+  DrDropdownMenu,
+  DrCard
 };

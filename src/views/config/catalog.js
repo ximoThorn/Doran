@@ -93,5 +93,15 @@ export const catalogList = [
     link: '/dropdown',
     name: 'Dropdown',
     dsc: '下拉菜单'
+  },
+  {
+    link: '/card',
+    name: 'Card',
+    dsc: '卡片'
+  },
+  {
+    link: '/notification',
+    name: 'Notification',
+    dsc: '通知'
   }
 ];

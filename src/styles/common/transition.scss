@@ -25,3 +25,13 @@
   transform: scaleY(0);
   opacity: 0;
 }
+
+
+.notification-enter-active, .notification-leave-active {
+  transform: translateX(0);
+  transition: all .3s ease-in;
+}
+.notification-enter, .notification-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
