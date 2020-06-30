@@ -49,6 +49,7 @@ views目录是各个组件的使用demo
 
 * Dropdown (下拉菜单) [文档说明](https://github.com/ximoThorn/Doran/tree/master/src/components/dropdown)
 
+* Card (卡片) [文档说明](https://github.com/ximoThorn/Doran/tree/master/src/components/card)
 
 ## Demo
 ```
