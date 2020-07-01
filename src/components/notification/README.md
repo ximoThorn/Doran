@@ -23,9 +23,10 @@ customClass|自定义类名|string||
 this.$Notice.open({
   title: 'title',
   message: 'message',
+  duration: 0
 }).then(_this => {
   console.log(_this, '返回当前的Notification的实例');
-  _this.close(); // 关闭当前Notification
+  // _this.close(); // 关闭当前Notification
 })
 ```
 
