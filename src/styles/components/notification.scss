@@ -9,8 +9,73 @@
 
 .dr-notification {
   &-default {
-    height: 20px;
-    background-color: red;
+    background-color: $body-white;
     margin-bottom: 16px;
+    padding: 16px;
+    box-shadow: $card-box-shadow;
+    border-radius: $btn-radius-base;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: ' ';
+      display: block;
+      width: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: $theme-color;
+    }
+    .dr-icon-close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $disabled-text-color;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+  &-title {
+    margin-bottom: 10px;
+    color: $title-color;
+    vertical-align: middle;
+    .dr-icon-default {
+      vertical-align: middle;
+    }
+    .dr-icon-roundcheck {
+      color: $success-color;
+    }
+    .dr-icon-info {
+      color: $info-color;
+    }
+    .dr-icon-warn {
+      color: $warning-color;
+    }
+    .dr-icon-roundclose {
+      color: $error-color;
+    }
+  }
+  &-message {
+    color: $disabled-text-color;
+  }
+  &-success {
+    &::before {
+      background-color: $success-color;
+    }
+  }
+  &-info {
+    &::before {
+      background-color: $info-color;
+    }
+  }
+  &-warning {
+    &::before {
+      background-color: $warning-color;
+    }  
+  }
+  &-error {
+    &::before {
+      background-color: $error-color;
+    }
   }
 }

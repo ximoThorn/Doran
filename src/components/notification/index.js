@@ -14,7 +14,7 @@ const notice = () => {
   obj.open = (options) => theNotification.notice(options)
 
   types.forEach(item => {
-    obj[item] = (options, item) => theNotification.notice(options, item)
+    obj[item] = (options) => theNotification.notice(options, item)
   })
 
   return obj

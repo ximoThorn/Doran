@@ -17,8 +17,8 @@ Notification.newInstance = (_props = {}) => {
   const notification = Instance.$children[0]; // 拿到最新的Notification组件实例
 
   return {
-    notice(options = {}, type = 'default') {
-      notification.add(options, type)
+    notice(options = {}, type) {
+      return notification.add(options, type);
     },
     remove() {}
   }
