@@ -51,6 +51,8 @@ views目录是各个组件的使用demo
 
 * Card (卡片) [文档说明](https://github.com/ximoThorn/Doran/tree/master/src/components/card)
 
+* Notification (通知) [文档说明](https://github.com/ximoThorn/Doran/blob/master/src/components/notification)
+
 ## Demo
 ```
 git clone
