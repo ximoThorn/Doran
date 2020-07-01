@@ -10,6 +10,7 @@
       :onClick="item.onClick"
       :showClose="item.showClose"
       :iconType="item.iconType"
+      :customClass="item.customClass"
       :ref="item.key"
       :dangerouslyUseHTMLString="item.dangerouslyUseHTMLString"
       :message="item.message" />

@@ -35,28 +35,27 @@ export default {
     openStatusNotice(type) {
       switch (type) {
         case 'success':
-          this.$Notice.open({
+          this.$Notice.open({ // 或者this.$Notice.success
             type: 'success',
             title: '成功！',
-            message: '这是一条成功的通知！',
-            duration: 0
+            message: '这是一条成功的通知！'
           })
           break;
         case 'info':
-          this.$Notice.open({
+          this.$Notice.open({ // 或者this.$Notice.success
             type: 'info',
             title: '描述！',
             message: '这是一条描述的通知！'
           })
           break;
         case 'warning':
-          this.$Notice.warning({
+          this.$Notice.warning({ // 或者传入type
             title: '警告！',
             message: '这是一条警告的通知！'
           })
           break;
         case 'error':
-          this.$Notice.error({
+          this.$Notice.error({ // 或者传入type
             title: '错误！',
             message: '这是一条错误的通知！'
           })

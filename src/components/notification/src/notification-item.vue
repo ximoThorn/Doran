@@ -62,6 +62,7 @@ export default {
       type: Boolean,
       default: true
     },
+    customClass: String,
     iconType: String,
     dangerouslyUseHTMLString: Boolean
   },
@@ -74,6 +75,7 @@ export default {
     classes() {
       return [
         `${notificationPreFix}-default`,
+        this.customClass,
         {
           [`${notificationPreFix}-${this.type}`]: this.type !== 'default'
         }

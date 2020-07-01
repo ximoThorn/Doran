@@ -12,6 +12,7 @@ showClose|是否显示关闭按钮|boolean||true
 onClose|通知关闭时的回调|function||
 onClick|点击通知时的回调|function||
 dangerouslyUseHTMLString|自定义message，可以是HTML字符串|string||
+customClass|自定义类名|string||
 
 
 # Notification Methods
