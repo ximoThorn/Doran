@@ -56,8 +56,10 @@
       @before-enter="beforeTransition"
       @after-leave="afterTransition"
       @after-enter="afterTransition"
-      name="select-suggestion">
+      name="select-suggestion"
+      appear>
       <dr-popper
+        :visible="isVisible"
         v-show="isVisible"
         :placement="placement"
         :transfer="transfer"
@@ -135,7 +137,7 @@ export default {
     transfer: {
       type: Boolean,
       default() {
-        return !!this.$DORAN.transfer
+        return !!this.$DORAN.transfer;
       }
     }
   },
@@ -165,7 +167,6 @@ export default {
   },
   mounted() {
     this.value && this.setCurrentValues();
-    this.getSelectWidth();
     addResizeListener(this.$el, this.getSelectWidth);
     this.$on('handlerClickOption', this.onSelectedOption);
   },
@@ -264,7 +265,9 @@ export default {
     getSelectWidth() { // 更改popper的宽度
       this.$nextTick(() => {
         const selectTagsWidth = this.$el.clientWidth;
-        this.$refs.popper.$el.style.minWidth = `${selectTagsWidth}px`;
+        if (this.$refs.popper) {
+          this.$refs.popper.$el.style.minWidth = `${selectTagsWidth}px`;
+        }
       });
       if (this.multiple) {
         this.updateSelectHeight();
@@ -322,6 +325,7 @@ export default {
       };
       this.$emit('visibleChange', newValue);
       this.broadcast('DrPopper', newValue ? 'onUpdatePopper' : 'onDestoryPopper');
+      newValue && this.getSelectWidth();
     },
     slotOptionsData(newValue) { // 监听option数据变化
       newValue && this.isVisible && this.broadcast('DrPopper', 'onUpdatePopper');
@@ -342,9 +346,9 @@ export default {
     }
   },
   beforeDestroy() {
-    this.$refs.popper.$el.style.display = 'none'; // 这里不能设置isVisible=false
     this.broadcast('DrPopper', 'onDestoryPopper');
     removeResizeListener(this.$el || '', this.getSelectWidth || function () {});
+    this.$refs.popper.removeChild(); // 销毁时移除popper的dom元素
   }
 };
 </script>

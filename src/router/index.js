@@ -93,6 +93,10 @@ const routes = [
   {
     path: '/notification',
     component: () => import('../views/Notification.vue')
+  },
+  {
+    path: '/popover',
+    component: () => import('../views/Popover.vue')
   }
 ];
 

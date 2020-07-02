@@ -1,19 +1,20 @@
 .dr-popper {
+  display: inline-block;
   transform-origin: center top;
   @include popper;
 }
-.dr-popper[x-placement^=bottom] {
-  margin-top: 5px;
-}
+// .dr-popper[x-placement^=bottom] {
+//   margin-top: 5px;
+// }
 
-.dr-popper[x-placement^=top] {
-  margin-top: -5px;
-}
+// .dr-popper[x-placement^=top] {
+//   margin-top: -5px;
+// }
 
-.dr-popper[x-placement^=left] {
-  margin-left: -5px;
-}
+// .dr-popper[x-placement^=left] {
+//   margin-left: -5px;
+// }
 
-.dr-popper[x-placement^=right] {
-  margin-left: 5px;
-}
+// .dr-popper[x-placement^=right] {
+//   margin-left: 5px;
+// }

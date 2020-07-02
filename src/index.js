@@ -30,7 +30,8 @@ import DrDropdown from './components/dropdown';
 import DrDropdownItem from './components/dropdown-item';
 import DrDropdownMenu from './components/dropdown-menu';
 import DrCard from './components/card'
-import Notification from './components/notification'
+import DrNotification from './components/notification'
+import DrPopover from './components/popover';
 
 const DoranComponents = [
   DrButton,
@@ -62,7 +63,8 @@ const DoranComponents = [
   DrDropdown,
   DrDropdownItem,
   DrDropdownMenu,
-  DrCard
+  DrCard,
+  DrPopover
 ];
 
 const install = function (Vue, opt = {}) {
@@ -75,7 +77,7 @@ const install = function (Vue, opt = {}) {
     zIndex: opt.zIndex || 2020
   };
 
-  Vue.prototype.$Notice = Notification;
+  Vue.prototype.$Notice = DrNotification;
 };
 
 typeof window !== 'undefined' && window.Vue && install(window.Vue);
@@ -111,5 +113,7 @@ export default {
   DrDropdown,
   DrDropdownItem,
   DrDropdownMenu,
-  DrCard
+  DrCard,
+  DrNotification,
+  DrPopover
 };

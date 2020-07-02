@@ -16,13 +16,16 @@
       @before-enter="beforeTransition"
       @after-leave="afterTransition"
       @after-enter="afterTransition"
-      name="select-suggestion">
+      name="select-suggestion"
+      appear>
       <dr-popper
         @mouseenter.native="handlerMouseenter"
         @mouseleave.native="handlerMouseleave"
         :transfer="transfer"
         :placement="placement"
-        v-show="isVisible || (visible && trigger === 'custom')">
+        ref="popper"
+        v-show="isVisible || (visible && trigger === 'custom')"
+        :visible="isVisible || (visible && trigger === 'custom')">
         <slot name="dropdown"></slot>
       </dr-popper>
     </transition>
@@ -137,11 +140,17 @@ export default {
   watch: {
     isVisible(newValue) {
       this.$emit('visibleChange', newValue);
-      this.broadcast('DrPopper', newValue ? 'onUpdatePopper' : 'onDestoryPopper');
+      this.$nextTick(() => {
+        this.broadcast('DrPopper', newValue ? 'onUpdatePopper' : 'onDestoryPopper');
+      })
     },
     visible(newValue) {
       this.isVisible = newValue;
     }
+  },
+  beforeDestroy() {
+    this.broadcast('DrPopper', 'onDestoryPopper');
+    this.$refs.popper.removeChild(); // 销毁时移除popper的dom元素
   }
 };
 </script>

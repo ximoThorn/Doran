@@ -2,6 +2,7 @@
   <div
     v-transfer-dom="transfer"
     :data-transfer="transfer"
+    :data-visible="visible"
     :style="`z-index: ${zIndex};`"
     class="dr-popper">
     <slot></slot>
@@ -25,14 +26,15 @@ export default {
     },
     offset: {
       type: String,
-      default: '0, 0px'
+      default: '0, 5px'
     },
     transfer: { // 是否将popper放置在body的最后面， 默认为true
       type: Boolean,
       default() {
         return !!this.$DORAN.transfer
       }
-    }
+    },
+    visible: Boolean
   },
   data() {
     return {
@@ -74,7 +76,17 @@ export default {
           this.currentPopper = null;
         }, 330);
       };
+    },
+    removeChild() {
+      if (this.transfer) {
+        this.visible && document.body.removeChild(this.$el);
+      } else {
+        this.$el.style.display = 'none';
+      }
     }
+  },
+  beforeDestroy() {
+    this.popperDetory();
   }
 };
 </script>

@@ -104,4 +104,9 @@ export const catalogList = [
     name: 'Notification',
     dsc: '通知'
   }
+  // {
+  //   link: '/popover',
+  //   name: 'Popover',
+  //   dsc: '弹出框'
+  // }
 ];
