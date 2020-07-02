@@ -79,7 +79,7 @@ export default {
     },
     removeChild() {
       if (this.transfer) {
-        this.visible && document.body.removeChild(this.$el);
+        document.body.contains(this.$el) && document.body.removeChild(this.$el);
       } else {
         this.$el.style.display = 'none';
       }
