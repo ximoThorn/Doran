@@ -35,3 +35,10 @@
   opacity: 0;
   transform: translateX(100%);
 }
+
+.popover-opacity-enter-active, .popover-opacity-leave-active {
+  transition: opacity .5s;
+}
+.popover-opacity-enter, .popover-opacity-leave-to {
+  opacity: 0;
+}

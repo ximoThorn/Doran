@@ -2,14 +2,27 @@
   display: inline-block;
   transform-origin: center top;
   @include popper;
+  position: relative;
+  &-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    &::after {
+      content: ' ';
+    }
+  }
 }
 // .dr-popper[x-placement^=bottom] {
 //   margin-top: 5px;
 // }
 
-// .dr-popper[x-placement^=top] {
-//   margin-top: -5px;
-// }
+.dr-popper[x-placement^=top] {
+  .dr-popper-arrow {
+    bottom: -12px;
+    border-top-color: $gray-color;
+  }
+}
 
 // .dr-popper[x-placement^=left] {
 //   margin-left: -5px;

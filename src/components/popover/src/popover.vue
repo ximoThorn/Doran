@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div
+    <div class="dr-popover-reference"
       @click="handlerClick"
       ref="reference">
       <slot></slot>
     </div>
-    <transition>
+    <transition name="popover-opacity">
       <DrPopper
         :transfer="transfer"
         :placement="placement"
+        :visible="visible"
         v-show="visible"
+        offset="0 12px"
+        :showArrow="true"
+        ref="popper"
         class="dr-popover-popper">
         <slot name="content">popover</slot>
       </DrPopper>
@@ -68,6 +72,9 @@ export default {
     visible(newValue) {
       this.broadcast('DrPopper', newValue ? 'onUpdatePopper' : 'onDestoryPopper');
     }
+  },
+  beforeDestroy() {
+    this.$refs.popper.removeChild(); // 销毁时移除popper的dom元素
   }
 }
 </script>

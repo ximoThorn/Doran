@@ -6,6 +6,7 @@
     :style="`z-index: ${zIndex};`"
     class="dr-popper">
     <slot></slot>
+    <div v-if="showArrow" class="dr-popper-arrow"></div>
   </div>
 </template>
 
@@ -34,7 +35,8 @@ export default {
         return !!this.$DORAN.transfer
       }
     },
-    visible: Boolean
+    visible: Boolean,
+    showArrow: Boolean
   },
   data() {
     return {
@@ -79,6 +81,7 @@ export default {
     },
     removeChild() {
       if (this.transfer) {
+        // 当父组件销毁时，移除
         document.body.contains(this.$el) && document.body.removeChild(this.$el);
       } else {
         this.$el.style.display = 'none';

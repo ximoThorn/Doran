@@ -103,10 +103,10 @@ export const catalogList = [
     link: '/notification',
     name: 'Notification',
     dsc: '通知'
+  },
+  {
+    link: '/popover',
+    name: 'Popover',
+    dsc: '弹出框'
   }
-  // {
-  //   link: '/popover',
-  //   name: 'Popover',
-  //   dsc: '弹出框'
-  // }
 ];

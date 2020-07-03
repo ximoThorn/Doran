@@ -1,5 +1,10 @@
 .dr-popover {
   &-popper {
     display: inline-block;
+    min-width: 150px;
+    padding: 16px;
+  }
+  &-reference {
+    display: inline-block;
   }
 }
