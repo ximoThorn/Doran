@@ -58,6 +58,7 @@
       @after-enter="afterTransition"
       name="select-suggestion"
       appear>
+      <!--  v-show是为了和transition配合生成显示和隐藏时的动画  visible是告诉popper配合transfer控制该怎么渲染 -->
       <dr-popper
         :visible="isVisible"
         v-show="isVisible"
