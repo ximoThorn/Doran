@@ -1,5 +1,5 @@
 
-# Popover Attributes
+# Tooltip Attributes
 
 参数|说明|类型|可选值|默认值
 -|-|-|-|-|
@@ -12,7 +12,7 @@ offset|偏移量|Number||12
 disabled|是否禁用|boolean||false
 
 
-# Popover Slot
+# Tooltip Slot
 
 name|说明|
 -|-|
