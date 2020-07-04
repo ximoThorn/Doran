@@ -1,10 +1,17 @@
 .dr-popover {
+  display: inline-block;
   &-popper {
     display: inline-block;
-    min-width: 150px;
+    min-width: 150px !important;
     padding: 16px;
+    @include popper;
   }
   &-reference {
     display: inline-block;
+  }
+  &-title {
+    font-size: $font-size-large;
+    color: $title-color;
+    margin-bottom: 10px;
   }
 }

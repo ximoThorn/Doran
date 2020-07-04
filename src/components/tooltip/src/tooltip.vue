@@ -1,12 +1,8 @@
 <template>
-  <div class="dr-popover">
-    <div class="dr-popover-reference"
-      @click="handlerClick"
-      v-click-outside="handlerClickOutside"
+  <div class="dr-tooltip">
+    <div class="dr-tooltip-reference"
       @mouseenter="handlerMouseEnter"
       @mouseleave="handlerMouseLeave"
-      @mousedown="handlerFocus"
-      @mouseup="handlerBlur"
       ref="reference">
       <slot></slot>
     </div>
@@ -16,17 +12,18 @@
         @mouseleave.native="handlerMouseLeave"
         :transfer="transfer"
         :placement="placement"
-        :visible="isVisible || visible"
-        v-show="isVisible || visible"
+        :visible="isVisible"
+        v-show="isVisible"
         :offset="`0 ${offset}px`"
         :showArrow="showArrow"
         :style="{width: `${width}px`}"
         ref="popper"
         :class="classes">
-        <slot name="content">
-          <div class="dr-popover-title">{{title}}</div>
-          <div class="dr-popover-content">{{content}}</div>
-        </slot>
+        <div class="dr-tooltip-content">
+          <slot name="content">
+            {{content}}
+          </slot>
+        </div>
       </DrPopper>
     </transition>
   </div>
@@ -34,19 +31,19 @@
 
 <script>
 import DrPopper from '@/base/popper';
-import { directive as clickOutside } from 'v-click-outside-x'; // 点击dom外部时
+// import { directive as clickOutside } from 'v-click-outside-x'; // 点击dom外部时
 
 import { validValue } from '@/utils/validate';
 import emitter from '@/mixins/emitter';
 import { arrowInit } from '@/mixins/base';
 
-const popoverPreFix = 'dr-popover'
+const tooltipPreFix = 'dr-tooltip'
 
 export default {
-  name: 'DrPopover',
-  directives: {
-    clickOutside
-  },
+  name: 'DrTooltip',
+  // directives: {
+  //   clickOutside
+  // },
   mixins: [emitter, arrowInit],
   props: {
     placement: {
@@ -56,37 +53,24 @@ export default {
       },
       default: 'top-start'
     },
-    trigger: {
-      validator (value) {
-        return validValue(value, ['hover', 'click', 'focus', 'custom']);
-      },
-      default: 'hover'
-    },
     transfer: {
       type: Boolean,
       default() {
         return !!this.$DORAN.transfer
       }
     },
-    title: {
-      type: String,
-      default: 'title'
-    },
     offset: {
       type: Number,
       default: 12
     },
-    content: {
-      type: String,
-      default: 'content'
-    },
-    visible: Boolean,
+    content: String,
     showArrow: {
       type: Boolean,
       default: true
     },
-    popoverClass: String,
-    width: Number
+    tooltipClass: String,
+    width: Number,
+    disabled: Boolean
   },
   components: {
     DrPopper
@@ -100,49 +84,31 @@ export default {
   computed: {
     classes() {
       return [
-        `${popoverPreFix}-popper`,
-        this.popoverClass
+        `${tooltipPreFix}-popper`,
+        this.tooltipClass
       ]
     }
   },
   methods: {
-    handlerClick() {
-      if (this.trigger === 'click') {
-        this.isVisible = !this.isVisible;
-      }
-    },
-    handlerClickOutside() {
-      if (this.trigger === 'click') {
-        this.isVisible = false;
-      }
-    },
-    handlerFocus() {
-      if (this.trigger === 'focus') {
-        this.isVisible = true;
-      }
-    },
-    handlerBlur() {
-      if (this.trigger === 'focus') {
-        this.isVisible = false;
-      }
-    },
     handlerMouseEnter() {
-      if (this.trigger === 'hover') {
-        // 延迟出现，防止鼠标快速hover时的显示bug
-        // 移入或者移出的时候互相清除对方内部的计时器，执行自己内部的计时器
-        this.timeOut && clearTimeout(this.timeOut);
-        this.timeOut = setTimeout(() => {
-          this.isVisible = true;
-        }, 251);
+      if (this.disabled) {
+        return;
       }
+      // 延迟出现，防止鼠标快速hover时的显示bug
+      // 移入或者移出的时候互相清除对方内部的计时器，执行自己内部的计时器
+      this.timeOut && clearTimeout(this.timeOut);
+      this.timeOut = setTimeout(() => {
+        this.isVisible = true;
+      }, 251);
     },
     handlerMouseLeave() {
-      if (this.trigger === 'hover') {
-        this.timeOut && clearTimeout(this.timeOut);
-        this.timeOut = setTimeout(() => {
-          this.isVisible = false;
-        }, 150);
-      }
+      // if (this.disabled) {
+      //   return;
+      // }
+      this.timeOut && clearTimeout(this.timeOut);
+      this.timeOut = setTimeout(() => {
+        this.isVisible = false;
+      }, 150);
     }
   },
   watch: {

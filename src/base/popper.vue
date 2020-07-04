@@ -6,7 +6,7 @@
     :style="`z-index: ${zIndex};`"
     class="dr-popper">
     <slot></slot>
-    <div v-if="showArrow" class="dr-popper-arrow"></div>
+    <div v-if="showArrow" ref="arrow" class="dr-popper-arrow"></div>
   </div>
 </template>
 

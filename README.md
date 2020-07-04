@@ -53,6 +53,10 @@ views目录是各个组件的使用demo
 
 * Notification (通知) [文档说明](https://github.com/ximoThorn/Doran/blob/master/src/components/notification)
 
+* Popover (弹出框) [文档说明](https://github.com/ximoThorn/Doran/blob/master/src/components/popover)
+
+* tooltip (文字提示) [文档说明](https://github.com/ximoThorn/Doran/blob/master/src/components/tooltip)
+
 ## Demo
 ```
 git clone

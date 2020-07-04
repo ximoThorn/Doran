@@ -10,10 +10,7 @@
     <DrIcon :icon="icon"
       v-if="!loading && icon">
     </DrIcon>
-    <span
-      v-if="$slots.default">
-      <slot></slot>
-    </span>
+    <slot v-if="$slots.default"></slot>
   </button>
 </template>
 

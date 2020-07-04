@@ -108,5 +108,10 @@ export const catalogList = [
     link: '/popover',
     name: 'Popover',
     dsc: '弹出框'
+  },
+  {
+    link: '/tooltip',
+    name: 'Tooltip',
+    dsc: '文字提示'
   }
 ];

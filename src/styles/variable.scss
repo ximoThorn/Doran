@@ -41,7 +41,7 @@ $btn-info-color: $info-color !default;
 $btn-success-color: $success-color !default;
 $btn-warning-color: $warning-color !default;
 $btn-error-color: $error-color !default;
-// $font-size-large: 16px !default;
+$font-size-large: 16px !default;
 
 $line-height-base: 1 !default;
 $text-color: #515a6e !default;
@@ -84,6 +84,8 @@ $popper-box-shadow: 0 1px 6px rgba(0,0,0,.1) !default;
 $card-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1) !default;
 $card-divider: $gray-color !default;
 $title-color: #464c5b !default;
+
+$tooltip-bg-color: #303133 !default;
 
 
 $sm: 768px !default;

@@ -1,0 +1,124 @@
+.dr-tooltip {
+  display: inline-block;
+  &-popper {
+    display: inline-block;
+    padding: 16px;
+    background-color: $tooltip-bg-color;
+    z-index: 2020;
+    border-radius: $btn-radius-base;
+  }
+  &-reference {
+    display: inline-block;
+  }
+  &-content {
+    color: $body-white;
+  }
+}
+
+.dr-tooltip-popper[x-placement=top] {
+  .dr-popper-arrow {
+    border-top-color: $tooltip-bg-color;
+    &::after {
+      border-top-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=top-start] {
+  .dr-popper-arrow {
+    border-top-color: $tooltip-bg-color;
+    &::after {
+      border-top-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=top-end] {
+  .dr-popper-arrow {
+    border-top-color: $tooltip-bg-color;
+    &::after {
+      border-top-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=bottom] {
+  .dr-popper-arrow {
+    border-bottom-color: $tooltip-bg-color;
+    &::after {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=bottom-start] {
+  .dr-popper-arrow {
+    border-bottom-color: $tooltip-bg-color;
+    &::after {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=bottom-end] {
+  .dr-popper-arrow {
+    border-bottom-color: $tooltip-bg-color;
+    &::after {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=right] {
+  .dr-popper-arrow {
+    border-right-color: $tooltip-bg-color;
+    &::after {
+      border-right-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=right-start] {
+  .dr-popper-arrow {
+    border-right-color: $tooltip-bg-color;
+    &::after {
+      border-right-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=right-end] {
+  .dr-popper-arrow {
+    border-right-color: $tooltip-bg-color;
+    &::after {
+      border-right-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=left] {
+  .dr-popper-arrow {
+    border-left-color: $tooltip-bg-color;
+    &::after {
+      border-left-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=left-start] {
+  .dr-popper-arrow {
+    border-left-color: $tooltip-bg-color;
+    &::after {
+      border-left-color: transparent;
+    }
+  }
+}
+
+.dr-tooltip-popper[x-placement=left-end] {
+  .dr-popper-arrow {
+    border-left-color: $tooltip-bg-color;
+    &::after {
+      border-left-color: transparent;
+    }
+  }
+}

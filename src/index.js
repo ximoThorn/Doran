@@ -32,6 +32,7 @@ import DrDropdownMenu from './components/dropdown-menu';
 import DrCard from './components/card'
 import DrNotification from './components/notification'
 import DrPopover from './components/popover';
+import DrTooltip from './components/tooltip';
 
 const DoranComponents = [
   DrButton,
@@ -64,7 +65,8 @@ const DoranComponents = [
   DrDropdownItem,
   DrDropdownMenu,
   DrCard,
-  DrPopover
+  DrPopover,
+  DrTooltip
 ];
 
 const install = function (Vue, opt = {}) {
@@ -115,5 +117,6 @@ export default {
   DrDropdownMenu,
   DrCard,
   DrNotification,
-  DrPopover
+  DrPopover,
+  DrTooltip
 };

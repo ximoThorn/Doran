@@ -97,6 +97,10 @@ const routes = [
   {
     path: '/popover',
     component: () => import('../views/Popover.vue')
+  },
+  {
+    path: '/tooltip',
+    component: () => import('../views/Tooltip.vue')
   }
 ];
 
