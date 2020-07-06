@@ -93,7 +93,7 @@ export default {
 
 <style lang="scss" scoped>
 .popover-page {
-  margin: 20px 0 100px;
+  margin: 60px 0 100px;
   > p {
     margin: 0 auto;
     text-align: center;
