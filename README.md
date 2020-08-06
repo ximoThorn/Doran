@@ -1,11 +1,60 @@
 # Doran-ui
-基于vue的一套中后台ui框架
+基于vue(2.x)的一套中后台ui框架
 >注：因为没有经过系统的测试和推广，该ui目前仅供学习。
-
 views目录是各个组件的使用demo
 
 在线[预览](http://39.105.180.129:9000/)
 
+## 全局引入
+一般在 webpack 入口页面 main.js 中如下配置：
+``` js
+import Vue from 'vue'
+import DoranUi from 'doran'
+import 'doran/dist/doran.css' // 引入css
+import App from './App.vue'
+
+Vue.use(DoranUi)
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+```
+
+## 按需引入
+借助插件[babel-plugin-import](https://github.com/ant-design/babel-plugin-import)可以实现按需加载组件，减少文件体积。首先安装，并在项目根目录文件 .babelrc 中配置：
+``` 
+npm install babel-plugin-import --save-dev // 安装
+```
+在.babelrc文件中
+```js
+{
+  "plugins": [["import", {
+    "libraryName": "doran",
+    "libraryDirectory": "dist/components"
+  }]]
+}
+```
+然后这样按需引入组件，就可以减小体积了：
+```html
+<template>
+  <div id="app">
+    <dr-button type="error">Doran</dr-button>
+    <dr-input placeholder="请输入"></dr-input>
+  </div>
+</template>
+
+<script>
+import { Button, Input } from 'doran'
+
+export default {
+  name: 'App',
+  components: {
+    DrButton: Button,
+    DrInput: Input
+  }
+}
+</script>
+```
 ## Version
 1.x
 

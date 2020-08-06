@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true
   },
+  exclude: /\(node_modules|dist)/,
   'extends': [
     'plugin:vue/essential',
     '@vue/standard'

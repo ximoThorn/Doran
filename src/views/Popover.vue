@@ -126,8 +126,8 @@ export default {
         > div {
           margin-bottom: 20px;
         }
-    }
-    .right {
+      }
+      .right {
         width: 80px;
         height: 200px;
         float: right;
