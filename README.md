@@ -55,6 +55,8 @@ export default {
 }
 </script>
 ```
+>注意：按需引用仍然需要导入样式，即在 main.js中全局引入
+
 ## Version
 1.x
 
@@ -106,13 +108,3 @@ export default {
 
 * tooltip (文字提示) [文档说明](https://github.com/ximoThorn/Doran/blob/master/src/components/tooltip)
 
-## Demo
-```
-git clone
-
-cd Doran
-
-npm install
-
-npm run serve
-```
